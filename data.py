@@ -1,9 +1,8 @@
 import torch
 from torch.utils.data import Dataset
 from torch.nn.utils.rnn import pad_sequence
-import torch.multiprocessing
 
-from multiprocessing.pool import Pool
+from multiprocessing.pool import ThreadPool
 import numpy as np
 from tqdm import tqdm
 import os
@@ -51,11 +50,13 @@ characters_to_keep += "12334567890"
 
 def collate_fn(tensor):             
     x_batch = [i[0] for i in tensor]
-    y_batch = [i[1] for i in tensor]                       
-    x_batch = pad_sequence(x_batch).cuda()
-    y_batch = pad_sequence(y_batch).cuda()
-    print(x_batch.shape)
-    print(y_batch.shape)
+    y_batch = torch.vstack([i[1] for i in tensor]).cuda()
+    x_batch = pad_sequence(x_batch).cuda().squeeze()
+
+    # Shorten long sequences
+    if x_batch.shape[0] > 100:
+        x_batch = x_batch[:100, :, :]
+
     return (x_batch, y_batch)
 
 def obs_to_tensor(obs):
@@ -112,7 +113,7 @@ class LocationDataset(Dataset):
         obs_len = np.char.str_len(self.x_data)
         str_len_order = obs_len.argsort()
         self.x_data = self.x_data[str_len_order]
-        self.y_data = self.x_data[str_len_order]
+        self.y_data = self.y_data[str_len_order]
         self.country = self.country[str_len_order]
 
         # Remove empty and short observations
@@ -121,22 +122,19 @@ class LocationDataset(Dataset):
         self.y_data = self.y_data[np.where(obs_len > 9)[0]]
         self.country = self.country[np.where(obs_len > 9)[0]]
 
-        np.savetxt("data/temp_x_preprocess.txt", self.x_data, fmt="%s")
-    
+        # Reduce
+        # self.x_data = self.x_data[:10000]
+        # self.y_data = self.y_data[:10000]
+        # self.country = self.country[:10000]
+
     def to_tensor(self):
         """Transforms the strings x data into one hot encoded tensor on the
         character level"""
+        with ThreadPool(10) as pool:
+            x_data_encoded = pool.map(obs_to_tensor, self.x_data)
 
-        # Multiprocessing using a pool
-        torch.multiprocessing.set_sharing_strategy("file_system")
-        print("opened pool")
-        with Pool(10) as pool:
-            x_data = pool.map(obs_to_tensor, self.x_data)
-            print("here")
-            pool.close()
-        print("closed pool")
-
-        self.x_data_encoded = x_data
+        self.x_data_raw = self.x_data
+        self.x_data = x_data_encoded
 
     def add_country_code(self):
         coordinates = self.y_data.tolist()
@@ -145,7 +143,7 @@ class LocationDataset(Dataset):
         self.country = np.array([i["cc"] for i in countries])
 
     def __len__(self):
-        return len(self.x_data_encoded)
+        return len(self.x_data)
 
     def __getitem__(self, index):
-        return (self.x_data_encoded[index], self.y_data[index]) 
+        return (self.x_data[index], self.y_data[index]) 
