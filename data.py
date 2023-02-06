@@ -39,9 +39,9 @@ country_to_code_map = {
     "Sweden"        : "SE",
     "Ireland"       : "IE", 	
     "Latvia"        : "LV", 	
-    "Poland"        : "PL"
-    #"Canada"        : "CA",
-    #"United States" : "US"
+    "Poland"        : "PL",
+    "Canada"        : "CA",
+    "United States" : "US"
 }
 
 code_to_country_map = {j:i for i,j in country_to_code_map.items()}
@@ -54,8 +54,8 @@ def collate_fn(tensor):
     x_batch = pad_sequence(x_batch).cuda().squeeze()
 
     # Shorten long sequences
-    if x_batch.shape[0] > 100:
-        x_batch = x_batch[:100, :, :]
+    if x_batch.shape[0] > 200:
+        x_batch = x_batch[:200, :, :]
 
     return (x_batch, y_batch)
 
@@ -93,7 +93,12 @@ def find_characters_to_keep(data, max_n_characters=100):
         if new_char not in characters_to_keep:
             characters_to_keep += new_char
 
-    characters_to_keep = characters_to_keep.replace(" ", "")
+    # Remove these characters regardless
+    characters_to_remove = """ @.,#'_-":);(/&*`$%|[]+~><=^\{}"""
+    for i in characters_to_remove:
+        characters_to_keep = characters_to_keep.replace(i, "")
+
+    print("Characters to keep: ", characters_to_keep)
 
     return characters_to_keep
 
@@ -120,10 +125,10 @@ class LocationDataset(Dataset):
 
     def pre_process(self):
         # Remove countries that are not in the EU or NA
-        in_region = np.isin(self.country, list(country_to_code_map.values()))
-        self.x_data = self.x_data[in_region]
-        self.y_data = self.y_data[in_region]
-        self.country = self.country[in_region]
+        # in_region = np.isin(self.country, list(country_to_code_map.values()))
+        # self.x_data = self.x_data[in_region]
+        # self.y_data = self.y_data[in_region]
+        # self.country = self.country[in_region]
         
         # Replace line breaks and tabs
         self.x_data = np.char.replace(self.x_data, "\n", "")
@@ -164,10 +169,22 @@ class LocationDataset(Dataset):
         self.y_data = self.y_data[np.where(obs_len > 9)[0]]
         self.country = self.country[np.where(obs_len > 9)[0]]
 
+        # Add weights based on country
+        # class_weights_map = {} 
+        # for country in np.unique(self.country):
+        #     class_weights_map[country] = \
+        #         len(self.country[self.country == country]) / len(self.country)
+
+        # class_weights_map = {k:v/max(class_weights_map.values()) for k,v
+        #                      in class_weights_map.items()}
+        # self.weights = [class_weights_map[i] for i in self.country]
+
         # Reduce
-        # self.x_data = self.x_data[:10000]
-        # self.y_data = self.y_data[:10000]
-        # self.country = self.country[:10000]
+        rand_idx = np.random.randint(low=0, high=len(self.x_data), size=500)
+        self.x_data = self.x_data[rand_idx]
+        self.y_data = self.y_data[rand_idx]
+        self.country = self.country[rand_idx]
+        # self.weights = self.weights[rand_idx]
 
     def to_tensor(self):
         """Transforms the strings x data into one hot encoded tensor on the
