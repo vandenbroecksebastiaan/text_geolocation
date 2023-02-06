@@ -8,6 +8,7 @@ from tqdm import tqdm
 import os
 import json
 import re
+from unidecode import unidecode
 
 import reverse_geocoder
 
@@ -45,10 +46,9 @@ country_to_code_map = {
 
 code_to_country_map = {j:i for i,j in country_to_code_map.items()}
 
-characters_to_keep = "abcdefghijklmnopqrstuvwxyz"
-characters_to_keep += "12334567890"
 
-def collate_fn(tensor):             
+
+def collate_fn(tensor):
     x_batch = [i[0] for i in tensor]
     y_batch = torch.vstack([i[1] for i in tensor]).cuda()
     x_batch = pad_sequence(x_batch).cuda().squeeze()
@@ -59,12 +59,43 @@ def collate_fn(tensor):
 
     return (x_batch, y_batch)
 
+
 def obs_to_tensor(obs):
+    """One hot encodes a string to a Tensor"""
     n_letters = len(characters_to_keep)
     tensor = torch.zeros(len(obs), 1, n_letters)
     for idx, char in enumerate(obs):
         tensor[idx][0][characters_to_keep.find(char)] = 1
     return tensor
+
+
+def find_characters_to_keep(data, max_n_characters=100):
+    """Finds the most frequent charachters in an iterable"""
+    character_count_map = {}
+    for obs in data:
+        for char in obs:
+            if char not in character_count_map.keys():
+                character_count_map[char] = 0
+            character_count_map[char] += 1
+
+    character_count_sorted = sorted(character_count_map.items(),
+                                 key=lambda x: x[1],
+                                 reverse=True)
+
+    global characters_to_keep
+    characters_to_keep = "abcdefghijklmnopqrstuvwxyz"
+    characters_to_keep += "12334567890"
+
+    # Add the most frequent characters to characters_to_keep
+    while (len(characters_to_keep) <= max_n_characters
+          and len(character_count_sorted) > 0):
+        new_char = character_count_sorted.pop(0)[0]
+        if new_char not in characters_to_keep:
+            characters_to_keep += new_char
+
+    characters_to_keep = characters_to_keep.replace(" ", "")
+
+    return characters_to_keep
 
 
 class LocationDataset(Dataset):
@@ -75,7 +106,7 @@ class LocationDataset(Dataset):
 
     def load_data(self):
         train_data_path = "data/training_data/training_data/"
-        for file in tqdm(os.listdir(train_data_path)):
+        for file in tqdm(os.listdir(train_data_path), desc="Reading data"):
             with open(train_data_path + file, "r") as file:
                 file_data = file.readlines()
                 for obs in file_data:
@@ -95,17 +126,28 @@ class LocationDataset(Dataset):
         self.country = self.country[in_region]
         
         # Replace line breaks and tabs
-        self.x_data = np.char.replace(self.x_data, "\n", " ")
-        self.x_data = np.char.replace(self.x_data, "\t", " ")
+        self.x_data = np.char.replace(self.x_data, "\n", "")
+        self.x_data = np.char.replace(self.x_data, "\t", "")
+
+        # Unicode decode
+        self.x_data = np.array([unidecode(i) for i in
+                                tqdm(self.x_data, desc="Unidecode")])
+
+        # All letters to lower case
+        self.x_data = np.char.lower(self.x_data)
 
         # Replace links
         self.x_data = np.array([re.sub(r'http\S+', '', i) for i in self.x_data])
 
         # Remove/replace special characters
-        for idx, obs in tqdm(enumerate(self.x_data)):
+        self.characters_to_keep = find_characters_to_keep(self.x_data)
+        with open("data/characters_to_keep.txt", "w") as file:
+            file.write(self.characters_to_keep)
+
+        for idx, obs in tqdm(enumerate(self.x_data), desc="Removing characters"):
             new_obs = ""
             for char in obs:
-                if char in characters_to_keep:
+                if char in self.characters_to_keep:
                     new_obs += char
             self.x_data[idx] = new_obs
 
