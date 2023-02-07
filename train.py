@@ -13,9 +13,10 @@ def train(model, train_loader, EPOCHS, LR):
     criterion = MSELoss()
 
     model.train()
-    train_loss = torch.empty(size=(0, 1)).cuda()
+    train_loss = []
     for epoch in range(EPOCHS):
 
+        # --- Train step
         print(epoch)
         desc = "Training model"
         iteration_loss = []
@@ -27,20 +28,24 @@ def train(model, train_loader, EPOCHS, LR):
             loss.backward()
             optimizer.step()
 
-            iteration_loss.append(loss)
+            iteration_loss.append(loss.item())
 
-            print(" ", round(loss.item()), end="\r")
+            print(" ", round(loss.item(), 4), end="\r")
+            
+        train_loss.extend(iteration_loss)
 
-        train_loss = torch.vstack([train_loss, sum(iteration_loss) / len(iteration_loss)])
+        # --- Validation step
+
 
     # Ask the trained model to make predictions and save them
-    predictions = torch.empty(size=(0, 2)).cuda()
-    targets = torch.empty(size=(0, 2)).cuda()
+    predictions = []
+    targets = []
+    model.eval()
     for idx, (x_train, y_train) in enumerate(train_loader):
         output = model(x_train)
-        predictions = torch.vstack([predictions, output])
-        targets = torch.vstack([targets, y_train])
+        predictions.extend(output.tolist())
+        targets.extend(y_train.tolist())
 
-    np.savetxt("data/predictions.txt", predictions.detach().cpu().numpy())
-    np.savetxt("data/targets.txt", targets.cpu().numpy())
-    np.savetxt("data/train_loss.txt", train_loss.detach().cpu().numpy())
+    np.savetxt("data/predictions.txt", np.array(predictions, dtype=object), fmt="%f")
+    np.savetxt("data/targets.txt", np.array(targets, dtype=object), fmt="%f")
+    np.savetxt("data/train_loss.txt", np.array(train_loss, dtype=object), fmt="%f")

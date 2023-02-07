@@ -1,6 +1,7 @@
 import torch
 from torch.utils.data import Dataset
 from torch.nn.utils.rnn import pad_sequence
+from torch.nn.functional import normalize
 
 from multiprocessing.pool import ThreadPool
 import numpy as np
@@ -103,6 +104,26 @@ def find_characters_to_keep(data, max_n_characters=100):
     return characters_to_keep
 
 
+def undo_min_max_scaling(tensor):
+    # Read information about the scaling previously applied
+    with open("data/temp/scaling_info.txt") as file:
+        data = file.readlines()
+        data = [float(i.replace("\n", "")) for i in data]
+        min_y1 = data[0]
+        max_y1 = data[1]
+        min_y2 = data[2]
+        max_y2 = data[3]
+
+    y1 = tensor[:, 0]
+    y2 = tensor[:, 1]
+
+    # Undo the min max scaling
+    y1_unscaled = y1 * (max_y1 - min_y1) + min_y1
+    y2_unscaled = y2 * (max_y2 - min_y2) + min_y2
+
+    return np.vstack([y1_unscaled, y2_unscaled]).transpose()
+
+
 class LocationDataset(Dataset):
 
     def __init__(self):
@@ -120,35 +141,54 @@ class LocationDataset(Dataset):
                     self.y_data.append(obs_dict["coordinates"])
     
         self.x_data = np.array(self.x_data)
-        self.y_data = [(float(i[0]), float(i[1])) for i in self.y_data]
-        self.y_data = torch.Tensor(self.y_data)
+        self.y_data_unnorm = [(float(i[0]), float(i[1])) for i in self.y_data]
+        self.y_data_unnorm = torch.Tensor(self.y_data_unnorm)
 
-    def pre_process(self):
-        # Remove countries that are not in the EU or NA
-        # in_region = np.isin(self.country, list(country_to_code_map.values()))
-        # self.x_data = self.x_data[in_region]
-        # self.y_data = self.y_data[in_region]
-        # self.country = self.country[in_region]
-        
+    def add_country_code(self):
+        coordinates = self.y_data_unnorm.tolist()
+        coordinates = [(i[1], i[0]) for i in coordinates]
+        countries = reverse_geocoder.search(coordinates)
+        self.country = np.array([i["cc"] for i in countries])
+
+    def reduce(self, max_obs):
+        # Reduce
+        rand_idx = np.random.randint(low=0, high=len(self.x_data), size=max_obs)
+        self.x_data = self.x_data[rand_idx]
+        self.y_data_unnorm = self.y_data_unnorm[rand_idx]
+        self.country = self.country[rand_idx]
+        # self.weights = self.weights[rand_idx]
+
+    def min_max_scale_y_data(self):
+        """Applies min max scaling to the coordinates"""
+        self.max_y1 = self.y_data_unnorm[:, 0].max()
+        self.min_y1 = self.y_data_unnorm[:, 0].min()
+        self.max_y2 = self.y_data_unnorm[:, 1].max()
+        self.min_y2 = self.y_data_unnorm[:, 1].min()
+
+        y1_scaled = (self.y_data_unnorm[:, 0] - self.min_y1) / (self.max_y1 - self.min_y1)
+        y2_scaled = (self.y_data_unnorm[:, 1] - self.min_y2) / (self.max_y2 - self.min_y2)
+
+        self.y_data = torch.vstack([y1_scaled, y2_scaled]).t()
+
+    def remove_break_tab_link(self):
         # Replace line breaks and tabs
         self.x_data = np.char.replace(self.x_data, "\n", "")
         self.x_data = np.char.replace(self.x_data, "\t", "")
+        # Replace links
+        self.x_data = np.array([re.sub(r'http\S+', '', i) for i in self.x_data])
 
+    def unidecode(self):
         # Unicode decode
         self.x_data = np.array([unidecode(i) for i in
                                 tqdm(self.x_data, desc="Unidecode")])
 
+    def lower(self):
         # All letters to lower case
         self.x_data = np.char.lower(self.x_data)
 
-        # Replace links
-        self.x_data = np.array([re.sub(r'http\S+', '', i) for i in self.x_data])
-
+    def remove_special_characters(self):
         # Remove/replace special characters
         self.characters_to_keep = find_characters_to_keep(self.x_data)
-        with open("data/characters_to_keep.txt", "w") as file:
-            file.write(self.characters_to_keep)
-
         for idx, obs in tqdm(enumerate(self.x_data), desc="Removing characters"):
             new_obs = ""
             for char in obs:
@@ -156,6 +196,7 @@ class LocationDataset(Dataset):
                     new_obs += char
             self.x_data[idx] = new_obs
 
+    def sort(self):
         # Order from short to long sentences for efficient batching
         obs_len = np.char.str_len(self.x_data)
         str_len_order = obs_len.argsort()
@@ -163,12 +204,14 @@ class LocationDataset(Dataset):
         self.y_data = self.y_data[str_len_order]
         self.country = self.country[str_len_order]
 
+    def remove_short(self):
         # Remove empty and short observations
         obs_len = np.char.str_len(self.x_data)
         self.x_data = self.x_data[np.where(obs_len > 9)[0]]
         self.y_data = self.y_data[np.where(obs_len > 9)[0]]
         self.country = self.country[np.where(obs_len > 9)[0]]
 
+    def add_weights(self):
         # Add weights based on country
         # class_weights_map = {} 
         # for country in np.unique(self.country):
@@ -178,13 +221,16 @@ class LocationDataset(Dataset):
         # class_weights_map = {k:v/max(class_weights_map.values()) for k,v
         #                      in class_weights_map.items()}
         # self.weights = [class_weights_map[i] for i in self.country]
+        pass
 
-        # Reduce
-        rand_idx = np.random.randint(low=0, high=len(self.x_data), size=500)
-        self.x_data = self.x_data[rand_idx]
-        self.y_data = self.y_data[rand_idx]
-        self.country = self.country[rand_idx]
-        # self.weights = self.weights[rand_idx]
+    def write(self):
+        """Writes self.x_data, self.y_data and self.country to the disk"""
+        np.savetxt("data/temp/x_data.txt", self.x_data, fmt="%s")
+        np.savetxt("data/temp/y_data.txt", self.y_data, fmt="%s")
+        np.savetxt("data/temp/country.txt", self.country, fmt="%s")
+        np.savetxt("data/temp/scaling_info.txt",
+                   np.array([self.min_y1, self.max_y1, self.min_y2, self.max_y2]),
+                   fmt="%s")
 
     def to_tensor(self):
         """Transforms the strings x data into one hot encoded tensor on the
@@ -194,12 +240,6 @@ class LocationDataset(Dataset):
 
         self.x_data_raw = self.x_data
         self.x_data = x_data_encoded
-
-    def add_country_code(self):
-        coordinates = self.y_data.tolist()
-        coordinates = [(i[1], i[0]) for i in coordinates]
-        countries = reverse_geocoder.search(coordinates)
-        self.country = np.array([i["cc"] for i in countries])
 
     def __len__(self):
         return len(self.x_data)
