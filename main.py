@@ -1,13 +1,16 @@
 import matplotlib.pyplot as plt
+from tqdm import tqdm
 import numpy as np
 from torch.utils.data import DataLoader
+import torchtext
+import torch
 
 from data import LocationDataset, collate_fn, find_characters_to_keep
-from model import Model
+from model import Model, RobertaModel
 from train import train
 
-EPOCHS = 50
-LR = 0.0001
+EPOCHS = 500
+LR = 0.001
 
 
 def get_n_parameters(model):
@@ -16,29 +19,37 @@ def get_n_parameters(model):
     print("-"*30, "\n", "Number of trainable parameters: ", str(params),
           "\n", "-"*30)
 
+# TODO: tokenize tags since they may be informative for a region?
 
 def main():
-    dataset = LocationDataset()
-    dataset.load_data()
-    dataset.add_country_code()
-    dataset.reduce(max_obs=5000)
-    dataset.min_max_scale_y_data()
-    # Preprocessing
-    dataset.remove_break_tab_link()
-    dataset.unidecode()
-    dataset.lower()
-    dataset.remove_special_characters()
-    dataset.sort()
-    dataset.remove_short()
-    dataset.write()
-    dataset.to_tensor()
+    torch.set_printoptions(sci_mode=False)
 
-    dataloader = DataLoader(dataset, batch_size=128, shuffle=True,
-                            collate_fn=collate_fn)
-    input_size = dataset.x_data[0].shape[-1]
-    model = Model(input_size=input_size).cuda()
-    get_n_parameters(model)
-    model = train(model=model, train_loader=dataloader, EPOCHS=EPOCHS, LR=LR)
+    dataset = LocationDataset(max_obs=100)
+    dataloader = DataLoader(dataset, batch_size=4, drop_last=True)
+    
+    idx, (input_id, attention_mask, continent) = next(enumerate(dataloader))
+   
+    model = RobertaModel()
+    output = model(input_id, attention_mask)
+    print(output)
+   
+    
+    # vocab = torchtext.vocab.build_vocab_from_iterator(
+    #     [i.split() for i in dataset.x_data], max_tokens=5000
+    # )
+    
+    # dataset.find_most_popular_words()
+    
+    # exit(0)
+    
+    # dataset.to_tensor()
+    
+    # dataloader = DataLoader(dataset, batch_size=64, shuffle=False,
+    #                         collate_fn=collate_fn)
+    # input_size = dataset.x_data[0].shape[-1]
+    # model = Model(input_size=input_size).cuda()
+    # get_n_parameters(model)
+    # model = train(model=model, train_loader=dataloader, EPOCHS=EPOCHS, LR=LR)
 
 
 if __name__== "__main__":

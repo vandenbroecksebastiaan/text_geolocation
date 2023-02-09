@@ -1,6 +1,6 @@
 import torch
 from torch.nn import MSELoss
-from torch.optim import Adam
+from torch.optim import SGD
 from torch.optim.lr_scheduler import StepLR
 
 import numpy as np
@@ -9,7 +9,7 @@ from tqdm import tqdm
 
 def train(model, train_loader, EPOCHS, LR):
 
-    optimizer = Adam(model.parameters(), lr=LR)
+    optimizer = SGD(model.parameters(), lr=LR)
     criterion = MSELoss()
 
     model.train()
@@ -30,9 +30,9 @@ def train(model, train_loader, EPOCHS, LR):
 
             iteration_loss.append(loss.item())
 
-            print(" ", round(loss.item(), 4), end="\r")
-            
-        train_loss.extend(iteration_loss)
+        mean_iteration_loss = sum(iteration_loss) / len(iteration_loss) 
+        train_loss.append(mean_iteration_loss)
+        print(" ", x_train.shape, round(mean_iteration_loss, 4), end="\r")
 
         # --- Validation step
 

@@ -2,6 +2,7 @@ import torch
 from torch.utils.data import Dataset
 from torch.nn.utils.rnn import pad_sequence
 from torch.nn.functional import normalize
+from transformers import AutoTokenizer
 
 from multiprocessing.pool import ThreadPool
 import numpy as np
@@ -10,8 +11,10 @@ import os
 import json
 import re
 from unidecode import unidecode
+from cleantext import clean
 
 import reverse_geocoder
+from pycountry_convert import country_alpha2_to_continent_code
 
 country_to_code_map = {
     "Belgium"       : "BE", 	
@@ -47,6 +50,18 @@ country_to_code_map = {
 
 code_to_country_map = {j:i for i,j in country_to_code_map.items()}
 
+continent_code_to_name_map = {
+    "AS": "Asia",
+    "NA": "North America",
+    "SA": "South America",
+    "EU": "Europe",
+    "AF": "Africa",
+    "OC": "Oceania"  
+}
+
+continent_code_to_code_map = {
+    i:j for i, j in zip(continent_code_to_name_map.keys(), list(range(6)))
+}
 
 
 def collate_fn(tensor):
@@ -55,8 +70,8 @@ def collate_fn(tensor):
     x_batch = pad_sequence(x_batch).cuda().squeeze()
 
     # Shorten long sequences
-    if x_batch.shape[0] > 200:
-        x_batch = x_batch[:200, :, :]
+    if x_batch.shape[0] > 100:
+        x_batch = x_batch[-100:, :, :]
 
     return (x_batch, y_batch)
 
@@ -95,7 +110,7 @@ def find_characters_to_keep(data, max_n_characters=100):
             characters_to_keep += new_char
 
     # Remove these characters regardless
-    characters_to_remove = """ @.,#'_-":);(/&*`$%|[]+~><=^\{}"""
+    characters_to_remove = """@.,#'_-":);(/&*`$%|[]+~><=^\{}"""
     for i in characters_to_remove:
         characters_to_keep = characters_to_keep.replace(i, "")
 
@@ -126,9 +141,21 @@ def undo_min_max_scaling(tensor):
 
 class LocationDataset(Dataset):
 
-    def __init__(self):
+    def __init__(self, max_obs):
         self.x_data = []
         self.y_data = []
+                                          
+        self.load_data()
+        self.reduce(max_obs=max_obs)
+        self.add_country_continent_code()
+        self.min_max_scale_y_data()
+        self.remove_special_characters()
+        self.lower()
+        self.remove_short()
+        self.write()
+                                          
+        self.tokenizer = AutoTokenizer.from_pretrained("xlm-roberta-large")
+        self.x_data = self.tokenizer(self.x_data.tolist(), padding=True)
 
     def load_data(self):
         train_data_path = "data/training_data/training_data/"
@@ -144,19 +171,28 @@ class LocationDataset(Dataset):
         self.y_data_unnorm = [(float(i[0]), float(i[1])) for i in self.y_data]
         self.y_data_unnorm = torch.Tensor(self.y_data_unnorm)
 
-    def add_country_code(self):
+    def reduce(self, max_obs):
+        # Reduce
+        if max_obs != None: 
+            rand_idx = np.random.randint(low=0, high=len(self.x_data),
+                                         size=max_obs)
+            self.x_data = self.x_data[rand_idx]
+            self.y_data_unnorm = self.y_data_unnorm[rand_idx]
+
+    def add_country_continent_code(self):
         coordinates = self.y_data_unnorm.tolist()
         coordinates = [(i[1], i[0]) for i in coordinates]
         countries = reverse_geocoder.search(coordinates)
         self.country = np.array([i["cc"] for i in countries])
-
-    def reduce(self, max_obs):
-        # Reduce
-        rand_idx = np.random.randint(low=0, high=len(self.x_data), size=max_obs)
-        self.x_data = self.x_data[rand_idx]
-        self.y_data_unnorm = self.y_data_unnorm[rand_idx]
-        self.country = self.country[rand_idx]
-        # self.weights = self.weights[rand_idx]
+        self.country = np.char.replace(self.country, "TL", "ID")
+        self.country = np.char.replace(self.country, "EH", "MA")
+        self.continent = np.array([country_alpha2_to_continent_code(i)
+                                  for i in self.country])
+        self.continent_name = np.array([continent_code_to_name_map[i]
+                                       for i in self.continent])
+        self.continent = np.array([continent_code_to_code_map[i]
+                                   for i in self.continent])
+        self.continent = torch.vstack([torch.eye(n=6)[:, i] for i in self.continent])
 
     def min_max_scale_y_data(self):
         """Applies min max scaling to the coordinates"""
@@ -170,12 +206,24 @@ class LocationDataset(Dataset):
 
         self.y_data = torch.vstack([y1_scaled, y2_scaled]).t()
 
-    def remove_break_tab_link(self):
+    def remove_special_characters(self):
         # Replace line breaks and tabs
         self.x_data = np.char.replace(self.x_data, "\n", "")
         self.x_data = np.char.replace(self.x_data, "\t", "")
         # Replace links
         self.x_data = np.array([re.sub(r'http\S+', '', i) for i in self.x_data])
+        # Replace tags
+        self.x_data = np.array([re.sub(r'@\S+', '', i) for i in self.x_data])
+        self.x_data = np.array([re.sub(r'#\S+', '', i) for i in self.x_data])
+        # Also replace the following special characters
+        special_characters = [
+            "@", "(", ")", ":", "/", ".", "&", "=", "-", "'", '"', "/", "\\",
+            "!", "?", "`"
+        ]
+        to_replace = {i:"" for i in special_characters}
+        self.x_data = np.array([i.translate(i.maketrans(to_replace)) for i in self.x_data])
+        # Remove emoji
+        self.x_data = np.array([clean(i, no_emoji=True) for i in self.x_data])
 
     def unidecode(self):
         # Unicode decode
@@ -185,16 +233,6 @@ class LocationDataset(Dataset):
     def lower(self):
         # All letters to lower case
         self.x_data = np.char.lower(self.x_data)
-
-    def remove_special_characters(self):
-        # Remove/replace special characters
-        self.characters_to_keep = find_characters_to_keep(self.x_data)
-        for idx, obs in tqdm(enumerate(self.x_data), desc="Removing characters"):
-            new_obs = ""
-            for char in obs:
-                if char in self.characters_to_keep:
-                    new_obs += char
-            self.x_data[idx] = new_obs
 
     def sort(self):
         # Order from short to long sentences for efficient batching
@@ -228,6 +266,7 @@ class LocationDataset(Dataset):
         np.savetxt("data/temp/x_data.txt", self.x_data, fmt="%s")
         np.savetxt("data/temp/y_data.txt", self.y_data, fmt="%s")
         np.savetxt("data/temp/country.txt", self.country, fmt="%s")
+        np.savetxt("data/temp/continent.txt", self.continent, fmt="%s")
         np.savetxt("data/temp/scaling_info.txt",
                    np.array([self.min_y1, self.max_y1, self.min_y2, self.max_y2]),
                    fmt="%s")
@@ -241,8 +280,24 @@ class LocationDataset(Dataset):
         self.x_data_raw = self.x_data
         self.x_data = x_data_encoded
 
+    def find_most_popular_words(self):
+        # Find the most popular words
+        words = "".join([i.strip() for i in self.x_data]).split()
+        words, counts = np.unique(words, return_counts=True)
+
+        words = words[counts.argsort()[::-1]]
+        counts = counts[counts.argsort()[::-1]]
+
+        # Write them to the disk
+        with open("data/temp/most_popular_words.txt", "w") as file:
+            file.writelines([i + " " + str(j) + "\n" for i, j in zip(words, counts)])
+
     def __len__(self):
-        return len(self.x_data)
+        return len(self.continent)
 
     def __getitem__(self, index):
-        return (self.x_data[index], self.y_data[index]) 
+        input_ids = torch.Tensor(self.x_data[index].ids).to(int)
+        attention_mask = torch.Tensor(self.x_data[index].attention_mask).to(int)
+        y = self.continent[index, :].to(int)
+
+        return (input_ids, attention_mask, y)
