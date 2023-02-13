@@ -12,6 +12,7 @@ import json
 import re
 from unidecode import unidecode
 from cleantext import clean
+from sklearn.cluster import KMeans
 
 import reverse_geocoder
 from pycountry_convert import country_alpha2_to_continent_code
@@ -119,7 +120,7 @@ def find_characters_to_keep(data, max_n_characters=100):
 
 def undo_min_max_scaling(tensor):
     # Read information about the scaling previously applied
-    with open("data/temp/scaling_info.txt") as file:
+    with open("data/scaling_info.txt") as file:
         data = file.readlines()
         data = [float(i.replace("\n", "")) for i in data]
         min_y1 = data[0]
@@ -139,31 +140,32 @@ def undo_min_max_scaling(tensor):
 
 class LocationDataset(Dataset):
 
-    def __init__(self, max_obs):
+    def __init__(self, max_obs, model_name, n_classes):
         self.x_data = []
         self.y_data = []
                                           
         self.load_data()
         self.reduce(max_obs=max_obs)
-        self.add_country_continent_code()
-        self.add_weights()
+        # self.add_country_continent_code()
         self.min_max_scale_y_data()
+        self.quantize_coordinates(n_classes=n_classes)
+        self.add_weights()
         self.remove_special_characters()
         self.lower()
-        self.remove_short()
-        self.write()
+        # self.remove_short()
+        
+        if model_name == "xlm-roberta-base":
+            self.tokenizer = AutoTokenizer.from_pretrained("xlm-roberta-base")
+            self.x_data = self.tokenizer(self.x_data.tolist(), padding=True,
+                                          truncation=True, max_length=128)
+
+        if model_name == "papluca/xlm-roberta-base-language-detection":
+            self.tokenizer = AutoTokenizer.from_pretrained("papluca/xlm-roberta-base-language-detection")
+            self.x_data = self.tokenizer(self.x_data.tolist(), padding=True,
+                                         truncation=True, max_length=128)
                                           
-        self.tokenizer = AutoTokenizer.from_pretrained("xlm-roberta-base")
-        self.x_data = self.tokenizer(self.x_data.tolist(), padding=True,
-                                     truncation=True, max_length=128)
-                                          
-        self.continent_to_mean_coordinate_map = {}
-        for continent in np.unique(self.continent_name):
-            mean_lat = self.y_data_unnorm[self.continent_name == continent][:, 0].mean()
-            mean_lon = self.y_data_unnorm[self.continent_name == continent][:, 1].mean()
-            self.continent_to_mean_coordinate_map[continent] = (mean_lat.item(), mean_lon.item())
-            
     def load_data(self):
+        y_data = []
         train_data_path = "data/training_data/training_data/"
         for file in tqdm(os.listdir(train_data_path), desc="Reading data"):
             with open(train_data_path + file, "r") as file:
@@ -171,11 +173,11 @@ class LocationDataset(Dataset):
                 for obs in file_data:
                     obs_dict = json.loads(obs)
                     self.x_data.append(obs_dict["text"])
-                    self.y_data.append(obs_dict["coordinates"])
-    
+                    y_data.append(obs_dict["coordinates"])
+
         self.x_data = np.array(self.x_data)
         # Latitude and longitude are switched around
-        self.y_data_unnorm = [(float(i[1]), float(i[0])) for i in self.y_data]
+        self.y_data_unnorm = [(float(i[1]), float(i[0])) for i in y_data]
         self.y_data_unnorm = torch.Tensor(self.y_data_unnorm)
 
     def reduce(self, max_obs):
@@ -205,9 +207,21 @@ class LocationDataset(Dataset):
             [torch.eye(n=self.continent.max()+1)[:, i] for i in self.continent]
         )
 
+    def quantize_coordinates(self, n_classes):
+        """Applies clustering to the coordinates to transform the regression
+           problem into a classfication problem."""
+        kmeans = KMeans(n_clusters=n_classes, random_state=1337).fit(self.y_data)
+        self.cluster = kmeans.labels_
+        self.cluster_to_coordinate_map = {i:kmeans.cluster_centers_[i] for i in range(n_classes)}
+        
+        # One-hot encode
+        self.cluster = torch.vstack(
+            [torch.eye(n=self.cluster.max()+1)[:, i] for i in self.cluster]
+        )
+
     def add_weights(self):
         # Add weights based on continent
-        weights = self.continent.sum(dim=0) / self.continent.shape[0]
+        weights = self.cluster.sum(dim=0) / self.cluster.shape[0]
         inv_weights = 1 / weights
         
         # Replace sum by zero
@@ -227,6 +241,10 @@ class LocationDataset(Dataset):
 
         self.y_data = torch.vstack([y1_scaled, y2_scaled]).t()
 
+        np.savetxt("data/scaling_info.txt",
+                   np.array([self.min_y1, self.max_y1, self.min_y2, self.max_y2]),
+                   fmt="%s")
+
     def remove_special_characters(self):
         # Replace line breaks and tabs
         self.x_data = np.char.replace(self.x_data, "\n", "")
@@ -245,6 +263,8 @@ class LocationDataset(Dataset):
         self.x_data = np.array([i.translate(i.maketrans(to_replace)) for i in self.x_data])
         # Remove emoji
         self.x_data = np.array([clean(i, no_emoji=True) for i in self.x_data])
+        
+        np.savetxt("data/x_after_removing_char.txt", self.x_data, fmt="%s")
 
     def unidecode(self):
         # Unicode decode
@@ -270,16 +290,6 @@ class LocationDataset(Dataset):
         self.y_data = self.y_data[np.where(obs_len > 9)[0]]
         # self.country = self.country[np.where(obs_len > 9)[0]]
         self.continent = self.continent[np.where(obs_len > 9)[0]]
-
-    def write(self):
-        """Writes self.x_data, self.y_data and self.country to the disk"""
-        np.savetxt("data/temp/x_data.txt", self.x_data, fmt="%s")
-        np.savetxt("data/temp/y_data.txt", self.y_data, fmt="%s")
-        # np.savetxt("data/temp/country.txt", self.country, fmt="%s")
-        # np.savetxt("data/temp/continent.txt", self.continent, fmt="%s")
-        np.savetxt("data/temp/scaling_info.txt",
-                   np.array([self.min_y1, self.max_y1, self.min_y2, self.max_y2]),
-                   fmt="%s")
 
     def to_tensor(self):
         """Transforms the strings x data into one hot encoded tensor on the
@@ -308,11 +318,11 @@ class LocationDataset(Dataset):
     def __getitem__(self, index):
         input_ids = torch.Tensor(self.x_data[index].ids).to(int)
         attention_mask = torch.Tensor(self.x_data[index].attention_mask).to(int)
-        # y = self.y_data[index, :]
-        y = self.continent[index, :]
+        y = self.cluster[index, :]
+        target_coordinate = self.y_data[index]
         
         input_ids = input_ids.cuda()
         attention_mask = attention_mask.cuda()
         y = y.cuda()
 
-        return (input_ids, attention_mask, y)
+        return (input_ids, attention_mask, y, target_coordinate)
