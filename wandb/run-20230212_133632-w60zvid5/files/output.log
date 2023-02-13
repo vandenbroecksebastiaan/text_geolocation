@@ -1,0 +1,83 @@
+
+0 4 tensor(1.7921, device='cuda:0', grad_fn=<NllLossBackward0>)
+Epoch:   0%|                                                                                                                   | 0/5 [00:00<?, ?it/s]/home/sebastiaan/fun/text_geolocation/model.py:26: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 77 tensor(1.5436, device='cuda:0', grad_fn=<NllLossBackward0>)
+Mean epoch acc 0.4890625ce='cuda:0', grad_fn=<NllLossBackward0>)
+Mean epoch loss 1.5515434965491295
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Mean epoch acc 0.496875ice='cuda:0', grad_fn=<NllLossBackward0>)
+Mean epoch loss 1.5467330530285834
+
+
+
+
+
+
+
+
+
+
+
+
+
+Mean epoch acc 0.496875ice='cuda:0', grad_fn=<NllLossBackward0>)
+
+Epoch:  60%|████████████████████████████████████████████████████████████████▏                                          | 3/5 [01:26<00:57, 28.71s/it]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Mean epoch acc 0.496875ice='cuda:0', grad_fn=<NllLossBackward0>)
+Mean epoch loss 1.5466756254434586
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Mean epoch acc 0.496875ice='cuda:0', grad_fn=<NllLossBackward0>)
+Mean epoch loss 1.546739435195923

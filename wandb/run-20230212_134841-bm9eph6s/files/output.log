@@ -1,0 +1,70 @@
+Epoch:   0%|                                                                                                                   | 0/5 [00:00<?, ?it/s]/home/sebastiaan/fun/text_geolocation/model.py:26: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  return self.sm(output)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 34 tensor(1.9154, device='cuda:0', grad_fn=<NllLossBackward0>)
+Epoch:   0%|                                                                                                                   | 0/5 [01:32<?, ?it/s]
+Traceback (most recent call last):
+  File "/home/sebastiaan/fun/text_geolocation/main.py", line 38, in <module>
+    main()
+  File "/home/sebastiaan/fun/text_geolocation/main.py", line 34, in main
+    train(model, train_loader, eval_loader, EPOCHS, LR)
+  File "/home/sebastiaan/fun/text_geolocation/train.py", line 33, in train
+    train_output = model(input_ids, attention_mask)
+  File "/home/sebastiaan/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1215, in _call_impl
+    hook_result = hook(self, input, result)
+  File "/home/sebastiaan/.local/lib/python3.10/site-packages/wandb/wandb_torch.py", line 110, in <lambda>
+    lambda mod, inp, outp: parameter_log_hook(
+  File "/home/sebastiaan/.local/lib/python3.10/site-packages/wandb/wandb_torch.py", line 105, in parameter_log_hook
+    self.log_tensor_stats(data.cpu(), "parameters/" + prefix + name)
+  File "/home/sebastiaan/.local/lib/python3.10/site-packages/wandb/wandb_torch.py", line 231, in log_tensor_stats
+    tensor = flat.histc(bins=self._num_bins, min=tmin, max=tmax)
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "/home/sebastiaan/fun/text_geolocation/main.py", line 38, in <module>
+    main()
+  File "/home/sebastiaan/fun/text_geolocation/main.py", line 34, in main
+    train(model, train_loader, eval_loader, EPOCHS, LR)
+  File "/home/sebastiaan/fun/text_geolocation/train.py", line 33, in train
+    train_output = model(input_ids, attention_mask)
+  File "/home/sebastiaan/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1215, in _call_impl
+    hook_result = hook(self, input, result)
+  File "/home/sebastiaan/.local/lib/python3.10/site-packages/wandb/wandb_torch.py", line 110, in <lambda>
+    lambda mod, inp, outp: parameter_log_hook(
+  File "/home/sebastiaan/.local/lib/python3.10/site-packages/wandb/wandb_torch.py", line 105, in parameter_log_hook
+    self.log_tensor_stats(data.cpu(), "parameters/" + prefix + name)
+  File "/home/sebastiaan/.local/lib/python3.10/site-packages/wandb/wandb_torch.py", line 231, in log_tensor_stats
+    tensor = flat.histc(bins=self._num_bins, min=tmin, max=tmax)
+KeyboardInterrupt

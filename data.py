@@ -60,7 +60,7 @@ continent_code_to_name_map = {
 }
 
 continent_code_to_code_map = {
-    i:j for i, j in zip(continent_code_to_name_map.keys(), list(range(6)))
+    i:j for i,j in zip(continent_code_to_name_map.keys(), list(range(6)))
 }
 
 
@@ -114,8 +114,6 @@ def find_characters_to_keep(data, max_n_characters=100):
     for i in characters_to_remove:
         characters_to_keep = characters_to_keep.replace(i, "")
 
-    print("Characters to keep: ", characters_to_keep)
-
     return characters_to_keep
 
 
@@ -148,15 +146,23 @@ class LocationDataset(Dataset):
         self.load_data()
         self.reduce(max_obs=max_obs)
         self.add_country_continent_code()
+        self.add_weights()
         self.min_max_scale_y_data()
         self.remove_special_characters()
         self.lower()
         self.remove_short()
         self.write()
                                           
-        self.tokenizer = AutoTokenizer.from_pretrained("xlm-roberta-large")
-        self.x_data = self.tokenizer(self.x_data.tolist(), padding=True)
-
+        self.tokenizer = AutoTokenizer.from_pretrained("xlm-roberta-base")
+        self.x_data = self.tokenizer(self.x_data.tolist(), padding=True,
+                                     truncation=True, max_length=128)
+                                          
+        self.continent_to_mean_coordinate_map = {}
+        for continent in np.unique(self.continent_name):
+            mean_lat = self.y_data_unnorm[self.continent_name == continent][:, 0].mean()
+            mean_lon = self.y_data_unnorm[self.continent_name == continent][:, 1].mean()
+            self.continent_to_mean_coordinate_map[continent] = (mean_lat.item(), mean_lon.item())
+            
     def load_data(self):
         train_data_path = "data/training_data/training_data/"
         for file in tqdm(os.listdir(train_data_path), desc="Reading data"):
@@ -168,7 +174,8 @@ class LocationDataset(Dataset):
                     self.y_data.append(obs_dict["coordinates"])
     
         self.x_data = np.array(self.x_data)
-        self.y_data_unnorm = [(float(i[0]), float(i[1])) for i in self.y_data]
+        # Latitude and longitude are switched around
+        self.y_data_unnorm = [(float(i[1]), float(i[0])) for i in self.y_data]
         self.y_data_unnorm = torch.Tensor(self.y_data_unnorm)
 
     def reduce(self, max_obs):
@@ -181,18 +188,32 @@ class LocationDataset(Dataset):
 
     def add_country_continent_code(self):
         coordinates = self.y_data_unnorm.tolist()
-        coordinates = [(i[1], i[0]) for i in coordinates]
+        coordinates = [(i[0], i[1]) for i in coordinates]
         countries = reverse_geocoder.search(coordinates)
         self.country = np.array([i["cc"] for i in countries])
         self.country = np.char.replace(self.country, "TL", "ID")
+        self.country = np.char.replace(self.country, "TF", "ZA")
         self.country = np.char.replace(self.country, "EH", "MA")
         self.continent = np.array([country_alpha2_to_continent_code(i)
-                                  for i in self.country])
+                                   for i in self.country])
+
         self.continent_name = np.array([continent_code_to_name_map[i]
                                        for i in self.continent])
         self.continent = np.array([continent_code_to_code_map[i]
                                    for i in self.continent])
-        self.continent = torch.vstack([torch.eye(n=6)[:, i] for i in self.continent])
+        self.continent = torch.vstack(
+            [torch.eye(n=self.continent.max()+1)[:, i] for i in self.continent]
+        )
+
+    def add_weights(self):
+        # Add weights based on continent
+        weights = self.continent.sum(dim=0) / self.continent.shape[0]
+        inv_weights = 1 / weights
+        
+        # Replace sum by zero
+        inv_weights[inv_weights == float("inf")] = 1
+
+        self.weights = inv_weights
 
     def min_max_scale_y_data(self):
         """Applies min max scaling to the coordinates"""
@@ -240,33 +261,22 @@ class LocationDataset(Dataset):
         str_len_order = obs_len.argsort()
         self.x_data = self.x_data[str_len_order]
         self.y_data = self.y_data[str_len_order]
-        self.country = self.country[str_len_order]
+        # self.country = self.country[str_len_order]
 
     def remove_short(self):
         # Remove empty and short observations
         obs_len = np.char.str_len(self.x_data)
         self.x_data = self.x_data[np.where(obs_len > 9)[0]]
         self.y_data = self.y_data[np.where(obs_len > 9)[0]]
-        self.country = self.country[np.where(obs_len > 9)[0]]
-
-    def add_weights(self):
-        # Add weights based on country
-        # class_weights_map = {} 
-        # for country in np.unique(self.country):
-        #     class_weights_map[country] = \
-        #         len(self.country[self.country == country]) / len(self.country)
-
-        # class_weights_map = {k:v/max(class_weights_map.values()) for k,v
-        #                      in class_weights_map.items()}
-        # self.weights = [class_weights_map[i] for i in self.country]
-        pass
+        # self.country = self.country[np.where(obs_len > 9)[0]]
+        self.continent = self.continent[np.where(obs_len > 9)[0]]
 
     def write(self):
         """Writes self.x_data, self.y_data and self.country to the disk"""
         np.savetxt("data/temp/x_data.txt", self.x_data, fmt="%s")
         np.savetxt("data/temp/y_data.txt", self.y_data, fmt="%s")
-        np.savetxt("data/temp/country.txt", self.country, fmt="%s")
-        np.savetxt("data/temp/continent.txt", self.continent, fmt="%s")
+        # np.savetxt("data/temp/country.txt", self.country, fmt="%s")
+        # np.savetxt("data/temp/continent.txt", self.continent, fmt="%s")
         np.savetxt("data/temp/scaling_info.txt",
                    np.array([self.min_y1, self.max_y1, self.min_y2, self.max_y2]),
                    fmt="%s")
@@ -293,11 +303,16 @@ class LocationDataset(Dataset):
             file.writelines([i + " " + str(j) + "\n" for i, j in zip(words, counts)])
 
     def __len__(self):
-        return len(self.continent)
+        return len(self.y_data)
 
     def __getitem__(self, index):
         input_ids = torch.Tensor(self.x_data[index].ids).to(int)
         attention_mask = torch.Tensor(self.x_data[index].attention_mask).to(int)
-        y = self.continent[index, :].to(int)
+        # y = self.y_data[index, :]
+        y = self.continent[index, :]
+        
+        input_ids = input_ids.cuda()
+        attention_mask = attention_mask.cuda()
+        y = y.cuda()
 
         return (input_ids, attention_mask, y)

@@ -1,0 +1,1277 @@
+2023-02-12 13:44:06,665 INFO    StreamThr :201440 [internal.py:wandb_internal():87] W&B internal server running at pid: 201440, started at: 2023-02-12 13:44:06.665320
+2023-02-12 13:44:06,666 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: status
+2023-02-12 13:44:06,667 INFO    WriterThread:201440 [datastore.py:open_for_write():85] open: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/run-ldwo0utd.wandb
+2023-02-12 13:44:06,667 DEBUG   SenderThread:201440 [sender.py:send():336] send: header
+2023-02-12 13:44:06,669 DEBUG   SenderThread:201440 [sender.py:send():336] send: run
+2023-02-12 13:44:07,610 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: check_version
+2023-02-12 13:44:07,613 INFO    SenderThread:201440 [dir_watcher.py:__init__():216] watching files in: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files
+2023-02-12 13:44:07,613 INFO    SenderThread:201440 [sender.py:_start_run_threads():1067] run started: ldwo0utd with start time 1676205846.664523
+2023-02-12 13:44:07,613 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:07,613 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:07,614 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: check_version
+2023-02-12 13:44:07,823 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: run_start
+2023-02-12 13:44:07,834 DEBUG   HandlerThread:201440 [system_info.py:__init__():31] System info init
+2023-02-12 13:44:07,834 DEBUG   HandlerThread:201440 [system_info.py:__init__():46] System info init done
+2023-02-12 13:44:07,834 INFO    HandlerThread:201440 [system_monitor.py:start():151] Starting system monitor
+2023-02-12 13:44:07,834 INFO    SystemMonitor:201440 [system_monitor.py:_start():116] Starting system asset monitoring threads
+2023-02-12 13:44:07,834 INFO    HandlerThread:201440 [system_monitor.py:probe():172] Collecting system info
+2023-02-12 13:44:07,834 INFO    SystemMonitor:201440 [interfaces.py:start():168] Started cpu
+2023-02-12 13:44:07,835 INFO    SystemMonitor:201440 [interfaces.py:start():168] Started disk
+2023-02-12 13:44:07,836 INFO    SystemMonitor:201440 [interfaces.py:start():168] Started gpu
+2023-02-12 13:44:07,837 INFO    SystemMonitor:201440 [interfaces.py:start():168] Started memory
+2023-02-12 13:44:07,837 INFO    SystemMonitor:201440 [interfaces.py:start():168] Started network
+2023-02-12 13:44:07,863 DEBUG   HandlerThread:201440 [system_info.py:probe():195] Probing system
+2023-02-12 13:44:07,866 DEBUG   HandlerThread:201440 [system_info.py:_probe_git():180] Probing git
+2023-02-12 13:44:07,875 DEBUG   HandlerThread:201440 [system_info.py:_probe_git():188] Probing git done
+2023-02-12 13:44:07,876 DEBUG   HandlerThread:201440 [system_info.py:probe():241] Probing system done
+2023-02-12 13:44:07,876 DEBUG   HandlerThread:201440 [system_monitor.py:probe():181] {'os': 'Linux-5.15.0-60-generic-x86_64-with-glibc2.35', 'python': '3.10.6', 'heartbeatAt': '2023-02-12T12:44:07.863840', 'startedAt': '2023-02-12T12:44:06.657915', 'docker': None, 'cuda': None, 'args': (), 'state': 'running', 'program': '/home/sebastiaan/fun/text_geolocation/main.py', 'codePath': 'main.py', 'git': {'remote': 'https://github.com/vandenbroecksebastiaan/text_geolocation.git', 'commit': '9255991bd60f4b81c59d9bf93b1ddd64d91e0527'}, 'email': 'van.den.broeck.sebastiaan@gmail.com', 'root': '/home/sebastiaan/fun/text_geolocation', 'host': 'glitterbox', 'username': 'sebastiaan', 'executable': '/usr/bin/python3', 'cpu_count': 6, 'cpu_count_logical': 12, 'cpu_freq': {'current': 2376.4921666666664, 'min': 800.0, 'max': 5600.0}, 'cpu_freq_per_core': [{'current': 2500.0, 'min': 800.0, 'max': 5600.0}, {'current': 2500.0, 'min': 800.0, 'max': 5600.0}, {'current': 1017.906, 'min': 800.0, 'max': 5600.0}, {'current': 2500.0, 'min': 800.0, 'max': 5600.0}, {'current': 2500.0, 'min': 800.0, 'max': 5600.0}, {'current': 2500.0, 'min': 800.0, 'max': 5600.0}, {'current': 2500.0, 'min': 800.0, 'max': 5600.0}, {'current': 2500.0, 'min': 800.0, 'max': 5600.0}, {'current': 2500.0, 'min': 800.0, 'max': 5600.0}, {'current': 2500.0, 'min': 800.0, 'max': 5600.0}, {'current': 2500.0, 'min': 800.0, 'max': 5600.0}, {'current': 2500.0, 'min': 800.0, 'max': 5600.0}], 'disk': {'total': 915.3232879638672, 'used': 182.78940200805664}, 'gpu': 'NVIDIA GeForce RTX 3060', 'gpu_count': 1, 'gpu_devices': [{'name': 'NVIDIA GeForce RTX 3060', 'memory_total': 12884901888}], 'memory': {'total': 31.097774505615234}}
+2023-02-12 13:44:07,876 INFO    HandlerThread:201440 [system_monitor.py:probe():182] Finished collecting system info
+2023-02-12 13:44:07,876 INFO    HandlerThread:201440 [system_monitor.py:probe():185] Publishing system info
+2023-02-12 13:44:07,876 DEBUG   HandlerThread:201440 [system_info.py:_save_pip():51] Saving list of pip packages installed into the current environment
+2023-02-12 13:44:07,877 DEBUG   HandlerThread:201440 [system_info.py:_save_pip():67] Saving pip packages done
+2023-02-12 13:44:07,877 INFO    HandlerThread:201440 [system_monitor.py:probe():187] Finished publishing system info
+2023-02-12 13:44:07,883 DEBUG   SenderThread:201440 [sender.py:send():336] send: files
+2023-02-12 13:44:07,883 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-metadata.json with policy now
+2023-02-12 13:44:07,889 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: stop_status
+2023-02-12 13:44:07,889 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: stop_status
+2023-02-12 13:44:08,289 DEBUG   SenderThread:201440 [sender.py:send():336] send: telemetry
+2023-02-12 13:44:08,289 DEBUG   SenderThread:201440 [sender.py:send():336] send: telemetry
+2023-02-12 13:44:08,440 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:08,613 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_created():275] file/dir created: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/requirements.txt
+2023-02-12 13:44:08,613 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_created():275] file/dir created: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/wandb-metadata.json
+2023-02-12 13:44:08,613 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_created():275] file/dir created: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/output.log
+2023-02-12 13:44:08,613 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_created():275] file/dir created: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/wandb-summary.json
+2023-02-12 13:44:08,793 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:08,794 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:08,794 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:08,794 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:08,918 INFO    wandb-upload_0:201440 [upload_job.py:push():138] Uploaded file /tmp/tmpbnhq5tdjwandb/g42siizv-wandb-metadata.json
+2023-02-12 13:44:09,147 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:09,148 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:09,148 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:09,148 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:09,502 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:09,502 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:09,502 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:09,503 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:09,613 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/wandb-summary.json
+2023-02-12 13:44:09,856 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:09,857 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:09,857 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:09,858 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:10,212 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:10,213 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:10,213 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:10,213 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:10,567 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:10,568 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:10,568 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:10,568 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:10,613 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/output.log
+2023-02-12 13:44:10,613 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/wandb-summary.json
+2023-02-12 13:44:10,921 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:10,921 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:10,922 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:10,922 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:11,276 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:11,277 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:11,277 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:11,277 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:11,613 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/wandb-summary.json
+2023-02-12 13:44:11,631 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:11,632 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:11,632 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:11,632 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:11,986 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:11,987 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:11,987 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:11,987 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: status_report
+2023-02-12 13:44:11,988 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:12,342 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:12,342 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:12,342 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:12,343 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:12,614 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/output.log
+2023-02-12 13:44:12,614 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/wandb-summary.json
+2023-02-12 13:44:12,697 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:12,697 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:12,697 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:12,698 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:13,052 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:13,052 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:13,053 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:13,053 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:13,408 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:13,408 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:13,408 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:13,409 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:13,614 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/wandb-summary.json
+2023-02-12 13:44:13,764 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:13,764 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:13,764 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:13,765 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:14,120 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:14,120 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:14,121 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:14,121 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:14,475 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:14,476 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:14,477 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:14,477 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:14,614 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/output.log
+2023-02-12 13:44:14,614 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/wandb-summary.json
+2023-02-12 13:44:14,832 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:14,832 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:14,832 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:14,833 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:15,187 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:15,188 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:15,188 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:15,188 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:15,543 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:15,544 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:15,544 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:15,544 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:15,614 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/wandb-summary.json
+2023-02-12 13:44:15,899 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:15,899 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:15,899 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:15,900 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:16,255 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:16,256 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:16,256 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:16,257 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:16,612 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:16,612 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:16,612 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:16,613 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:16,614 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/output.log
+2023-02-12 13:44:16,614 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/wandb-summary.json
+2023-02-12 13:44:16,968 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:16,969 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:16,969 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:16,969 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:17,324 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:17,325 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:17,325 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:17,325 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: status_report
+2023-02-12 13:44:17,326 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:17,614 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/wandb-summary.json
+2023-02-12 13:44:17,680 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:17,680 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:17,680 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:17,681 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:18,036 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:18,036 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:18,036 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:18,037 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:18,392 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:18,393 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:18,393 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:18,394 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:18,615 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/output.log
+2023-02-12 13:44:18,615 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/wandb-summary.json
+2023-02-12 13:44:18,749 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:18,749 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:18,749 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:18,750 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:19,105 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:19,106 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:19,106 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:19,106 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:19,461 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:19,462 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:19,462 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:19,462 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:19,615 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/wandb-summary.json
+2023-02-12 13:44:19,818 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:19,818 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:19,818 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:19,819 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:20,174 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:20,175 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:20,175 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:20,175 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:20,530 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:20,531 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:20,531 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:20,531 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:20,615 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/output.log
+2023-02-12 13:44:20,615 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/wandb-summary.json
+2023-02-12 13:44:20,887 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:20,887 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:20,887 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:20,888 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:21,244 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:21,244 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:21,245 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:21,245 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:21,600 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:21,601 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:21,601 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:21,601 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:21,615 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/wandb-summary.json
+2023-02-12 13:44:21,956 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:21,957 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:21,957 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:21,957 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:22,313 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:22,313 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:22,314 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:22,314 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:22,615 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/output.log
+2023-02-12 13:44:22,616 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/wandb-summary.json
+2023-02-12 13:44:22,670 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:22,670 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:22,670 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:22,671 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: status_report
+2023-02-12 13:44:22,671 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:22,888 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: keepalive
+2023-02-12 13:44:23,027 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:23,027 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:23,027 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:23,028 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:23,384 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:23,384 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:23,384 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:23,385 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:23,616 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/wandb-summary.json
+2023-02-12 13:44:23,741 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:23,741 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:23,741 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:23,742 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:24,098 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:24,098 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:24,099 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:24,099 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:24,456 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:24,456 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:24,456 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:24,457 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:24,616 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/output.log
+2023-02-12 13:44:24,616 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/wandb-summary.json
+2023-02-12 13:44:24,813 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:24,814 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:24,814 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:24,814 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:25,171 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:25,172 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:25,172 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:25,172 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:25,529 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:25,530 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:25,530 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:25,530 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:25,616 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/wandb-summary.json
+2023-02-12 13:44:25,887 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:25,888 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:25,888 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:25,888 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:26,245 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:26,245 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:26,245 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:26,246 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:26,603 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:26,603 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:26,604 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:26,604 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:26,616 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/output.log
+2023-02-12 13:44:26,616 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/wandb-summary.json
+2023-02-12 13:44:26,961 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:26,961 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:26,961 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:26,962 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:27,318 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:27,319 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:27,319 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:27,320 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:27,617 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/wandb-summary.json
+2023-02-12 13:44:27,676 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:27,677 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:27,677 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:27,677 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: status_report
+2023-02-12 13:44:27,677 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:27,889 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: keepalive
+2023-02-12 13:44:28,034 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:28,034 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:28,034 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:28,035 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:28,392 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:28,393 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:28,393 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:28,393 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:28,617 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/output.log
+2023-02-12 13:44:28,617 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/wandb-summary.json
+2023-02-12 13:44:28,751 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:28,751 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:28,751 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:28,752 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:29,109 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:29,110 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:29,110 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:29,110 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:29,467 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:29,468 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:29,468 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:29,468 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:29,617 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/wandb-summary.json
+2023-02-12 13:44:29,825 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:29,826 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:29,826 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:29,827 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:30,184 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:30,185 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:30,192 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:30,192 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:30,542 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:30,543 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:30,543 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:30,543 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:30,617 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/output.log
+2023-02-12 13:44:30,617 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/wandb-summary.json
+2023-02-12 13:44:30,900 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:30,901 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:30,901 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:30,901 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:31,259 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:31,259 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:31,259 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:31,260 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:31,617 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:31,617 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:31,618 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:31,618 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:31,618 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/wandb-summary.json
+2023-02-12 13:44:31,975 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:31,975 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:31,975 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:31,976 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:32,334 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:32,334 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:32,334 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:32,335 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:32,618 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/output.log
+2023-02-12 13:44:32,618 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/wandb-summary.json
+2023-02-12 13:44:32,692 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:32,692 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:32,693 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:32,693 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: status_report
+2023-02-12 13:44:32,693 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:32,889 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: keepalive
+2023-02-12 13:44:33,050 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:33,051 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:33,051 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:33,051 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:33,409 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:33,409 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:33,409 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:33,410 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:33,619 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/wandb-summary.json
+2023-02-12 13:44:33,767 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:33,768 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:33,768 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:33,768 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:34,126 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:34,127 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:34,127 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:34,127 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:34,485 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:34,485 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:34,485 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:34,486 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:34,619 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/output.log
+2023-02-12 13:44:34,619 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/wandb-summary.json
+2023-02-12 13:44:34,843 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:34,844 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:34,844 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:34,844 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:35,202 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:35,203 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:35,203 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:35,203 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:35,561 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:35,561 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:35,561 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:35,562 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:35,619 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/wandb-summary.json
+2023-02-12 13:44:35,919 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:35,919 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:35,919 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:35,920 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:36,277 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:36,279 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:44:36,279 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:44:36,279 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:44:36,619 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/output.log
+2023-02-12 13:44:36,619 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/wandb-summary.json
+2023-02-12 13:44:36,636 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:36,636 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 0 < 78. Dropping entry: {'epoch': 1, 'loss': 1.1688120365142822, '_timestamp': 1676205876.6365645}.
+2023-02-12 13:44:36,994 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:36,994 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 1 < 78. Dropping entry: {'epoch': 1, 'loss': 1.4187241792678833, '_timestamp': 1676205876.9942212}.
+2023-02-12 13:44:37,353 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:37,353 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 2 < 78. Dropping entry: {'epoch': 1, 'loss': 1.4187045097351074, '_timestamp': 1676205877.3528113}.
+2023-02-12 13:44:37,710 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:37,711 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 3 < 78. Dropping entry: {'epoch': 1, 'loss': 1.9185411930084229, '_timestamp': 1676205877.7106347}.
+2023-02-12 13:44:37,713 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: status_report
+2023-02-12 13:44:37,890 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: keepalive
+2023-02-12 13:44:38,068 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:38,069 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 4 < 78. Dropping entry: {'epoch': 1, 'loss': 1.5436499118804932, '_timestamp': 1676205878.068654}.
+2023-02-12 13:44:38,428 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:38,428 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 5 < 78. Dropping entry: {'epoch': 1, 'loss': 1.6686668395996094, '_timestamp': 1676205878.4276912}.
+2023-02-12 13:44:38,620 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/output.log
+2023-02-12 13:44:38,620 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/config.yaml
+2023-02-12 13:44:38,786 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:38,786 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 6 < 78. Dropping entry: {'epoch': 1, 'loss': 1.668585181236267, '_timestamp': 1676205878.7860768}.
+2023-02-12 13:44:39,144 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:39,144 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 7 < 78. Dropping entry: {'epoch': 1, 'loss': 1.668539047241211, '_timestamp': 1676205879.1443224}.
+2023-02-12 13:44:39,503 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:39,503 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 8 < 78. Dropping entry: {'epoch': 1, 'loss': 1.6685688495635986, '_timestamp': 1676205879.5034254}.
+2023-02-12 13:44:39,862 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:39,862 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 9 < 78. Dropping entry: {'epoch': 1, 'loss': 1.2937476634979248, '_timestamp': 1676205879.8620923}.
+2023-02-12 13:44:40,221 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:40,221 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 10 < 78. Dropping entry: {'epoch': 1, 'loss': 1.4187437295913696, '_timestamp': 1676205880.2212305}.
+2023-02-12 13:44:40,579 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:40,579 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 11 < 78. Dropping entry: {'epoch': 1, 'loss': 1.5436937808990479, '_timestamp': 1676205880.5795517}.
+2023-02-12 13:44:40,620 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/output.log
+2023-02-12 13:44:40,938 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:40,938 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 12 < 78. Dropping entry: {'epoch': 1, 'loss': 1.9183704853057861, '_timestamp': 1676205880.937684}.
+2023-02-12 13:44:41,296 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:41,297 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 13 < 78. Dropping entry: {'epoch': 1, 'loss': 1.6684828996658325, '_timestamp': 1676205881.2965412}.
+2023-02-12 13:44:41,655 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:41,655 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 14 < 78. Dropping entry: {'epoch': 1, 'loss': 1.5437538623809814, '_timestamp': 1676205881.6547892}.
+2023-02-12 13:44:42,013 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:42,013 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 15 < 78. Dropping entry: {'epoch': 1, 'loss': 1.7935113906860352, '_timestamp': 1676205882.013353}.
+2023-02-12 13:44:42,372 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:42,372 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 16 < 78. Dropping entry: {'epoch': 1, 'loss': 1.543616533279419, '_timestamp': 1676205882.3719463}.
+2023-02-12 13:44:42,620 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/output.log
+2023-02-12 13:44:42,730 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:42,730 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 17 < 78. Dropping entry: {'epoch': 1, 'loss': 1.7935198545455933, '_timestamp': 1676205882.7300637}.
+2023-02-12 13:44:42,891 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: keepalive
+2023-02-12 13:44:43,088 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:43,088 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 18 < 78. Dropping entry: {'epoch': 1, 'loss': 1.6684857606887817, '_timestamp': 1676205883.0883822}.
+2023-02-12 13:44:43,089 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: status_report
+2023-02-12 13:44:43,447 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:43,447 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 19 < 78. Dropping entry: {'epoch': 1, 'loss': 1.5437066555023193, '_timestamp': 1676205883.4474442}.
+2023-02-12 13:44:43,806 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:43,807 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 20 < 78. Dropping entry: {'epoch': 1, 'loss': 1.543563723564148, '_timestamp': 1676205883.8064752}.
+2023-02-12 13:44:44,166 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:44,166 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 21 < 78. Dropping entry: {'epoch': 1, 'loss': 1.5437071323394775, '_timestamp': 1676205884.1656644}.
+2023-02-12 13:44:44,525 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:44,525 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 22 < 78. Dropping entry: {'epoch': 1, 'loss': 1.41886305809021, '_timestamp': 1676205884.524882}.
+2023-02-12 13:44:44,621 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/output.log
+2023-02-12 13:44:44,883 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:44,883 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 23 < 78. Dropping entry: {'epoch': 1, 'loss': 1.5436570644378662, '_timestamp': 1676205884.8831606}.
+2023-02-12 13:44:45,242 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:45,242 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 24 < 78. Dropping entry: {'epoch': 1, 'loss': 1.2937767505645752, '_timestamp': 1676205885.242379}.
+2023-02-12 13:44:45,601 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:45,601 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 25 < 78. Dropping entry: {'epoch': 1, 'loss': 1.5436303615570068, '_timestamp': 1676205885.6012065}.
+2023-02-12 13:44:45,960 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:45,960 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 26 < 78. Dropping entry: {'epoch': 1, 'loss': 1.6685965061187744, '_timestamp': 1676205885.9596095}.
+2023-02-12 13:44:46,318 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:46,318 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 27 < 78. Dropping entry: {'epoch': 1, 'loss': 1.6685988903045654, '_timestamp': 1676205886.3182309}.
+2023-02-12 13:44:46,621 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/output.log
+2023-02-12 13:44:46,676 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:46,676 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 28 < 78. Dropping entry: {'epoch': 1, 'loss': 1.5436367988586426, '_timestamp': 1676205886.676325}.
+2023-02-12 13:44:47,033 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:47,034 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 29 < 78. Dropping entry: {'epoch': 1, 'loss': 1.4187333583831787, '_timestamp': 1676205887.0336232}.
+2023-02-12 13:44:47,392 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:47,392 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 30 < 78. Dropping entry: {'epoch': 1, 'loss': 1.6685473918914795, '_timestamp': 1676205887.3918169}.
+2023-02-12 13:44:47,749 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:47,750 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 31 < 78. Dropping entry: {'epoch': 1, 'loss': 1.4186456203460693, '_timestamp': 1676205887.7496855}.
+2023-02-12 13:44:47,891 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: keepalive
+2023-02-12 13:44:48,108 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:48,108 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 32 < 78. Dropping entry: {'epoch': 1, 'loss': 1.5436490774154663, '_timestamp': 1676205888.107587}.
+2023-02-12 13:44:48,108 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: status_report
+2023-02-12 13:44:48,466 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:48,466 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 33 < 78. Dropping entry: {'epoch': 1, 'loss': 1.4186983108520508, '_timestamp': 1676205888.4661136}.
+2023-02-12 13:44:48,622 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/output.log
+2023-02-12 13:44:48,824 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:48,824 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 34 < 78. Dropping entry: {'epoch': 1, 'loss': 1.5436336994171143, '_timestamp': 1676205888.824194}.
+2023-02-12 13:44:49,183 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:49,183 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 35 < 78. Dropping entry: {'epoch': 1, 'loss': 1.293704867362976, '_timestamp': 1676205889.1827924}.
+2023-02-12 13:44:49,541 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:49,541 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 36 < 78. Dropping entry: {'epoch': 1, 'loss': 1.4187321662902832, '_timestamp': 1676205889.541259}.
+2023-02-12 13:44:49,899 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:49,899 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 37 < 78. Dropping entry: {'epoch': 1, 'loss': 1.668589472770691, '_timestamp': 1676205889.899362}.
+2023-02-12 13:44:50,257 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:50,258 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 38 < 78. Dropping entry: {'epoch': 1, 'loss': 1.6685614585876465, '_timestamp': 1676205890.2576523}.
+2023-02-12 13:44:50,616 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:50,616 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 39 < 78. Dropping entry: {'epoch': 1, 'loss': 1.2938435077667236, '_timestamp': 1676205890.6160767}.
+2023-02-12 13:44:50,622 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/output.log
+2023-02-12 13:44:50,974 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:50,974 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 40 < 78. Dropping entry: {'epoch': 1, 'loss': 1.668602466583252, '_timestamp': 1676205890.9738545}.
+2023-02-12 13:44:51,332 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:51,332 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 41 < 78. Dropping entry: {'epoch': 1, 'loss': 1.2937569618225098, '_timestamp': 1676205891.3320549}.
+2023-02-12 13:44:51,690 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:51,690 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 42 < 78. Dropping entry: {'epoch': 1, 'loss': 1.5436747074127197, '_timestamp': 1676205891.689912}.
+2023-02-12 13:44:52,048 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:52,048 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 43 < 78. Dropping entry: {'epoch': 1, 'loss': 1.4186716079711914, '_timestamp': 1676205892.0478003}.
+2023-02-12 13:44:52,406 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:52,406 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 44 < 78. Dropping entry: {'epoch': 1, 'loss': 1.6685439348220825, '_timestamp': 1676205892.4064147}.
+2023-02-12 13:44:52,623 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/output.log
+2023-02-12 13:44:52,765 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:52,765 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 45 < 78. Dropping entry: {'epoch': 1, 'loss': 1.4187355041503906, '_timestamp': 1676205892.7648873}.
+2023-02-12 13:44:52,892 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: keepalive
+2023-02-12 13:44:53,124 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:53,124 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 46 < 78. Dropping entry: {'epoch': 1, 'loss': 1.6686152219772339, '_timestamp': 1676205893.1237087}.
+2023-02-12 13:44:53,124 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: status_report
+2023-02-12 13:44:53,483 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:53,483 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 47 < 78. Dropping entry: {'epoch': 1, 'loss': 1.9184565544128418, '_timestamp': 1676205893.482861}.
+2023-02-12 13:44:53,841 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:53,841 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 48 < 78. Dropping entry: {'epoch': 1, 'loss': 1.2938218116760254, '_timestamp': 1676205893.8414013}.
+2023-02-12 13:44:54,200 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:54,200 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 49 < 78. Dropping entry: {'epoch': 1, 'loss': 1.4188117980957031, '_timestamp': 1676205894.1998858}.
+2023-02-12 13:44:54,558 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:54,558 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 50 < 78. Dropping entry: {'epoch': 1, 'loss': 1.5436155796051025, '_timestamp': 1676205894.5580606}.
+2023-02-12 13:44:54,623 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/output.log
+2023-02-12 13:44:54,916 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:54,917 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 51 < 78. Dropping entry: {'epoch': 1, 'loss': 1.9185338020324707, '_timestamp': 1676205894.9165854}.
+2023-02-12 13:44:55,275 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:55,276 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 52 < 78. Dropping entry: {'epoch': 1, 'loss': 1.543642520904541, '_timestamp': 1676205895.27557}.
+2023-02-12 13:44:55,633 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:55,633 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 53 < 78. Dropping entry: {'epoch': 1, 'loss': 1.4187302589416504, '_timestamp': 1676205895.6333196}.
+2023-02-12 13:44:55,991 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:55,991 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 54 < 78. Dropping entry: {'epoch': 1, 'loss': 1.1687442064285278, '_timestamp': 1676205895.9914463}.
+2023-02-12 13:44:56,350 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:56,350 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 55 < 78. Dropping entry: {'epoch': 1, 'loss': 1.7935253381729126, '_timestamp': 1676205896.3499582}.
+2023-02-12 13:44:56,623 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/output.log
+2023-02-12 13:44:56,708 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:56,708 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 56 < 78. Dropping entry: {'epoch': 1, 'loss': 1.7935158014297485, '_timestamp': 1676205896.7080333}.
+2023-02-12 13:44:57,067 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:57,067 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 57 < 78. Dropping entry: {'epoch': 1, 'loss': 1.5437912940979004, '_timestamp': 1676205897.0666153}.
+2023-02-12 13:44:57,426 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:57,426 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 58 < 78. Dropping entry: {'epoch': 1, 'loss': 1.7935481071472168, '_timestamp': 1676205897.4256284}.
+2023-02-12 13:44:57,784 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:57,784 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 59 < 78. Dropping entry: {'epoch': 1, 'loss': 1.5436186790466309, '_timestamp': 1676205897.7838974}.
+2023-02-12 13:44:57,892 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: keepalive
+2023-02-12 13:44:58,142 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:58,142 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 60 < 78. Dropping entry: {'epoch': 1, 'loss': 1.6685742139816284, '_timestamp': 1676205898.1421862}.
+2023-02-12 13:44:58,143 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: status_report
+2023-02-12 13:44:58,501 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:58,501 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 61 < 78. Dropping entry: {'epoch': 1, 'loss': 1.543642520904541, '_timestamp': 1676205898.500897}.
+2023-02-12 13:44:58,624 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/output.log
+2023-02-12 13:44:58,859 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:58,859 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 62 < 78. Dropping entry: {'epoch': 1, 'loss': 1.6685556173324585, '_timestamp': 1676205898.8595648}.
+2023-02-12 13:44:59,218 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:59,219 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 63 < 78. Dropping entry: {'epoch': 1, 'loss': 1.5436030626296997, '_timestamp': 1676205899.2186444}.
+2023-02-12 13:44:59,577 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:59,577 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 64 < 78. Dropping entry: {'epoch': 1, 'loss': 1.2937214374542236, '_timestamp': 1676205899.5773473}.
+2023-02-12 13:44:59,936 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:44:59,936 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 65 < 78. Dropping entry: {'epoch': 1, 'loss': 1.293994426727295, '_timestamp': 1676205899.9358485}.
+2023-02-12 13:45:00,294 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:00,294 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 66 < 78. Dropping entry: {'epoch': 1, 'loss': 1.7935062646865845, '_timestamp': 1676205900.2945342}.
+2023-02-12 13:45:00,624 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/output.log
+2023-02-12 13:45:00,653 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:00,653 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 67 < 78. Dropping entry: {'epoch': 1, 'loss': 1.7935714721679688, '_timestamp': 1676205900.6530519}.
+2023-02-12 13:45:01,011 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:01,011 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 68 < 78. Dropping entry: {'epoch': 1, 'loss': 1.793542742729187, '_timestamp': 1676205901.011436}.
+2023-02-12 13:45:01,370 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:01,370 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 69 < 78. Dropping entry: {'epoch': 1, 'loss': 1.6685905456542969, '_timestamp': 1676205901.3698022}.
+2023-02-12 13:45:01,728 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:01,728 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 70 < 78. Dropping entry: {'epoch': 1, 'loss': 1.5436025857925415, '_timestamp': 1676205901.7280645}.
+2023-02-12 13:45:02,086 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:02,086 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 71 < 78. Dropping entry: {'epoch': 1, 'loss': 1.5435683727264404, '_timestamp': 1676205902.086263}.
+2023-02-12 13:45:02,445 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:02,445 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 72 < 78. Dropping entry: {'epoch': 1, 'loss': 1.4186493158340454, '_timestamp': 1676205902.4448266}.
+2023-02-12 13:45:02,625 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/output.log
+2023-02-12 13:45:02,803 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:02,803 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 73 < 78. Dropping entry: {'epoch': 1, 'loss': 1.543597936630249, '_timestamp': 1676205902.8029988}.
+2023-02-12 13:45:02,893 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: keepalive
+2023-02-12 13:45:03,161 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:03,161 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 74 < 78. Dropping entry: {'epoch': 1, 'loss': 1.7935535907745361, '_timestamp': 1676205903.161537}.
+2023-02-12 13:45:03,162 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: status_report
+2023-02-12 13:45:03,521 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:03,521 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 75 < 78. Dropping entry: {'epoch': 1, 'loss': 1.5435945987701416, '_timestamp': 1676205903.521014}.
+2023-02-12 13:45:03,880 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:03,880 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 76 < 78. Dropping entry: {'epoch': 1, 'loss': 1.918501853942871, '_timestamp': 1676205903.8801792}.
+2023-02-12 13:45:04,239 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:04,239 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 77 < 78. Dropping entry: {'epoch': 1, 'loss': 1.4186807870864868, '_timestamp': 1676205904.2392395}.
+2023-02-12 13:45:04,598 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:04,625 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/output.log
+2023-02-12 13:45:04,958 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:04,958 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 0 < 78. Dropping entry: {'epoch': 2, 'loss': 1.1687086820602417, '_timestamp': 1676205904.9575958}.
+2023-02-12 13:45:05,317 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:05,317 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 1 < 78. Dropping entry: {'epoch': 2, 'loss': 1.4187484979629517, '_timestamp': 1676205905.3170292}.
+2023-02-12 13:45:05,676 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:05,676 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 2 < 78. Dropping entry: {'epoch': 2, 'loss': 1.4186551570892334, '_timestamp': 1676205905.6758657}.
+2023-02-12 13:45:06,034 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:06,035 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 3 < 78. Dropping entry: {'epoch': 2, 'loss': 1.91853666305542, '_timestamp': 1676205906.0346036}.
+2023-02-12 13:45:06,394 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:06,394 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 4 < 78. Dropping entry: {'epoch': 2, 'loss': 1.5436689853668213, '_timestamp': 1676205906.3941958}.
+2023-02-12 13:45:06,625 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/output.log
+2023-02-12 13:45:06,753 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:06,753 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 5 < 78. Dropping entry: {'epoch': 2, 'loss': 1.6686159372329712, '_timestamp': 1676205906.752844}.
+2023-02-12 13:45:07,112 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:07,112 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 6 < 78. Dropping entry: {'epoch': 2, 'loss': 1.668596625328064, '_timestamp': 1676205907.1116438}.
+2023-02-12 13:45:07,471 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:07,471 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 7 < 78. Dropping entry: {'epoch': 2, 'loss': 1.6685590744018555, '_timestamp': 1676205907.470853}.
+2023-02-12 13:45:07,830 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:07,830 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 8 < 78. Dropping entry: {'epoch': 2, 'loss': 1.6686036586761475, '_timestamp': 1676205907.829647}.
+2023-02-12 13:45:07,837 DEBUG   SystemMonitor:201440 [system_monitor.py:_start():130] Starting system metrics aggregation loop
+2023-02-12 13:45:07,837 DEBUG   SenderThread:201440 [sender.py:send():336] send: stats
+2023-02-12 13:45:07,894 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: keepalive
+2023-02-12 13:45:08,189 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:08,189 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 9 < 78. Dropping entry: {'epoch': 2, 'loss': 1.2936890125274658, '_timestamp': 1676205908.1888916}.
+2023-02-12 13:45:08,189 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: status_report
+2023-02-12 13:45:08,548 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:08,548 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 10 < 78. Dropping entry: {'epoch': 2, 'loss': 1.4186345338821411, '_timestamp': 1676205908.5477684}.
+2023-02-12 13:45:08,626 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/output.log
+2023-02-12 13:45:08,907 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:08,907 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 11 < 78. Dropping entry: {'epoch': 2, 'loss': 1.5436893701553345, '_timestamp': 1676205908.9066775}.
+2023-02-12 13:45:09,266 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:09,266 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 12 < 78. Dropping entry: {'epoch': 2, 'loss': 1.9184510707855225, '_timestamp': 1676205909.265733}.
+2023-02-12 13:45:09,624 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:09,624 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 13 < 78. Dropping entry: {'epoch': 2, 'loss': 1.6685912609100342, '_timestamp': 1676205909.6245806}.
+2023-02-12 13:45:09,983 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:09,983 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 14 < 78. Dropping entry: {'epoch': 2, 'loss': 1.5436153411865234, '_timestamp': 1676205909.9828095}.
+2023-02-12 13:45:10,342 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:10,342 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 15 < 78. Dropping entry: {'epoch': 2, 'loss': 1.7935540676116943, '_timestamp': 1676205910.3421624}.
+2023-02-12 13:45:10,626 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/output.log
+2023-02-12 13:45:10,701 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:10,701 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 16 < 78. Dropping entry: {'epoch': 2, 'loss': 1.543529748916626, '_timestamp': 1676205910.7006524}.
+2023-02-12 13:45:11,060 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:11,060 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 17 < 78. Dropping entry: {'epoch': 2, 'loss': 1.7935843467712402, '_timestamp': 1676205911.0598025}.
+2023-02-12 13:45:11,419 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:11,419 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 18 < 78. Dropping entry: {'epoch': 2, 'loss': 1.668595314025879, '_timestamp': 1676205911.4191668}.
+2023-02-12 13:45:11,778 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:11,778 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 19 < 78. Dropping entry: {'epoch': 2, 'loss': 1.543655276298523, '_timestamp': 1676205911.7779214}.
+2023-02-12 13:45:12,137 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:12,137 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 20 < 78. Dropping entry: {'epoch': 2, 'loss': 1.5436184406280518, '_timestamp': 1676205912.137282}.
+2023-02-12 13:45:12,497 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:12,497 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 21 < 78. Dropping entry: {'epoch': 2, 'loss': 1.5436064004898071, '_timestamp': 1676205912.4970472}.
+2023-02-12 13:45:12,627 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/output.log
+2023-02-12 13:45:12,856 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:12,856 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 22 < 78. Dropping entry: {'epoch': 2, 'loss': 1.4186429977416992, '_timestamp': 1676205912.8560698}.
+2023-02-12 13:45:12,894 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: keepalive
+2023-02-12 13:45:13,216 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:13,216 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 23 < 78. Dropping entry: {'epoch': 2, 'loss': 1.5436018705368042, '_timestamp': 1676205913.2160125}.
+2023-02-12 13:45:13,216 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: status_report
+2023-02-12 13:45:13,575 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:13,575 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 24 < 78. Dropping entry: {'epoch': 2, 'loss': 1.2936776876449585, '_timestamp': 1676205913.575452}.
+2023-02-12 13:45:13,934 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:13,934 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 25 < 78. Dropping entry: {'epoch': 2, 'loss': 1.543641209602356, '_timestamp': 1676205913.9345012}.
+2023-02-12 13:45:14,294 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:14,294 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 26 < 78. Dropping entry: {'epoch': 2, 'loss': 1.6685237884521484, '_timestamp': 1676205914.2942297}.
+2023-02-12 13:45:14,627 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/output.log
+2023-02-12 13:45:14,653 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:14,653 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 27 < 78. Dropping entry: {'epoch': 2, 'loss': 1.6685887575149536, '_timestamp': 1676205914.6534293}.
+2023-02-12 13:45:15,013 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:15,013 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 28 < 78. Dropping entry: {'epoch': 2, 'loss': 1.5437352657318115, '_timestamp': 1676205915.012815}.
+2023-02-12 13:45:15,373 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:15,373 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 29 < 78. Dropping entry: {'epoch': 2, 'loss': 1.418648600578308, '_timestamp': 1676205915.3726225}.
+2023-02-12 13:45:15,732 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:15,732 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 30 < 78. Dropping entry: {'epoch': 2, 'loss': 1.6686033010482788, '_timestamp': 1676205915.7318728}.
+2023-02-12 13:45:16,091 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:16,091 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 31 < 78. Dropping entry: {'epoch': 2, 'loss': 1.4186550378799438, '_timestamp': 1676205916.0908782}.
+2023-02-12 13:45:16,450 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:16,450 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 32 < 78. Dropping entry: {'epoch': 2, 'loss': 1.5435813665390015, '_timestamp': 1676205916.4503782}.
+2023-02-12 13:45:16,627 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/output.log
+2023-02-12 13:45:16,809 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:16,809 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 33 < 78. Dropping entry: {'epoch': 2, 'loss': 1.4187339544296265, '_timestamp': 1676205916.80931}.
+2023-02-12 13:45:17,168 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:17,168 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 34 < 78. Dropping entry: {'epoch': 2, 'loss': 1.5435762405395508, '_timestamp': 1676205917.16817}.
+2023-02-12 13:45:17,528 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:17,528 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 35 < 78. Dropping entry: {'epoch': 2, 'loss': 1.2936971187591553, '_timestamp': 1676205917.5277247}.
+2023-02-12 13:45:17,887 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:17,887 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 36 < 78. Dropping entry: {'epoch': 2, 'loss': 1.4186499118804932, '_timestamp': 1676205917.8869517}.
+2023-02-12 13:45:17,895 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: keepalive
+2023-02-12 13:45:18,246 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:18,246 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 37 < 78. Dropping entry: {'epoch': 2, 'loss': 1.668609857559204, '_timestamp': 1676205918.24613}.
+2023-02-12 13:45:18,247 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: status_report
+2023-02-12 13:45:18,605 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:18,605 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 38 < 78. Dropping entry: {'epoch': 2, 'loss': 1.6685353517532349, '_timestamp': 1676205918.6052089}.
+2023-02-12 13:45:18,628 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/output.log
+2023-02-12 13:45:18,964 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:18,964 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 39 < 78. Dropping entry: {'epoch': 2, 'loss': 1.2936094999313354, '_timestamp': 1676205918.9640949}.
+2023-02-12 13:45:19,323 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:19,323 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 40 < 78. Dropping entry: {'epoch': 2, 'loss': 1.6685537099838257, '_timestamp': 1676205919.32337}.
+2023-02-12 13:45:19,682 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:19,682 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 41 < 78. Dropping entry: {'epoch': 2, 'loss': 1.2936968803405762, '_timestamp': 1676205919.6821907}.
+2023-02-12 13:45:20,041 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:20,041 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 42 < 78. Dropping entry: {'epoch': 2, 'loss': 1.5436218976974487, '_timestamp': 1676205920.0410554}.
+2023-02-12 13:45:20,401 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:20,401 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 43 < 78. Dropping entry: {'epoch': 2, 'loss': 1.4186363220214844, '_timestamp': 1676205920.4006357}.
+2023-02-12 13:45:20,628 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/output.log
+2023-02-12 13:45:20,759 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:20,759 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 44 < 78. Dropping entry: {'epoch': 2, 'loss': 1.6684881448745728, '_timestamp': 1676205920.759574}.
+2023-02-12 13:45:21,118 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:21,118 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 45 < 78. Dropping entry: {'epoch': 2, 'loss': 1.418708324432373, '_timestamp': 1676205921.118378}.
+2023-02-12 13:45:21,478 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:21,478 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 46 < 78. Dropping entry: {'epoch': 2, 'loss': 1.668563961982727, '_timestamp': 1676205921.4776685}.
+2023-02-12 13:45:21,837 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:21,837 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 47 < 78. Dropping entry: {'epoch': 2, 'loss': 1.9185181856155396, '_timestamp': 1676205921.8370767}.
+2023-02-12 13:45:22,197 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:22,197 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 48 < 78. Dropping entry: {'epoch': 2, 'loss': 1.2937003374099731, '_timestamp': 1676205922.197286}.
+2023-02-12 13:45:22,556 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:22,556 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 49 < 78. Dropping entry: {'epoch': 2, 'loss': 1.4186946153640747, '_timestamp': 1676205922.5562985}.
+2023-02-12 13:45:22,629 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/output.log
+2023-02-12 13:45:22,896 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: keepalive
+2023-02-12 13:45:22,915 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:22,915 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 50 < 78. Dropping entry: {'epoch': 2, 'loss': 1.543676733970642, '_timestamp': 1676205922.915246}.
+2023-02-12 13:45:23,275 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:23,275 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 51 < 78. Dropping entry: {'epoch': 2, 'loss': 1.9185290336608887, '_timestamp': 1676205923.2752264}.
+2023-02-12 13:45:23,276 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: status_report
+2023-02-12 13:45:23,635 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:23,635 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 52 < 78. Dropping entry: {'epoch': 2, 'loss': 1.5436345338821411, '_timestamp': 1676205923.6347919}.
+2023-02-12 13:45:23,994 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:23,994 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 53 < 78. Dropping entry: {'epoch': 2, 'loss': 1.418641448020935, '_timestamp': 1676205923.9938593}.
+2023-02-12 13:45:24,354 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:24,355 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 54 < 78. Dropping entry: {'epoch': 2, 'loss': 1.168701410293579, '_timestamp': 1676205924.354648}.
+2023-02-12 13:45:24,629 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/output.log
+2023-02-12 13:45:24,714 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:24,714 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 55 < 78. Dropping entry: {'epoch': 2, 'loss': 1.7935290336608887, '_timestamp': 1676205924.7140431}.
+2023-02-12 13:45:25,073 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:25,073 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 56 < 78. Dropping entry: {'epoch': 2, 'loss': 1.7935271263122559, '_timestamp': 1676205925.073182}.
+2023-02-12 13:45:25,433 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:25,433 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 57 < 78. Dropping entry: {'epoch': 2, 'loss': 1.5435909032821655, '_timestamp': 1676205925.4330933}.
+2023-02-12 13:45:25,793 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:25,793 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 58 < 78. Dropping entry: {'epoch': 2, 'loss': 1.793565034866333, '_timestamp': 1676205925.7929847}.
+2023-02-12 13:45:26,152 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:26,152 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 59 < 78. Dropping entry: {'epoch': 2, 'loss': 1.543625831604004, '_timestamp': 1676205926.1523113}.
+2023-02-12 13:45:26,512 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:26,512 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 60 < 78. Dropping entry: {'epoch': 2, 'loss': 1.668520212173462, '_timestamp': 1676205926.5119886}.
+2023-02-12 13:45:26,629 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/output.log
+2023-02-12 13:45:26,871 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:26,871 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 61 < 78. Dropping entry: {'epoch': 2, 'loss': 1.5436031818389893, '_timestamp': 1676205926.8713987}.
+2023-02-12 13:45:27,231 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:27,231 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 62 < 78. Dropping entry: {'epoch': 2, 'loss': 1.668641448020935, '_timestamp': 1676205927.2309775}.
+2023-02-12 13:45:27,591 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:27,591 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 63 < 78. Dropping entry: {'epoch': 2, 'loss': 1.5435595512390137, '_timestamp': 1676205927.5907917}.
+2023-02-12 13:45:27,896 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: keepalive
+2023-02-12 13:45:27,950 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:27,950 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 64 < 78. Dropping entry: {'epoch': 2, 'loss': 1.293741226196289, '_timestamp': 1676205927.950564}.
+2023-02-12 13:45:28,310 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:28,311 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 65 < 78. Dropping entry: {'epoch': 2, 'loss': 1.2936933040618896, '_timestamp': 1676205928.3105319}.
+2023-02-12 13:45:28,311 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: status_report
+2023-02-12 13:45:28,630 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/output.log
+2023-02-12 13:45:28,670 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:28,670 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 66 < 78. Dropping entry: {'epoch': 2, 'loss': 1.7935389280319214, '_timestamp': 1676205928.6701694}.
+2023-02-12 13:45:29,030 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:29,030 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 67 < 78. Dropping entry: {'epoch': 2, 'loss': 1.7935450077056885, '_timestamp': 1676205929.0301557}.
+2023-02-12 13:45:29,390 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:29,390 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 68 < 78. Dropping entry: {'epoch': 2, 'loss': 1.7935632467269897, '_timestamp': 1676205929.390145}.
+2023-02-12 13:45:29,750 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:29,750 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 69 < 78. Dropping entry: {'epoch': 2, 'loss': 1.6686066389083862, '_timestamp': 1676205929.7498262}.
+2023-02-12 13:45:30,109 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:30,109 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 70 < 78. Dropping entry: {'epoch': 2, 'loss': 1.5436007976531982, '_timestamp': 1676205930.1093705}.
+2023-02-12 13:45:30,469 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:30,469 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 71 < 78. Dropping entry: {'epoch': 2, 'loss': 1.5436252355575562, '_timestamp': 1676205930.469387}.
+2023-02-12 13:45:30,630 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/output.log
+2023-02-12 13:45:30,829 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:30,829 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 72 < 78. Dropping entry: {'epoch': 2, 'loss': 1.4186582565307617, '_timestamp': 1676205930.8291392}.
+2023-02-12 13:45:31,189 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:31,189 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 73 < 78. Dropping entry: {'epoch': 2, 'loss': 1.5436068773269653, '_timestamp': 1676205931.1891184}.
+2023-02-12 13:45:31,548 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:31,548 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 74 < 78. Dropping entry: {'epoch': 2, 'loss': 1.7935320138931274, '_timestamp': 1676205931.548421}.
+2023-02-12 13:45:31,909 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:31,909 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 75 < 78. Dropping entry: {'epoch': 2, 'loss': 1.5435842275619507, '_timestamp': 1676205931.9086947}.
+2023-02-12 13:45:32,269 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:32,269 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 76 < 78. Dropping entry: {'epoch': 2, 'loss': 1.9185011386871338, '_timestamp': 1676205932.2687552}.
+2023-02-12 13:45:32,628 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:32,628 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 77 < 78. Dropping entry: {'epoch': 2, 'loss': 1.4186527729034424, '_timestamp': 1676205932.6280828}.
+2023-02-12 13:45:32,631 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/output.log
+2023-02-12 13:45:32,897 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: keepalive
+2023-02-12 13:45:32,988 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:33,350 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:33,350 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 0 < 78. Dropping entry: {'epoch': 3, 'loss': 1.168711543083191, '_timestamp': 1676205933.3498516}.
+2023-02-12 13:45:33,350 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: status_report
+2023-02-12 13:45:33,709 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:33,710 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 1 < 78. Dropping entry: {'epoch': 3, 'loss': 1.4186201095581055, '_timestamp': 1676205933.7094994}.
+2023-02-12 13:45:34,069 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:34,069 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 2 < 78. Dropping entry: {'epoch': 3, 'loss': 1.4186450242996216, '_timestamp': 1676205934.069012}.
+2023-02-12 13:45:34,429 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:34,429 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 3 < 78. Dropping entry: {'epoch': 3, 'loss': 1.9185301065444946, '_timestamp': 1676205934.4288366}.
+2023-02-12 13:45:34,631 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/output.log
+2023-02-12 13:45:34,788 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:34,788 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 4 < 78. Dropping entry: {'epoch': 3, 'loss': 1.5436391830444336, '_timestamp': 1676205934.7882545}.
+2023-02-12 13:45:35,148 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:35,148 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 5 < 78. Dropping entry: {'epoch': 3, 'loss': 1.668589472770691, '_timestamp': 1676205935.148004}.
+2023-02-12 13:45:35,508 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:35,508 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 6 < 78. Dropping entry: {'epoch': 3, 'loss': 1.6686129570007324, '_timestamp': 1676205935.508025}.
+2023-02-12 13:45:35,868 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:35,868 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 7 < 78. Dropping entry: {'epoch': 3, 'loss': 1.6685552597045898, '_timestamp': 1676205935.867985}.
+2023-02-12 13:45:36,228 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:36,228 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 8 < 78. Dropping entry: {'epoch': 3, 'loss': 1.66852605342865, '_timestamp': 1676205936.2284818}.
+2023-02-12 13:45:36,588 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:36,588 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 9 < 78. Dropping entry: {'epoch': 3, 'loss': 1.293776035308838, '_timestamp': 1676205936.588193}.
+2023-02-12 13:45:36,631 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/output.log
+2023-02-12 13:45:36,948 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:36,948 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 10 < 78. Dropping entry: {'epoch': 3, 'loss': 1.4186383485794067, '_timestamp': 1676205936.9479868}.
+2023-02-12 13:45:37,308 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:37,308 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 11 < 78. Dropping entry: {'epoch': 3, 'loss': 1.5435949563980103, '_timestamp': 1676205937.308416}.
+2023-02-12 13:45:37,668 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:37,668 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 12 < 78. Dropping entry: {'epoch': 3, 'loss': 1.91849946975708, '_timestamp': 1676205937.6681554}.
+2023-02-12 13:45:37,838 DEBUG   SenderThread:201440 [sender.py:send():336] send: stats
+2023-02-12 13:45:37,898 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: keepalive
+2023-02-12 13:45:38,028 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:38,028 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 13 < 78. Dropping entry: {'epoch': 3, 'loss': 1.6685764789581299, '_timestamp': 1676205938.028247}.
+2023-02-12 13:45:38,388 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:38,388 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 14 < 78. Dropping entry: {'epoch': 3, 'loss': 1.5435916185379028, '_timestamp': 1676205938.3882644}.
+2023-02-12 13:45:38,389 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: status_report
+2023-02-12 13:45:38,632 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/output.log
+2023-02-12 13:45:38,748 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:38,748 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 15 < 78. Dropping entry: {'epoch': 3, 'loss': 1.793574571609497, '_timestamp': 1676205938.7479749}.
+2023-02-12 13:45:39,108 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:39,108 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 16 < 78. Dropping entry: {'epoch': 3, 'loss': 1.543612003326416, '_timestamp': 1676205939.1078765}.
+2023-02-12 13:45:39,468 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:39,468 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 17 < 78. Dropping entry: {'epoch': 3, 'loss': 1.7935895919799805, '_timestamp': 1676205939.4680376}.
+2023-02-12 13:45:39,827 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:39,828 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 18 < 78. Dropping entry: {'epoch': 3, 'loss': 1.6686112880706787, '_timestamp': 1676205939.8275304}.
+2023-02-12 13:45:40,188 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:40,188 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 19 < 78. Dropping entry: {'epoch': 3, 'loss': 1.54360032081604, '_timestamp': 1676205940.1879928}.
+2023-02-12 13:45:40,548 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:40,548 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 20 < 78. Dropping entry: {'epoch': 3, 'loss': 1.5436301231384277, '_timestamp': 1676205940.5481102}.
+2023-02-12 13:45:40,632 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/output.log
+2023-02-12 13:45:40,908 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:40,908 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 21 < 78. Dropping entry: {'epoch': 3, 'loss': 1.5435999631881714, '_timestamp': 1676205940.907918}.
+2023-02-12 13:45:41,268 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:41,268 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 22 < 78. Dropping entry: {'epoch': 3, 'loss': 1.4186674356460571, '_timestamp': 1676205941.2681694}.
+2023-02-12 13:45:41,627 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:41,628 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 23 < 78. Dropping entry: {'epoch': 3, 'loss': 1.5436772108078003, '_timestamp': 1676205941.6276717}.
+2023-02-12 13:45:41,987 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:41,987 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 24 < 78. Dropping entry: {'epoch': 3, 'loss': 1.293625831604004, '_timestamp': 1676205941.9872952}.
+2023-02-12 13:45:42,348 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:42,348 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 25 < 78. Dropping entry: {'epoch': 3, 'loss': 1.5436475276947021, '_timestamp': 1676205942.3480484}.
+2023-02-12 13:45:42,633 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/output.log
+2023-02-12 13:45:42,709 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:42,709 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 26 < 78. Dropping entry: {'epoch': 3, 'loss': 1.6686854362487793, '_timestamp': 1676205942.7089336}.
+2023-02-12 13:45:42,898 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: keepalive
+2023-02-12 13:45:43,069 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:43,070 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 27 < 78. Dropping entry: {'epoch': 3, 'loss': 1.6685590744018555, '_timestamp': 1676205943.0696795}.
+2023-02-12 13:45:43,431 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:43,431 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 28 < 78. Dropping entry: {'epoch': 3, 'loss': 1.5436724424362183, '_timestamp': 1676205943.431049}.
+2023-02-12 13:45:43,431 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: status_report
+2023-02-12 13:45:43,791 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:43,791 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 29 < 78. Dropping entry: {'epoch': 3, 'loss': 1.418700933456421, '_timestamp': 1676205943.7915099}.
+2023-02-12 13:45:44,152 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:44,152 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 30 < 78. Dropping entry: {'epoch': 3, 'loss': 1.668628454208374, '_timestamp': 1676205944.1521366}.
+2023-02-12 13:45:44,513 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:44,513 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 31 < 78. Dropping entry: {'epoch': 3, 'loss': 1.4187138080596924, '_timestamp': 1676205944.5131772}.
+2023-02-12 13:45:44,633 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/output.log
+2023-02-12 13:45:44,874 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:44,874 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 32 < 78. Dropping entry: {'epoch': 3, 'loss': 1.5435994863510132, '_timestamp': 1676205944.8737457}.
+2023-02-12 13:45:45,234 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:45,234 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 33 < 78. Dropping entry: {'epoch': 3, 'loss': 1.4187129735946655, '_timestamp': 1676205945.2341955}.
+2023-02-12 13:45:45,594 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:45,595 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 34 < 78. Dropping entry: {'epoch': 3, 'loss': 1.5436253547668457, '_timestamp': 1676205945.594686}.
+2023-02-12 13:45:45,955 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:45,955 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 35 < 78. Dropping entry: {'epoch': 3, 'loss': 1.2936930656433105, '_timestamp': 1676205945.954939}.
+2023-02-12 13:45:46,316 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:46,316 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 36 < 78. Dropping entry: {'epoch': 3, 'loss': 1.418699860572815, '_timestamp': 1676205946.3162124}.
+2023-02-12 13:45:46,634 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/output.log
+2023-02-12 13:45:46,676 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:46,677 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 37 < 78. Dropping entry: {'epoch': 3, 'loss': 1.6685649156570435, '_timestamp': 1676205946.6766627}.
+2023-02-12 13:45:47,037 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:47,037 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 38 < 78. Dropping entry: {'epoch': 3, 'loss': 1.6686033010482788, '_timestamp': 1676205947.0373528}.
+2023-02-12 13:45:47,399 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:47,399 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 39 < 78. Dropping entry: {'epoch': 3, 'loss': 1.2936804294586182, '_timestamp': 1676205947.3988168}.
+2023-02-12 13:45:47,759 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:47,759 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 40 < 78. Dropping entry: {'epoch': 3, 'loss': 1.6686292886734009, '_timestamp': 1676205947.7594473}.
+2023-02-12 13:45:47,899 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: keepalive
+2023-02-12 13:45:48,120 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:48,120 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 41 < 78. Dropping entry: {'epoch': 3, 'loss': 1.293724536895752, '_timestamp': 1676205948.119897}.
+2023-02-12 13:45:48,481 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:48,481 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 42 < 78. Dropping entry: {'epoch': 3, 'loss': 1.5435556173324585, '_timestamp': 1676205948.4809773}.
+2023-02-12 13:45:48,481 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: status_report
+2023-02-12 13:45:48,634 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/output.log
+2023-02-12 13:45:48,842 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:48,842 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 43 < 78. Dropping entry: {'epoch': 3, 'loss': 1.4186488389968872, '_timestamp': 1676205948.841703}.
+2023-02-12 13:45:49,203 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:49,203 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 44 < 78. Dropping entry: {'epoch': 3, 'loss': 1.66856849193573, '_timestamp': 1676205949.202953}.
+2023-02-12 13:45:49,564 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:49,564 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 45 < 78. Dropping entry: {'epoch': 3, 'loss': 1.4186484813690186, '_timestamp': 1676205949.5639713}.
+2023-02-12 13:45:49,925 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:49,925 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 46 < 78. Dropping entry: {'epoch': 3, 'loss': 1.6685731410980225, '_timestamp': 1676205949.924663}.
+2023-02-12 13:45:50,286 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:50,286 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 47 < 78. Dropping entry: {'epoch': 3, 'loss': 1.9185121059417725, '_timestamp': 1676205950.2858741}.
+2023-02-12 13:45:50,634 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/output.log
+2023-02-12 13:45:50,647 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:50,647 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 48 < 78. Dropping entry: {'epoch': 3, 'loss': 1.2936986684799194, '_timestamp': 1676205950.6471639}.
+2023-02-12 13:45:51,007 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:51,008 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 49 < 78. Dropping entry: {'epoch': 3, 'loss': 1.4186760187149048, '_timestamp': 1676205951.007529}.
+2023-02-12 13:45:51,369 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:51,369 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 50 < 78. Dropping entry: {'epoch': 3, 'loss': 1.5436207056045532, '_timestamp': 1676205951.368969}.
+2023-02-12 13:45:51,729 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:51,729 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 51 < 78. Dropping entry: {'epoch': 3, 'loss': 1.918548822402954, '_timestamp': 1676205951.7296271}.
+2023-02-12 13:45:52,090 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:52,090 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 52 < 78. Dropping entry: {'epoch': 3, 'loss': 1.5436186790466309, '_timestamp': 1676205952.0900955}.
+2023-02-12 13:45:52,451 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:52,451 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 53 < 78. Dropping entry: {'epoch': 3, 'loss': 1.4185863733291626, '_timestamp': 1676205952.4512055}.
+2023-02-12 13:45:52,635 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/output.log
+2023-02-12 13:45:52,812 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:52,812 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 54 < 78. Dropping entry: {'epoch': 3, 'loss': 1.168775200843811, '_timestamp': 1676205952.8118486}.
+2023-02-12 13:45:52,899 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: keepalive
+2023-02-12 13:45:53,173 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:53,173 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 55 < 78. Dropping entry: {'epoch': 3, 'loss': 1.7935574054718018, '_timestamp': 1676205953.1726358}.
+2023-02-12 13:45:53,533 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:53,533 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 56 < 78. Dropping entry: {'epoch': 3, 'loss': 1.7935426235198975, '_timestamp': 1676205953.5329082}.
+2023-02-12 13:45:53,534 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: status_report
+2023-02-12 13:45:53,894 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:53,894 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 57 < 78. Dropping entry: {'epoch': 3, 'loss': 1.5436581373214722, '_timestamp': 1676205953.894235}.
+2023-02-12 13:45:54,255 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:54,255 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 58 < 78. Dropping entry: {'epoch': 3, 'loss': 1.7935340404510498, '_timestamp': 1676205954.2553792}.
+2023-02-12 13:45:54,616 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:54,616 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 59 < 78. Dropping entry: {'epoch': 3, 'loss': 1.5436484813690186, '_timestamp': 1676205954.616522}.
+2023-02-12 13:45:54,635 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/output.log
+2023-02-12 13:45:54,977 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:54,977 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 60 < 78. Dropping entry: {'epoch': 3, 'loss': 1.6686023473739624, '_timestamp': 1676205954.9772923}.
+2023-02-12 13:45:55,338 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:55,338 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 61 < 78. Dropping entry: {'epoch': 3, 'loss': 1.54358971118927, '_timestamp': 1676205955.3380654}.
+2023-02-12 13:45:55,699 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:55,699 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 62 < 78. Dropping entry: {'epoch': 3, 'loss': 1.6685668230056763, '_timestamp': 1676205955.6990776}.
+2023-02-12 13:45:56,060 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:56,060 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 63 < 78. Dropping entry: {'epoch': 3, 'loss': 1.5436445474624634, '_timestamp': 1676205956.0600636}.
+2023-02-12 13:45:56,422 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:56,422 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 64 < 78. Dropping entry: {'epoch': 3, 'loss': 1.2936582565307617, '_timestamp': 1676205956.4218442}.
+2023-02-12 13:45:56,636 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/output.log
+2023-02-12 13:45:56,782 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:56,782 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 65 < 78. Dropping entry: {'epoch': 3, 'loss': 1.293682336807251, '_timestamp': 1676205956.7825491}.
+2023-02-12 13:45:57,143 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:57,143 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 66 < 78. Dropping entry: {'epoch': 3, 'loss': 1.7935359477996826, '_timestamp': 1676205957.1433363}.
+2023-02-12 13:45:57,505 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:57,505 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 67 < 78. Dropping entry: {'epoch': 3, 'loss': 1.7935521602630615, '_timestamp': 1676205957.5046978}.
+2023-02-12 13:45:57,866 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:57,866 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 68 < 78. Dropping entry: {'epoch': 3, 'loss': 1.7935521602630615, '_timestamp': 1676205957.8657959}.
+2023-02-12 13:45:57,900 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: keepalive
+2023-02-12 13:45:58,227 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:58,227 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 69 < 78. Dropping entry: {'epoch': 3, 'loss': 1.6685880422592163, '_timestamp': 1676205958.227235}.
+2023-02-12 13:45:58,588 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:58,588 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 70 < 78. Dropping entry: {'epoch': 3, 'loss': 1.5436286926269531, '_timestamp': 1676205958.5876756}.
+2023-02-12 13:45:58,588 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: status_report
+2023-02-12 13:45:58,636 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/output.log
+2023-02-12 13:45:58,948 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:58,948 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 71 < 78. Dropping entry: {'epoch': 3, 'loss': 1.543605089187622, '_timestamp': 1676205958.9483411}.
+2023-02-12 13:45:59,309 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:59,309 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 72 < 78. Dropping entry: {'epoch': 3, 'loss': 1.4186385869979858, '_timestamp': 1676205959.3090596}.
+2023-02-12 13:45:59,669 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:45:59,670 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 73 < 78. Dropping entry: {'epoch': 3, 'loss': 1.5436300039291382, '_timestamp': 1676205959.6695423}.
+2023-02-12 13:46:00,030 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:00,030 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 74 < 78. Dropping entry: {'epoch': 3, 'loss': 1.7935727834701538, '_timestamp': 1676205960.0298235}.
+2023-02-12 13:46:00,392 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:00,392 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 75 < 78. Dropping entry: {'epoch': 3, 'loss': 1.5435888767242432, '_timestamp': 1676205960.3916492}.
+2023-02-12 13:46:00,636 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/output.log
+2023-02-12 13:46:00,753 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:00,753 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 76 < 78. Dropping entry: {'epoch': 3, 'loss': 1.918501853942871, '_timestamp': 1676205960.7528}.
+2023-02-12 13:46:01,113 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:01,113 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 77 < 78. Dropping entry: {'epoch': 3, 'loss': 1.418644666671753, '_timestamp': 1676205961.1136117}.
+2023-02-12 13:46:01,474 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:01,836 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:01,836 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 0 < 78. Dropping entry: {'epoch': 4, 'loss': 1.1686811447143555, '_timestamp': 1676205961.8362136}.
+2023-02-12 13:46:02,198 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:02,198 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 1 < 78. Dropping entry: {'epoch': 4, 'loss': 1.4187235832214355, '_timestamp': 1676205962.1977403}.
+2023-02-12 13:46:02,558 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:02,558 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 2 < 78. Dropping entry: {'epoch': 4, 'loss': 1.4187403917312622, '_timestamp': 1676205962.5582485}.
+2023-02-12 13:46:02,637 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/output.log
+2023-02-12 13:46:02,901 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: keepalive
+2023-02-12 13:46:02,919 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:02,919 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 3 < 78. Dropping entry: {'epoch': 4, 'loss': 1.9185545444488525, '_timestamp': 1676205962.919229}.
+2023-02-12 13:46:03,280 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:03,280 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 4 < 78. Dropping entry: {'epoch': 4, 'loss': 1.5436365604400635, '_timestamp': 1676205963.2803338}.
+2023-02-12 13:46:03,641 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:03,641 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 5 < 78. Dropping entry: {'epoch': 4, 'loss': 1.6685699224472046, '_timestamp': 1676205963.641353}.
+2023-02-12 13:46:03,642 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: status_report
+2023-02-12 13:46:04,003 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:04,003 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 6 < 78. Dropping entry: {'epoch': 4, 'loss': 1.668607234954834, '_timestamp': 1676205964.0027573}.
+2023-02-12 13:46:04,364 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:04,364 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 7 < 78. Dropping entry: {'epoch': 4, 'loss': 1.6686065196990967, '_timestamp': 1676205964.3640127}.
+2023-02-12 13:46:04,637 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/output.log
+2023-02-12 13:46:04,725 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:04,725 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 8 < 78. Dropping entry: {'epoch': 4, 'loss': 1.668573260307312, '_timestamp': 1676205964.7248576}.
+2023-02-12 13:46:05,086 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:05,086 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 9 < 78. Dropping entry: {'epoch': 4, 'loss': 1.2936677932739258, '_timestamp': 1676205965.0859458}.
+2023-02-12 13:46:05,447 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:05,447 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 10 < 78. Dropping entry: {'epoch': 4, 'loss': 1.4186519384384155, '_timestamp': 1676205965.4472983}.
+2023-02-12 13:46:05,808 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:05,808 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 11 < 78. Dropping entry: {'epoch': 4, 'loss': 1.5436301231384277, '_timestamp': 1676205965.808047}.
+2023-02-12 13:46:06,169 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:06,169 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 12 < 78. Dropping entry: {'epoch': 4, 'loss': 1.918489933013916, '_timestamp': 1676205966.1688137}.
+2023-02-12 13:46:06,530 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:06,530 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 13 < 78. Dropping entry: {'epoch': 4, 'loss': 1.6686002016067505, '_timestamp': 1676205966.5301607}.
+2023-02-12 13:46:06,638 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/output.log
+2023-02-12 13:46:06,891 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:06,891 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 14 < 78. Dropping entry: {'epoch': 4, 'loss': 1.5436441898345947, '_timestamp': 1676205966.8913667}.
+2023-02-12 13:46:07,253 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:07,253 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 15 < 78. Dropping entry: {'epoch': 4, 'loss': 1.7935500144958496, '_timestamp': 1676205967.2533765}.
+2023-02-12 13:46:07,614 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:07,614 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 16 < 78. Dropping entry: {'epoch': 4, 'loss': 1.5436170101165771, '_timestamp': 1676205967.6143785}.
+2023-02-12 13:46:07,838 DEBUG   SenderThread:201440 [sender.py:send():336] send: stats
+2023-02-12 13:46:07,901 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: keepalive
+2023-02-12 13:46:07,975 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:07,975 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 17 < 78. Dropping entry: {'epoch': 4, 'loss': 1.7935450077056885, '_timestamp': 1676205967.9753158}.
+2023-02-12 13:46:08,336 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:08,336 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 18 < 78. Dropping entry: {'epoch': 4, 'loss': 1.6685526371002197, '_timestamp': 1676205968.3363907}.
+2023-02-12 13:46:08,638 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/output.log
+2023-02-12 13:46:08,698 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:08,698 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 19 < 78. Dropping entry: {'epoch': 4, 'loss': 1.5436224937438965, '_timestamp': 1676205968.69789}.
+2023-02-12 13:46:08,698 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: status_report
+2023-02-12 13:46:09,059 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:09,060 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 20 < 78. Dropping entry: {'epoch': 4, 'loss': 1.5436253547668457, '_timestamp': 1676205969.0595262}.
+2023-02-12 13:46:09,422 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:09,422 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 21 < 78. Dropping entry: {'epoch': 4, 'loss': 1.5435636043548584, '_timestamp': 1676205969.4220467}.
+2023-02-12 13:46:09,783 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:09,783 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 22 < 78. Dropping entry: {'epoch': 4, 'loss': 1.4186242818832397, '_timestamp': 1676205969.7830517}.
+2023-02-12 13:46:10,144 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:10,144 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 23 < 78. Dropping entry: {'epoch': 4, 'loss': 1.543622612953186, '_timestamp': 1676205970.1438937}.
+2023-02-12 13:46:10,505 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:10,505 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 24 < 78. Dropping entry: {'epoch': 4, 'loss': 1.2936530113220215, '_timestamp': 1676205970.5051854}.
+2023-02-12 13:46:10,638 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/output.log
+2023-02-12 13:46:10,866 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:10,866 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 25 < 78. Dropping entry: {'epoch': 4, 'loss': 1.543611764907837, '_timestamp': 1676205970.8657408}.
+2023-02-12 13:46:11,227 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:11,227 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 26 < 78. Dropping entry: {'epoch': 4, 'loss': 1.6685981750488281, '_timestamp': 1676205971.227026}.
+2023-02-12 13:46:11,588 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:11,588 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 27 < 78. Dropping entry: {'epoch': 4, 'loss': 1.6686114072799683, '_timestamp': 1676205971.5881376}.
+2023-02-12 13:46:11,949 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:11,949 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 28 < 78. Dropping entry: {'epoch': 4, 'loss': 1.5436292886734009, '_timestamp': 1676205971.949052}.
+2023-02-12 13:46:12,310 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:12,310 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 29 < 78. Dropping entry: {'epoch': 4, 'loss': 1.41862154006958, '_timestamp': 1676205972.3102705}.
+2023-02-12 13:46:12,639 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/output.log
+2023-02-12 13:46:12,671 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:12,672 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 30 < 78. Dropping entry: {'epoch': 4, 'loss': 1.6686033010482788, '_timestamp': 1676205972.6716318}.
+2023-02-12 13:46:12,902 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: keepalive
+2023-02-12 13:46:13,032 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:13,032 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 31 < 78. Dropping entry: {'epoch': 4, 'loss': 1.4186196327209473, '_timestamp': 1676205973.032319}.
+2023-02-12 13:46:13,394 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:13,394 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 32 < 78. Dropping entry: {'epoch': 4, 'loss': 1.5436570644378662, '_timestamp': 1676205973.3939726}.
+2023-02-12 13:46:13,755 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:13,755 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 33 < 78. Dropping entry: {'epoch': 4, 'loss': 1.4187068939208984, '_timestamp': 1676205973.7548087}.
+2023-02-12 13:46:13,755 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: status_report
+2023-02-12 13:46:14,116 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:14,116 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 34 < 78. Dropping entry: {'epoch': 4, 'loss': 1.5436136722564697, '_timestamp': 1676205974.1162703}.
+2023-02-12 13:46:14,478 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:14,478 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 35 < 78. Dropping entry: {'epoch': 4, 'loss': 1.2936465740203857, '_timestamp': 1676205974.477994}.
+2023-02-12 13:46:14,639 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/output.log
+2023-02-12 13:46:14,839 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:14,839 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 36 < 78. Dropping entry: {'epoch': 4, 'loss': 1.4186749458312988, '_timestamp': 1676205974.8389843}.
+2023-02-12 13:46:15,201 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:15,201 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 37 < 78. Dropping entry: {'epoch': 4, 'loss': 1.6686227321624756, '_timestamp': 1676205975.2010617}.
+2023-02-12 13:46:15,562 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:15,562 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 38 < 78. Dropping entry: {'epoch': 4, 'loss': 1.6685816049575806, '_timestamp': 1676205975.562059}.
+2023-02-12 13:46:15,923 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:15,923 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 39 < 78. Dropping entry: {'epoch': 4, 'loss': 1.293655276298523, '_timestamp': 1676205975.9228292}.
+2023-02-12 13:46:16,284 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:16,284 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 40 < 78. Dropping entry: {'epoch': 4, 'loss': 1.6685847043991089, '_timestamp': 1676205976.2844741}.
+2023-02-12 13:46:16,640 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/output.log
+2023-02-12 13:46:16,645 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:16,645 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 41 < 78. Dropping entry: {'epoch': 4, 'loss': 1.2936829328536987, '_timestamp': 1676205976.6450546}.
+2023-02-12 13:46:17,006 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:17,006 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 42 < 78. Dropping entry: {'epoch': 4, 'loss': 1.543616771697998, '_timestamp': 1676205977.0058692}.
+2023-02-12 13:46:17,367 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:17,367 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 43 < 78. Dropping entry: {'epoch': 4, 'loss': 1.4186458587646484, '_timestamp': 1676205977.3673234}.
+2023-02-12 13:46:17,728 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:17,728 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 44 < 78. Dropping entry: {'epoch': 4, 'loss': 1.6685550212860107, '_timestamp': 1676205977.7283397}.
+2023-02-12 13:46:17,903 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: keepalive
+2023-02-12 13:46:18,090 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:18,090 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 45 < 78. Dropping entry: {'epoch': 4, 'loss': 1.4186614751815796, '_timestamp': 1676205978.0900736}.
+2023-02-12 13:46:18,452 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:18,452 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 46 < 78. Dropping entry: {'epoch': 4, 'loss': 1.6685595512390137, '_timestamp': 1676205978.4518156}.
+2023-02-12 13:46:18,640 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/output.log
+2023-02-12 13:46:18,813 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:18,813 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 47 < 78. Dropping entry: {'epoch': 4, 'loss': 1.9185521602630615, '_timestamp': 1676205978.813099}.
+2023-02-12 13:46:18,813 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: status_report
+2023-02-12 13:46:19,175 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:19,175 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 48 < 78. Dropping entry: {'epoch': 4, 'loss': 1.293686866760254, '_timestamp': 1676205979.1750624}.
+2023-02-12 13:46:19,536 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:19,536 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 49 < 78. Dropping entry: {'epoch': 4, 'loss': 1.4186333417892456, '_timestamp': 1676205979.5363398}.
+2023-02-12 13:46:19,897 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:19,897 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 50 < 78. Dropping entry: {'epoch': 4, 'loss': 1.543649673461914, '_timestamp': 1676205979.8974407}.
+2023-02-12 13:46:20,260 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:20,260 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 51 < 78. Dropping entry: {'epoch': 4, 'loss': 1.918559193611145, '_timestamp': 1676205980.2597098}.
+2023-02-12 13:46:20,621 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:20,621 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 52 < 78. Dropping entry: {'epoch': 4, 'loss': 1.543588399887085, '_timestamp': 1676205980.6208289}.
+2023-02-12 13:46:20,641 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/output.log
+2023-02-12 13:46:20,981 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:20,982 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 53 < 78. Dropping entry: {'epoch': 4, 'loss': 1.4186819791793823, '_timestamp': 1676205980.9816122}.
+2023-02-12 13:46:21,343 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:21,343 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 54 < 78. Dropping entry: {'epoch': 4, 'loss': 1.1686991453170776, '_timestamp': 1676205981.3434753}.
+2023-02-12 13:46:21,704 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:21,704 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 55 < 78. Dropping entry: {'epoch': 4, 'loss': 1.7935246229171753, '_timestamp': 1676205981.704223}.
+2023-02-12 13:46:22,065 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:22,065 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 56 < 78. Dropping entry: {'epoch': 4, 'loss': 1.7935878038406372, '_timestamp': 1676205982.0652306}.
+2023-02-12 13:46:22,427 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:22,427 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 57 < 78. Dropping entry: {'epoch': 4, 'loss': 1.5436376333236694, '_timestamp': 1676205982.4273608}.
+2023-02-12 13:46:22,641 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/output.log
+2023-02-12 13:46:22,789 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:22,789 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 58 < 78. Dropping entry: {'epoch': 4, 'loss': 1.7935478687286377, '_timestamp': 1676205982.788863}.
+2023-02-12 13:46:22,903 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: keepalive
+2023-02-12 13:46:23,150 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:23,150 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 59 < 78. Dropping entry: {'epoch': 4, 'loss': 1.5436439514160156, '_timestamp': 1676205983.1499093}.
+2023-02-12 13:46:23,512 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:23,512 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 60 < 78. Dropping entry: {'epoch': 4, 'loss': 1.6685943603515625, '_timestamp': 1676205983.5119076}.
+2023-02-12 13:46:23,873 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:23,873 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 61 < 78. Dropping entry: {'epoch': 4, 'loss': 1.5436127185821533, '_timestamp': 1676205983.8731248}.
+2023-02-12 13:46:23,873 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: status_report
+2023-02-12 13:46:24,234 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:24,234 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 62 < 78. Dropping entry: {'epoch': 4, 'loss': 1.6685792207717896, '_timestamp': 1676205984.2343218}.
+2023-02-12 13:46:24,596 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:24,596 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 63 < 78. Dropping entry: {'epoch': 4, 'loss': 1.5436019897460938, '_timestamp': 1676205984.596012}.
+2023-02-12 13:46:24,642 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/output.log
+2023-02-12 13:46:24,958 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:24,958 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 64 < 78. Dropping entry: {'epoch': 4, 'loss': 1.2937374114990234, '_timestamp': 1676205984.9576583}.
+2023-02-12 13:46:25,319 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:25,319 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 65 < 78. Dropping entry: {'epoch': 4, 'loss': 1.293669581413269, '_timestamp': 1676205985.3190486}.
+2023-02-12 13:46:25,679 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:25,680 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 66 < 78. Dropping entry: {'epoch': 4, 'loss': 1.7935376167297363, '_timestamp': 1676205985.6797767}.
+2023-02-12 13:46:26,040 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:26,041 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 67 < 78. Dropping entry: {'epoch': 4, 'loss': 1.793603777885437, '_timestamp': 1676205986.0407305}.
+2023-02-12 13:46:26,401 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:26,402 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 68 < 78. Dropping entry: {'epoch': 4, 'loss': 1.793573021888733, '_timestamp': 1676205986.4016933}.
+2023-02-12 13:46:26,642 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/output.log
+2023-02-12 13:46:26,763 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:26,763 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 69 < 78. Dropping entry: {'epoch': 4, 'loss': 1.6685302257537842, '_timestamp': 1676205986.763336}.
+2023-02-12 13:46:27,124 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:27,124 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 70 < 78. Dropping entry: {'epoch': 4, 'loss': 1.5436596870422363, '_timestamp': 1676205987.1241465}.
+2023-02-12 13:46:27,486 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:27,486 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 71 < 78. Dropping entry: {'epoch': 4, 'loss': 1.5436395406723022, '_timestamp': 1676205987.485929}.
+2023-02-12 13:46:27,847 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:27,847 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 72 < 78. Dropping entry: {'epoch': 4, 'loss': 1.4185978174209595, '_timestamp': 1676205987.8473003}.
+2023-02-12 13:46:27,904 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: keepalive
+2023-02-12 13:46:28,209 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:28,209 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 73 < 78. Dropping entry: {'epoch': 4, 'loss': 1.543692708015442, '_timestamp': 1676205988.2087958}.
+2023-02-12 13:46:28,570 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:28,570 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 74 < 78. Dropping entry: {'epoch': 4, 'loss': 1.7935606241226196, '_timestamp': 1676205988.5700543}.
+2023-02-12 13:46:28,642 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/output.log
+2023-02-12 13:46:28,931 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:28,932 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 75 < 78. Dropping entry: {'epoch': 4, 'loss': 1.543623447418213, '_timestamp': 1676205988.9317546}.
+2023-02-12 13:46:28,932 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: status_report
+2023-02-12 13:46:29,294 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:29,294 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 76 < 78. Dropping entry: {'epoch': 4, 'loss': 1.9185439348220825, '_timestamp': 1676205989.2942743}.
+2023-02-12 13:46:29,656 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:29,656 WARNING HandlerThread:201440 [handler.py:handle_request_partial_history():549] Step 77 < 78. Dropping entry: {'epoch': 4, 'loss': 1.418654203414917, '_timestamp': 1676205989.6559827}.
+2023-02-12 13:46:30,017 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: partial_history
+2023-02-12 13:46:30,154 DEBUG   SenderThread:201440 [sender.py:send():336] send: exit
+2023-02-12 13:46:30,154 INFO    SenderThread:201440 [sender.py:send_exit():559] handling exit code: 0
+2023-02-12 13:46:30,154 INFO    SenderThread:201440 [sender.py:send_exit():561] handling runtime: 142
+2023-02-12 13:46:30,154 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:46:30,154 INFO    SenderThread:201440 [sender.py:send_exit():567] send defer
+2023-02-12 13:46:30,154 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: defer
+2023-02-12 13:46:30,154 INFO    HandlerThread:201440 [handler.py:handle_request_defer():170] handle defer: 0
+2023-02-12 13:46:30,154 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: defer
+2023-02-12 13:46:30,154 INFO    SenderThread:201440 [sender.py:send_request_defer():583] handle sender defer: 0
+2023-02-12 13:46:30,155 INFO    SenderThread:201440 [sender.py:transition_state():587] send defer: 1
+2023-02-12 13:46:30,155 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: defer
+2023-02-12 13:46:30,155 INFO    HandlerThread:201440 [handler.py:handle_request_defer():170] handle defer: 1
+2023-02-12 13:46:30,155 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: defer
+2023-02-12 13:46:30,155 INFO    SenderThread:201440 [sender.py:send_request_defer():583] handle sender defer: 1
+2023-02-12 13:46:30,155 INFO    SenderThread:201440 [sender.py:transition_state():587] send defer: 2
+2023-02-12 13:46:30,155 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: defer
+2023-02-12 13:46:30,155 INFO    HandlerThread:201440 [handler.py:handle_request_defer():170] handle defer: 2
+2023-02-12 13:46:30,155 INFO    HandlerThread:201440 [system_monitor.py:finish():161] Stopping system monitor
+2023-02-12 13:46:30,155 INFO    HandlerThread:201440 [interfaces.py:finish():175] Joined cpu
+2023-02-12 13:46:30,155 INFO    HandlerThread:201440 [interfaces.py:finish():175] Joined disk
+2023-02-12 13:46:30,155 DEBUG   SystemMonitor:201440 [system_monitor.py:_start():137] Finished system metrics aggregation loop
+2023-02-12 13:46:30,155 DEBUG   SystemMonitor:201440 [system_monitor.py:_start():141] Publishing last batch of metrics
+2023-02-12 13:46:30,169 INFO    HandlerThread:201440 [interfaces.py:finish():175] Joined gpu
+2023-02-12 13:46:30,169 INFO    HandlerThread:201440 [interfaces.py:finish():175] Joined memory
+2023-02-12 13:46:30,169 INFO    HandlerThread:201440 [interfaces.py:finish():175] Joined network
+2023-02-12 13:46:30,169 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: defer
+2023-02-12 13:46:30,169 INFO    SenderThread:201440 [sender.py:send_request_defer():583] handle sender defer: 2
+2023-02-12 13:46:30,169 INFO    SenderThread:201440 [sender.py:transition_state():587] send defer: 3
+2023-02-12 13:46:30,169 DEBUG   SenderThread:201440 [sender.py:send():336] send: stats
+2023-02-12 13:46:30,169 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: defer
+2023-02-12 13:46:30,169 INFO    HandlerThread:201440 [handler.py:handle_request_defer():170] handle defer: 3
+2023-02-12 13:46:30,170 DEBUG   SenderThread:201440 [sender.py:send():336] send: history
+2023-02-12 13:46:30,170 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: summary_record
+2023-02-12 13:46:30,170 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:46:30,170 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: defer
+2023-02-12 13:46:30,170 INFO    SenderThread:201440 [sender.py:send_request_defer():583] handle sender defer: 3
+2023-02-12 13:46:30,170 INFO    SenderThread:201440 [sender.py:transition_state():587] send defer: 4
+2023-02-12 13:46:30,170 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: defer
+2023-02-12 13:46:30,170 INFO    HandlerThread:201440 [handler.py:handle_request_defer():170] handle defer: 4
+2023-02-12 13:46:30,170 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: defer
+2023-02-12 13:46:30,170 INFO    SenderThread:201440 [sender.py:send_request_defer():583] handle sender defer: 4
+2023-02-12 13:46:30,170 INFO    SenderThread:201440 [sender.py:transition_state():587] send defer: 5
+2023-02-12 13:46:30,170 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: defer
+2023-02-12 13:46:30,170 INFO    HandlerThread:201440 [handler.py:handle_request_defer():170] handle defer: 5
+2023-02-12 13:46:30,170 DEBUG   SenderThread:201440 [sender.py:send():336] send: summary
+2023-02-12 13:46:30,170 INFO    SenderThread:201440 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-12 13:46:30,170 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: defer
+2023-02-12 13:46:30,170 INFO    SenderThread:201440 [sender.py:send_request_defer():583] handle sender defer: 5
+2023-02-12 13:46:30,170 INFO    SenderThread:201440 [sender.py:transition_state():587] send defer: 6
+2023-02-12 13:46:30,170 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: defer
+2023-02-12 13:46:30,170 INFO    HandlerThread:201440 [handler.py:handle_request_defer():170] handle defer: 6
+2023-02-12 13:46:30,170 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: defer
+2023-02-12 13:46:30,170 INFO    SenderThread:201440 [sender.py:send_request_defer():583] handle sender defer: 6
+2023-02-12 13:46:30,170 INFO    SenderThread:201440 [sender.py:transition_state():587] send defer: 7
+2023-02-12 13:46:30,170 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: status_report
+2023-02-12 13:46:30,170 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: defer
+2023-02-12 13:46:30,170 INFO    HandlerThread:201440 [handler.py:handle_request_defer():170] handle defer: 7
+2023-02-12 13:46:30,171 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: defer
+2023-02-12 13:46:30,171 INFO    SenderThread:201440 [sender.py:send_request_defer():583] handle sender defer: 7
+2023-02-12 13:46:30,644 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/output.log
+2023-02-12 13:46:30,644 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/wandb-summary.json
+2023-02-12 13:46:31,154 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: poll_exit
+2023-02-12 13:46:32,644 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/output.log
+2023-02-12 13:46:32,652 INFO    SenderThread:201440 [sender.py:transition_state():587] send defer: 8
+2023-02-12 13:46:32,652 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: poll_exit
+2023-02-12 13:46:32,653 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: defer
+2023-02-12 13:46:32,653 INFO    HandlerThread:201440 [handler.py:handle_request_defer():170] handle defer: 8
+2023-02-12 13:46:32,653 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: defer
+2023-02-12 13:46:32,653 INFO    SenderThread:201440 [sender.py:send_request_defer():583] handle sender defer: 8
+2023-02-12 13:46:32,656 INFO    SenderThread:201440 [sender.py:transition_state():587] send defer: 9
+2023-02-12 13:46:32,656 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: defer
+2023-02-12 13:46:32,656 DEBUG   SenderThread:201440 [sender.py:send():336] send: artifact
+2023-02-12 13:46:32,656 INFO    HandlerThread:201440 [handler.py:handle_request_defer():170] handle defer: 9
+2023-02-12 13:46:33,645 INFO    Thread-13 :201440 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/output.log
+2023-02-12 13:46:35,040 INFO    wandb-upload_0:201440 [upload_job.py:push():93] Skipped uploading /home/sebastiaan/.local/share/wandb/artifacts/staging/tmp2xpw4fup
+2023-02-12 13:46:35,502 INFO    wandb-upload_1:201440 [upload_job.py:push():96] Uploaded file /home/sebastiaan/.local/share/wandb/artifacts/staging/tmplo4bf936
+2023-02-12 13:46:36,157 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: keepalive
+2023-02-12 13:46:37,584 INFO    SenderThread:201440 [sender.py:send_artifact():1417] sent artifact job-https___github.com_vandenbroecksebastiaan_text_geolocation.git_main.py - {'id': 'QXJ0aWZhY3Q6MzYzNzg5ODY4', 'digest': '7e8be70a9a7c3c09d930aa52df423755', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjUyNzE1MzM2', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MzYzNzc3Mzk5', 'versionIndex': 0}}, 'version': 'latest'}
+2023-02-12 13:46:37,584 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: defer
+2023-02-12 13:46:37,584 INFO    SenderThread:201440 [sender.py:send_request_defer():583] handle sender defer: 9
+2023-02-12 13:46:37,584 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: status_report
+2023-02-12 13:46:37,584 INFO    SenderThread:201440 [dir_watcher.py:finish():362] shutting down directory watcher
+2023-02-12 13:46:37,647 INFO    SenderThread:201440 [dir_watcher.py:finish():392] scan: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files
+2023-02-12 13:46:37,647 INFO    SenderThread:201440 [dir_watcher.py:finish():406] scan save: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/config.yaml config.yaml
+2023-02-12 13:46:37,648 INFO    SenderThread:201440 [dir_watcher.py:finish():406] scan save: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/output.log output.log
+2023-02-12 13:46:37,648 INFO    SenderThread:201440 [dir_watcher.py:finish():406] scan save: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/wandb-summary.json wandb-summary.json
+2023-02-12 13:46:37,648 INFO    SenderThread:201440 [dir_watcher.py:finish():406] scan save: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/requirements.txt requirements.txt
+2023-02-12 13:46:37,649 INFO    SenderThread:201440 [dir_watcher.py:finish():406] scan save: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/wandb-metadata.json wandb-metadata.json
+2023-02-12 13:46:37,649 INFO    SenderThread:201440 [sender.py:transition_state():587] send defer: 10
+2023-02-12 13:46:37,650 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: defer
+2023-02-12 13:46:37,650 INFO    HandlerThread:201440 [handler.py:handle_request_defer():170] handle defer: 10
+2023-02-12 13:46:37,669 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: defer
+2023-02-12 13:46:37,669 INFO    SenderThread:201440 [sender.py:send_request_defer():583] handle sender defer: 10
+2023-02-12 13:46:37,670 INFO    SenderThread:201440 [file_pusher.py:finish():162] shutting down file pusher
+2023-02-12 13:46:38,444 INFO    wandb-upload_0:201440 [upload_job.py:push():138] Uploaded file /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/config.yaml
+2023-02-12 13:46:38,705 INFO    wandb-upload_1:201440 [upload_job.py:push():138] Uploaded file /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/requirements.txt
+2023-02-12 13:46:38,711 INFO    wandb-upload_2:201440 [upload_job.py:push():138] Uploaded file /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/output.log
+2023-02-12 13:46:38,834 INFO    wandb-upload_3:201440 [upload_job.py:push():138] Uploaded file /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/files/wandb-summary.json
+2023-02-12 13:46:39,035 INFO    Thread-12 (_thread_body):201440 [sender.py:transition_state():587] send defer: 11
+2023-02-12 13:46:39,036 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: defer
+2023-02-12 13:46:39,036 INFO    HandlerThread:201440 [handler.py:handle_request_defer():170] handle defer: 11
+2023-02-12 13:46:39,037 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: defer
+2023-02-12 13:46:39,038 INFO    SenderThread:201440 [sender.py:send_request_defer():583] handle sender defer: 11
+2023-02-12 13:46:39,038 INFO    SenderThread:201440 [file_pusher.py:join():167] waiting for file pusher
+2023-02-12 13:46:39,038 INFO    SenderThread:201440 [sender.py:transition_state():587] send defer: 12
+2023-02-12 13:46:39,038 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: defer
+2023-02-12 13:46:39,039 INFO    HandlerThread:201440 [handler.py:handle_request_defer():170] handle defer: 12
+2023-02-12 13:46:39,039 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: defer
+2023-02-12 13:46:39,040 INFO    SenderThread:201440 [sender.py:send_request_defer():583] handle sender defer: 12
+2023-02-12 13:46:39,231 INFO    SenderThread:201440 [sender.py:transition_state():587] send defer: 13
+2023-02-12 13:46:39,232 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: defer
+2023-02-12 13:46:39,232 INFO    HandlerThread:201440 [handler.py:handle_request_defer():170] handle defer: 13
+2023-02-12 13:46:39,233 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: defer
+2023-02-12 13:46:39,233 INFO    SenderThread:201440 [sender.py:send_request_defer():583] handle sender defer: 13
+2023-02-12 13:46:39,233 INFO    SenderThread:201440 [sender.py:transition_state():587] send defer: 14
+2023-02-12 13:46:39,234 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: defer
+2023-02-12 13:46:39,234 INFO    HandlerThread:201440 [handler.py:handle_request_defer():170] handle defer: 14
+2023-02-12 13:46:39,236 DEBUG   SenderThread:201440 [sender.py:send():336] send: final
+2023-02-12 13:46:39,236 DEBUG   SenderThread:201440 [sender.py:send():336] send: footer
+2023-02-12 13:46:39,236 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: defer
+2023-02-12 13:46:39,236 INFO    SenderThread:201440 [sender.py:send_request_defer():583] handle sender defer: 14
+2023-02-12 13:46:39,238 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: poll_exit
+2023-02-12 13:46:39,239 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: server_info
+2023-02-12 13:46:39,239 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: poll_exit
+2023-02-12 13:46:39,241 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: get_summary
+2023-02-12 13:46:39,243 DEBUG   SenderThread:201440 [sender.py:send_request():363] send_request: server_info
+2023-02-12 13:46:39,243 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: sampled_history
+2023-02-12 13:46:39,601 INFO    MainThread:201440 [wandb_run.py:_footer_history_summary_info():3442] rendering history
+2023-02-12 13:46:39,602 INFO    MainThread:201440 [wandb_run.py:_footer_history_summary_info():3474] rendering summary
+2023-02-12 13:46:39,603 INFO    MainThread:201440 [wandb_run.py:_footer_sync_info():3398] logging synced files
+2023-02-12 13:46:39,604 DEBUG   HandlerThread:201440 [handler.py:handle_request():144] handle_request: shutdown
+2023-02-12 13:46:39,604 INFO    HandlerThread:201440 [handler.py:finish():841] shutting down handler
+2023-02-12 13:46:40,243 INFO    WriterThread:201440 [datastore.py:close():299] close: /home/sebastiaan/fun/text_geolocation/wandb/run-20230212_134406-ldwo0utd/run-ldwo0utd.wandb
+2023-02-12 13:46:40,601 INFO    SenderThread:201440 [sender.py:finish():1493] shutting down sender
+2023-02-12 13:46:40,601 INFO    SenderThread:201440 [file_pusher.py:finish():162] shutting down file pusher
+2023-02-12 13:46:40,601 INFO    SenderThread:201440 [file_pusher.py:join():167] waiting for file pusher

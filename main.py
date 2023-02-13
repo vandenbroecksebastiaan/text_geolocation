@@ -1,56 +1,36 @@
 import matplotlib.pyplot as plt
 from tqdm import tqdm
 import numpy as np
-from torch.utils.data import DataLoader
-import torchtext
+from torch.utils.data import DataLoader, random_split, WeightedRandomSampler
 import torch
 
-from data import LocationDataset, collate_fn, find_characters_to_keep
-from model import Model, RobertaModel
+from data import LocationDataset
+from model import RobertaModel
 from train import train
-
-EPOCHS = 500
-LR = 0.001
 
 
 def get_n_parameters(model):
     model_parameters = filter(lambda p: p.requires_grad, model.parameters())
-    params = sum([np.prod(p.size()) for p in model_parameters])
-    print("-"*30, "\n", "Number of trainable parameters: ", str(params),
-          "\n", "-"*30)
+    n_params = sum([np.prod(p.size()) for p in model_parameters])
+    print("-"*80)
+    print("Number of trainable parameters:", str(n_params))
+    print("-"*80)
 
-# TODO: tokenize tags since they may be informative for a region?
+EPOCHS = 5
+LR = 0.00001
 
 def main():
     torch.set_printoptions(sci_mode=False)
 
-    dataset = LocationDataset(max_obs=100)
-    dataloader = DataLoader(dataset, batch_size=4, drop_last=True)
-    
-    idx, (input_id, attention_mask, continent) = next(enumerate(dataloader))
+    dataset = LocationDataset(max_obs=20000)
+    train_dataset, eval_dataset = random_split(dataset, lengths=[0.8, 0.2])
+    train_loader = DataLoader(train_dataset, batch_size=32, drop_last=True, shuffle=True)
+    eval_loader = DataLoader(eval_dataset, batch_size=32, drop_last=True, shuffle=True)
    
-    model = RobertaModel()
-    output = model(input_id, attention_mask)
-    print(output)
+    model = RobertaModel().cuda()
+    get_n_parameters(model)
+    train(model, train_loader, eval_loader, EPOCHS, LR)
    
-    
-    # vocab = torchtext.vocab.build_vocab_from_iterator(
-    #     [i.split() for i in dataset.x_data], max_tokens=5000
-    # )
-    
-    # dataset.find_most_popular_words()
-    
-    # exit(0)
-    
-    # dataset.to_tensor()
-    
-    # dataloader = DataLoader(dataset, batch_size=64, shuffle=False,
-    #                         collate_fn=collate_fn)
-    # input_size = dataset.x_data[0].shape[-1]
-    # model = Model(input_size=input_size).cuda()
-    # get_n_parameters(model)
-    # model = train(model=model, train_loader=dataloader, EPOCHS=EPOCHS, LR=LR)
-
 
 if __name__== "__main__":
     main()
