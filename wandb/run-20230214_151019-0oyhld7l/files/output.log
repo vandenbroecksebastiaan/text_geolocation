@@ -1,0 +1,19 @@
+Epoch:   0%|                                                                                                                  | 0/10 [00:01<?, ?it/s]
+Traceback (most recent call last):
+  File "/home/sebastiaan/fun/text_geolocation/main.py", line 34, in <module>
+    main()
+  File "/home/sebastiaan/fun/text_geolocation/main.py", line 30, in main
+    train(model, train_loader, eval_loader, config["epochs"], config["lr"])
+  File "/home/sebastiaan/fun/text_geolocation/train.py", line 70, in train
+    total_train_loss = train_custom_loss[0]
+IndexError: invalid index of a 0-dim tensor. Use `tensor.item()` in Python or `tensor.item<T>()` in C++ to convert a 0-dim tensor to a number
+Traceback (most recent call last):
+  File "/home/sebastiaan/fun/text_geolocation/main.py", line 34, in <module>
+    main()
+  File "/home/sebastiaan/fun/text_geolocation/main.py", line 30, in main
+    train(model, train_loader, eval_loader, config["epochs"], config["lr"])
+  File "/home/sebastiaan/fun/text_geolocation/train.py", line 70, in train
+    total_train_loss = train_custom_loss[0]
+IndexError: invalid index of a 0-dim tensor. Use `tensor.item()` in Python or `tensor.item<T>()` in C++ to convert a 0-dim tensor to a number
+Len train loader: 21
+Len eval loader: 5

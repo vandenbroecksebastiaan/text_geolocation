@@ -150,9 +150,9 @@ class LocationDataset(Dataset):
         self.min_max_scale_y_data()
         self.quantize_coordinates(n_classes=n_classes)
         self.add_weights()
-        self.remove_special_characters()
         self.lower()
-        # self.remove_short()
+        self.remove_special_characters()
+        self.remove_short()
         
         if model_name == "xlm-roberta-base":
             self.tokenizer = AutoTokenizer.from_pretrained("xlm-roberta-base")
@@ -226,8 +226,10 @@ class LocationDataset(Dataset):
         
         # Replace sum by zero
         inv_weights[inv_weights == float("inf")] = 1
-
+        
         self.weights = inv_weights
+        
+        print("Weights:", self.weights)
 
     def min_max_scale_y_data(self):
         """Applies min max scaling to the coordinates"""
@@ -249,18 +251,20 @@ class LocationDataset(Dataset):
         # Replace line breaks and tabs
         self.x_data = np.char.replace(self.x_data, "\n", "")
         self.x_data = np.char.replace(self.x_data, "\t", "")
+
         # Replace links
         self.x_data = np.array([re.sub(r'http\S+', '', i) for i in self.x_data])
         # Replace tags
         self.x_data = np.array([re.sub(r'@\S+', '', i) for i in self.x_data])
         self.x_data = np.array([re.sub(r'#\S+', '', i) for i in self.x_data])
+
         # Also replace the following special characters
-        special_characters = [
-            "@", "(", ")", ":", "/", ".", "&", "=", "-", "'", '"', "/", "\\",
-            "!", "?", "`"
-        ]
-        to_replace = {i:"" for i in special_characters}
-        self.x_data = np.array([i.translate(i.maketrans(to_replace)) for i in self.x_data])
+        # special_characters = [
+        #     "@", "(", ")", ":", "/", ".", "&", "=", "-", "'", '"', "/", "\\",
+        #     "!", "?", "`"
+        # ]
+        # to_replace = {i:"" for i in special_characters}
+        # self.x_data = np.array([i.translate(i.maketrans(to_replace)) for i in self.x_data])
         # Remove emoji
         self.x_data = np.array([clean(i, no_emoji=True) for i in self.x_data])
         
@@ -285,11 +289,13 @@ class LocationDataset(Dataset):
 
     def remove_short(self):
         # Remove empty and short observations
+        print("Shape before removing short:", self.x_data.shape)
         obs_len = np.char.str_len(self.x_data)
-        self.x_data = self.x_data[np.where(obs_len > 9)[0]]
-        self.y_data = self.y_data[np.where(obs_len > 9)[0]]
-        # self.country = self.country[np.where(obs_len > 9)[0]]
-        self.continent = self.continent[np.where(obs_len > 9)[0]]
+        self.x_data = self.x_data[np.where(obs_len > 5)[0]]
+        self.y_data = self.y_data[np.where(obs_len > 5)[0]]
+        print("Shape after removing short:", self.x_data.shape)
+
+        np.savetxt("data/x_after_removing_short.txt", self.x_data, fmt="%s")
 
     def to_tensor(self):
         """Transforms the strings x data into one hot encoded tensor on the

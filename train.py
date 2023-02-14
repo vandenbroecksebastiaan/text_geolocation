@@ -10,105 +10,51 @@ import wandb
 from data import undo_min_max_scaling
 from config import config
 
-from torch.nn.functional import cross_entropy, mse_loss
-
-def custom_loss(output_cluster, target_cluster, target_coordinate, weight,
-                cluster_to_coordinate_map, alpha):
-    # Loss from the prediction and clusters center
-    cross_entropy_loss = cross_entropy(output_cluster, target_cluster, weight)
-    
-    # Loss from the prediction and actual coordinate
-    output_coordinate = torch.Tensor(
-        np.array(
-            [cluster_to_coordinate_map[i.item()] for i
-             in output_cluster.argmax(dim=1)]
-        )
-    )
-    mse_loss_coordinate = mse_loss(output_coordinate, target_coordinate)
-    
-    total_loss = alpha * cross_entropy_loss + (1 - alpha) * mse_loss_coordinate
-    
-    # print("cross entropy", cross_entropy_loss)
-    # print("mse", mse_loss_coordinate)
-
-    return total_loss
 
 def train(model, train_loader, eval_loader, epochs, lr):
 
     optimizer = Adam(model.parameters(), lr=lr)
     weight = train_loader.dataset.dataset.weights.cuda()
-    cluster_to_coordinate_map = train_loader.dataset.dataset.cluster_to_coordinate_map
     criterion = CrossEntropyLoss(weight=weight)
     
-    # wandb.init(project="text_geolocation", config=config)
-    # wandb.watch(model, criterion, log="all", log_freq=len(train_loader) // 4)
-
-    train_losses = []
-    train_acc = []
-    eval_losses = []
-    eval_mae_km_list = []
+    wandb.init(project="text_geolocation", config=config)
+    wandb.watch(model, criterion, log="all", log_freq=len(train_loader) // 30)
+    
+    print("Len train loader:", len(train_loader))
+    print("Len eval loader:", len(eval_loader))
 
     for epoch in tqdm(range(epochs), desc="Epoch"):
 
-        epoch_train_acc = []
-        epoch_train_losses = []
-
-        # --- Train step
-        model.train()
         for idx, (input_ids, attention_mask, y_train, target_coordinate) in enumerate(train_loader):
-
+    
+            # --- Train step
+            model.train()
             optimizer.zero_grad()
             train_output = model(input_ids, attention_mask)
-            train_custom_loss = custom_loss(output_cluster=train_output,
-                                            target_cluster=y_train.argmax(dim=1),
-                                            target_coordinate=target_coordinate,
-                                            weight=weight,
-                                            cluster_to_coordinate_map=cluster_to_coordinate_map,
-                                            alpha=config["alpha"])
-
-            train_custom_loss.backward()
+            train_loss = CrossEntropyLoss(train_output, y_train.argmax(dim=1))
+            train_loss.backward()
             optimizer.step()
 
             iteration_acc = (y_train.argmax(dim=1) == train_output.argmax(dim=1)).sum().item() / config["batch_size"]
-
-            epoch_train_losses.append(train_custom_loss.item())
-            epoch_train_acc.append(iteration_acc)
             
-            # if idx % 10 == 0: wandb.log({"train loss": train_custom_loss.item(),
-            #                              "train acc": iteration_acc})
+            if idx % 10 == 0: wandb.log({"train loss": train_loss.item(),
+                                         "train acc": iteration_acc})
 
-            print(epoch, idx, "\t|", round(train_custom_loss.item(), 4), "\t|",
-                  round(iteration_acc, 4))
-            
-        train_losses.append(sum(epoch_train_losses) / len(epoch_train_losses))
-        train_acc.append(sum(epoch_train_acc) / len(epoch_train_acc))
-
-        # --- Validation step
-        eval_mae_km, mean_eval_loss = validation_step(model, eval_loader, criterion)
-
-        # wandb.log({"eval loss": mean_eval_loss, "eval_mae_km": eval_mae_km, "train loss": train_loss.item()})
-        
-        eval_mae_km_list.append(eval_mae_km)
-        eval_losses.append(mean_eval_loss)
-        
-        print("Val mae km:", eval_mae_km, " | Mean val loss:", mean_eval_loss)
-        
-    print("eval mae km:", eval_mae_km_list)
-    print("eval losses:", eval_losses)
+            # --- Validation step
+            if idx % 100 == 0:
+                eval_mae_km, mean_eval_loss = validation_step(model, eval_loader)
+                
+                print("Val mae km:", eval_mae_km, " | Mean val loss:", mean_eval_loss)
+    
+            print(epoch, idx, "\t|", round(train_loss.item(), 4),
+                  "\t|", round(iteration_acc, 4))
 
     # After training, do a validation step to save last targets and predictions
-    validation_step(model, eval_loader, criterion, write=True)
+    validation_step(model, eval_loader, write=True)
 
-    # Save train data
-    np.savetxt("data/train_losses.txt", np.array(train_losses, dtype=object), fmt="%f")
-
-    # Save validation data
-    np.savetxt("data/eval_losses.txt", np.array(eval_losses, dtype=object), fmt="%f")
-    np.savetxt("data/eval_mae_km_list.txt", np.array(eval_mae_km_list, dtype=object), fmt="%f")
 
 def validation_step(model, eval_loader, criterion, write=False):
         model.eval()
-        weight = eval_loader.dataset.dataset.weights.cuda()
         cluster_to_coordinate_map = eval_loader.dataset.dataset.cluster_to_coordinate_map
 
         # Iterate over the evaluation dataloader
@@ -117,19 +63,13 @@ def validation_step(model, eval_loader, criterion, write=False):
         eval_targets = np.empty(shape=(0, 2))
 
         for _, (input_ids, attention_mask, y_eval, target_coordinate) in enumerate(eval_loader):
-            eval_output = model(input_ids, attention_mask)
-            eval_custom_loss = custom_loss(output_cluster=eval_output,
-                                           target_cluster=y_eval.argmax(dim=1),
-                                           target_coordinate=target_coordinate,
-                                           weight=weight,
-                                           cluster_to_coordinate_map=cluster_to_coordinate_map,
-                                           alpha=config["alpha"])
-            # eval_loss = criterion(eval_output, y_eval.argmax(dim=1)).item()
-            eval_losses.append(eval_custom_loss)
+            eval_output = model(input_ids, attention_mask).detach().cpu()
+            eval_loss = criterion(eval_output, y_eval.argmax(dim=1)).item()
 
-            eval_output = eval_output.argmax(dim=1).detach().cpu().tolist()
+            eval_losses.append(eval_loss)
+            eval_output_cluster = eval_output.argmax(dim=1).tolist()
             eval_output_coordinates = np.array(
-                [cluster_to_coordinate_map[i] for i in eval_output]
+                [cluster_to_coordinate_map[i] for i in eval_output_cluster]
             )
             
             target_coordinate = target_coordinate.cpu().numpy()
@@ -159,6 +99,9 @@ def validation_step(model, eval_loader, criterion, write=False):
             np.savetxt("data/eval_predictions.txt",
                        np.array(eval_predictions_unscaled, dtype=object), fmt="%f")
             np.savetxt("data/eval_targets.txt",
-                       np.array(eval_targets_unscaled, dtype=object), fmt="%f")
+                np.array(eval_targets_unscaled, dtype=object), fmt="%f"
+            )
+            
+        wandb.log({"eval loss": mean_eval_loss, "mae km": mae_km})
 
         return mae_km, mean_eval_loss

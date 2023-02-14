@@ -1,0 +1,105 @@
+
+Epoch:   0%|                                                                                                                  | 0/10 [00:00<?, ?it/s]
+0 0 	| 2.1278 	| 0.0
+0 1 	| 2.0993 	| 0.0
+0 2 	| 1.9163 	| 0.1562
+0 3 	| 1.8705 	| 0.0625
+0 4 	| 1.9317 	| 0.125
+0 5 	| 1.8891 	| 0.1562
+0 6 	| 1.9408 	| 0.0938
+0 7 	| 1.7671 	| 0.1562
+0 8 	| 1.78 	| 0.1875
+0 9 	| 1.8507 	| 0.1562
+0 10 	| 1.5308 	| 0.25
+0 11 	| 1.546 	| 0.375
+0 12 	| 1.6953 	| 0.125
+0 13 	| 1.4647 	| 0.375
+0 14 	| 1.6834 	| 0.25
+0 15 	| 1.4475 	| 0.375
+0 16 	| 1.5066 	| 0.3125
+0 17 	| 1.7966 	| 0.25
+0 18 	| 1.5005 	| 0.4375
+0 19 	| 1.7008 	| 0.2812
+0 20 	| 1.5066 	| 0.3125
+0 21 	| 1.609 	| 0.3125
+0 22 	| 1.5426 	| 0.2812
+0 23 	| 1.7212 	| 0.2812
+0 24 	| 1.6505 	| 0.2812
+0 25 	| 1.5007 	| 0.2812
+0 26 	| 1.6263 	| 0.2812
+0 27 	| 1.5307 	| 0.2812
+0 28 	| 1.4487 	| 0.3438
+0 29 	| 1.6166 	| 0.1875
+0 30 	| 1.526 	| 0.25
+0 31 	| 1.4485 	| 0.375
+0 32 	| 1.5908 	| 0.3438
+0 33 	| 1.6558 	| 0.25
+0 34 	| 1.4058 	| 0.375
+0 35 	| 1.5578 	| 0.375
+0 36 	| 1.5534 	| 0.25
+0 37 	| 1.326 	| 0.3438
+0 38 	| 1.5964 	| 0.2812
+0 39 	| 1.775 	| 0.2812
+0 40 	| 1.4057 	| 0.375
+0 41 	| 1.4987 	| 0.3125
+0 42 	| 1.6395 	| 0.3125
+0 43 	| 1.6026 	| 0.2188
+0 44 	| 1.5079 	| 0.2812
+0 45 	| 1.7085 	| 0.1875
+0 46 	| 1.4117 	| 0.3125
+0 47 	| 1.2785 	| 0.3438
+0 48 	| 1.5457 	| 0.2188
+0 49 	| 1.608 	| 0.3125
+0 50 	| 1.5254 	| 0.3438
+0 51 	| 1.4876 	| 0.375
+0 52 	| 1.4786 	| 0.3125
+0 53 	| 1.5034 	| 0.25
+0 54 	| 1.5896 	| 0.2812
+0 55 	| 1.703 	| 0.1562
+0 56 	| 1.6734 	| 0.1875
+0 57 	| 1.7081 	| 0.1562
+0 58 	| 1.4825 	| 0.25
+0 59 	| 1.6139 	| 0.2812
+0 60 	| 1.6544 	| 0.3125
+0 61 	| 1.7132 	| 0.1875
+0 62 	| 1.5204 	| 0.25
+0 63 	| 1.5193 	| 0.2188
+0 64 	| 1.5348 	| 0.25
+0 65 	| 1.4905 	| 0.2812
+0 66 	| 1.4833 	| 0.25
+0 67 	| 1.4896 	| 0.3438
+0 68 	| 1.5694 	| 0.2812
+0 69 	| 1.9077 	| 0.2812
+0 70 	| 1.6098 	| 0.1562
+0 71 	| 1.3782 	| 0.2188
+Epoch:   0%|                                                                                                                  | 0/10 [00:45<?, ?it/s]
+Traceback (most recent call last):
+  File "/home/sebastiaan/fun/text_geolocation/main.py", line 34, in <module>
+    main()
+  File "/home/sebastiaan/fun/text_geolocation/main.py", line 30, in main
+    train(model, train_loader, eval_loader, config["epochs"], config["lr"])
+  File "/home/sebastiaan/fun/text_geolocation/train.py", line 84, in train
+    eval_mae_km, mean_eval_loss = validation_step(model, eval_loader)
+  File "/home/sebastiaan/fun/text_geolocation/train.py", line 119, in validation_step
+    eval_custom_loss = custom_loss(output_cluster=eval_output_cluster,
+  File "/home/sebastiaan/fun/text_geolocation/train.py", line 18, in custom_loss
+    cross_entropy_loss = cross_entropy(output_cluster, target_cluster, weight)
+  File "/home/sebastiaan/.local/lib/python3.10/site-packages/torch/nn/functional.py", line 3026, in cross_entropy
+    return torch._C._nn.cross_entropy_loss(input, target, weight, _Reduction.get_enum(reduction), ignore_index, label_smoothing)
+RuntimeError: Expected all tensors to be on the same device, but found at least two devices, cpu and cuda:0! (when checking argument for argument target in method wrapper_nll_loss_forward)
+Traceback (most recent call last):
+  File "/home/sebastiaan/fun/text_geolocation/main.py", line 34, in <module>
+    main()
+  File "/home/sebastiaan/fun/text_geolocation/main.py", line 30, in main
+    train(model, train_loader, eval_loader, config["epochs"], config["lr"])
+  File "/home/sebastiaan/fun/text_geolocation/train.py", line 84, in train
+    eval_mae_km, mean_eval_loss = validation_step(model, eval_loader)
+  File "/home/sebastiaan/fun/text_geolocation/train.py", line 119, in validation_step
+    eval_custom_loss = custom_loss(output_cluster=eval_output_cluster,
+  File "/home/sebastiaan/fun/text_geolocation/train.py", line 18, in custom_loss
+    cross_entropy_loss = cross_entropy(output_cluster, target_cluster, weight)
+  File "/home/sebastiaan/.local/lib/python3.10/site-packages/torch/nn/functional.py", line 3026, in cross_entropy
+    return torch._C._nn.cross_entropy_loss(input, target, weight, _Reduction.get_enum(reduction), ignore_index, label_smoothing)
+RuntimeError: Expected all tensors to be on the same device, but found at least two devices, cpu and cuda:0! (when checking argument for argument target in method wrapper_nll_loss_forward)
+0 73 	| 1.3358 	| 0.4062
+0 74 	| 1.5803 	| 0.25

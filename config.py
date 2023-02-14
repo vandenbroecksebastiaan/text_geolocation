@@ -1,9 +1,9 @@
 config = {
-    "epochs": 10,
-    "lr": 0.000005,
+    "epochs": 20,
+    "lr": 0.00001,
     "batch_size": 32,
     "max_obs": 1000,
-    "n_classes": 15,
-    "alpha": 0.7,
+    "n_classes": 20,
+    "alpha": 1,
     "model_name": "papluca/xlm-roberta-base-language-detection"
 }

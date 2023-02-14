@@ -1,0 +1,39 @@
+Len train loader: 21
+Len eval loader: 5
+Epoch:   0%|                                                                                                                  | 0/20 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "/home/sebastiaan/fun/text_geolocation/main.py", line 34, in <module>
+    main()
+  File "/home/sebastiaan/fun/text_geolocation/main.py", line 30, in main
+    train(model, train_loader, eval_loader, config["epochs"], config["lr"])
+  File "/home/sebastiaan/fun/text_geolocation/train.py", line 62, in train
+    train_output = model(input_ids, attention_mask)
+  File "/home/sebastiaan/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1212, in _call_impl
+    result = forward_call(*input, **kwargs)
+  File "/home/sebastiaan/fun/text_geolocation/model.py", line 39, in forward
+    last_hidden_state = self.bn1(last_hidden_state)
+  File "/home/sebastiaan/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/sebastiaan/.local/lib/python3.10/site-packages/torch/nn/modules/batchnorm.py", line 171, in forward
+    return F.batch_norm(
+  File "/home/sebastiaan/.local/lib/python3.10/site-packages/torch/nn/functional.py", line 2450, in batch_norm
+    return torch.batch_norm(
+RuntimeError: running_mean should contain 87552 elements not 98304
+Traceback (most recent call last):
+  File "/home/sebastiaan/fun/text_geolocation/main.py", line 34, in <module>
+    main()
+  File "/home/sebastiaan/fun/text_geolocation/main.py", line 30, in main
+    train(model, train_loader, eval_loader, config["epochs"], config["lr"])
+  File "/home/sebastiaan/fun/text_geolocation/train.py", line 62, in train
+    train_output = model(input_ids, attention_mask)
+  File "/home/sebastiaan/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1212, in _call_impl
+    result = forward_call(*input, **kwargs)
+  File "/home/sebastiaan/fun/text_geolocation/model.py", line 39, in forward
+    last_hidden_state = self.bn1(last_hidden_state)
+  File "/home/sebastiaan/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/sebastiaan/.local/lib/python3.10/site-packages/torch/nn/modules/batchnorm.py", line 171, in forward
+    return F.batch_norm(
+  File "/home/sebastiaan/.local/lib/python3.10/site-packages/torch/nn/functional.py", line 2450, in batch_norm
+    return torch.batch_norm(
+RuntimeError: running_mean should contain 87552 elements not 98304

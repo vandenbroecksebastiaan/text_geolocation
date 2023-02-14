@@ -1,0 +1,19 @@
+Len train loader: 21
+Len eval loader: 5
+Epoch:   0%|                                                                                                                  | 0/10 [00:01<?, ?it/s]
+Traceback (most recent call last):
+  File "/home/sebastiaan/fun/text_geolocation/main.py", line 34, in <module>
+    main()
+  File "/home/sebastiaan/fun/text_geolocation/main.py", line 30, in main
+    train(model, train_loader, eval_loader, config["epochs"], config["lr"])
+  File "/home/sebastiaan/fun/text_geolocation/train.py", line 71, in train
+    train_cross_entropy_loss = train_custom_loss[1][0].item()
+AttributeError: 'int' object has no attribute 'item'
+Traceback (most recent call last):
+  File "/home/sebastiaan/fun/text_geolocation/main.py", line 34, in <module>
+    main()
+  File "/home/sebastiaan/fun/text_geolocation/main.py", line 30, in main
+    train(model, train_loader, eval_loader, config["epochs"], config["lr"])
+  File "/home/sebastiaan/fun/text_geolocation/train.py", line 71, in train
+    train_cross_entropy_loss = train_custom_loss[1][0].item()
+AttributeError: 'int' object has no attribute 'item'

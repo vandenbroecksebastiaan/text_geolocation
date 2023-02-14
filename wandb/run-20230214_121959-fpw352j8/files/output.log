@@ -1,0 +1,161 @@
+
+Epoch:   0%|                                                                                                                  | 0/10 [00:00<?, ?it/s]
+0 0 	| 2.0549 	| 0.0625
+0 1 	| 1.9508 	| 0.125
+0 2 	| 1.9405 	| 0.1562
+0 3 	| 1.9971 	| 0.0625
+0 4 	| 1.79 	| 0.25
+0 5 	| 1.7449 	| 0.25
+0 6 	| 1.8334 	| 0.125
+0 7 	| 1.6227 	| 0.125
+0 8 	| 1.7623 	| 0.0938
+0 9 	| 1.8355 	| 0.2812
+0 10 	| 1.6163 	| 0.25
+0 11 	| 1.6289 	| 0.2812
+0 12 	| 1.5894 	| 0.1875
+0 13 	| 1.4836 	| 0.3125
+0 14 	| 1.9418 	| 0.1562
+0 15 	| 1.6298 	| 0.2812
+0 16 	| 1.6621 	| 0.2188
+0 17 	| 1.6174 	| 0.25
+0 18 	| 1.6251 	| 0.25
+0 19 	| 1.7196 	| 0.25
+0 20 	| 1.5601 	| 0.4062
+0 21 	| 1.4936 	| 0.3125
+0 22 	| 1.5844 	| 0.3125
+0 23 	| 1.2816 	| 0.4062
+0 24 	| 1.5148 	| 0.3438
+0 25 	| 1.688 	| 0.1875
+0 26 	| 1.432 	| 0.3125
+0 27 	| 1.3319 	| 0.375
+0 28 	| 1.5497 	| 0.2812
+0 29 	| 1.3805 	| 0.4375
+0 30 	| 1.5709 	| 0.2812
+0 31 	| 1.4701 	| 0.375
+0 32 	| 1.2497 	| 0.4688
+0 33 	| 1.6328 	| 0.3125
+0 34 	| 1.461 	| 0.4062
+0 35 	| 1.3922 	| 0.375
+0 36 	| 1.815 	| 0.2812
+0 37 	| 1.4972 	| 0.2812
+0 38 	| 1.9918 	| 0.1875
+0 39 	| 1.4782 	| 0.3438
+0 40 	| 1.524 	| 0.25
+0 41 	| 1.2755 	| 0.3438
+0 42 	| 1.3674 	| 0.3125
+0 43 	| 1.4948 	| 0.375
+0 44 	| 1.4095 	| 0.3125
+0 45 	| 1.6636 	| 0.1562
+0 46 	| 1.4978 	| 0.25
+0 47 	| 1.61 	| 0.1875
+0 48 	| 1.4541 	| 0.3125
+0 49 	| 1.5514 	| 0.25
+0 50 	| 1.1463 	| 0.4375
+0 51 	| 1.3344 	| 0.3125
+0 52 	| 1.6907 	| 0.2812
+0 53 	| 1.4518 	| 0.1562
+0 54 	| 1.6203 	| 0.25
+0 55 	| 1.6503 	| 0.2188
+0 56 	| 1.5509 	| 0.1875
+0 57 	| 1.8809 	| 0.25
+0 58 	| 2.0009 	| 0.0625
+0 59 	| 1.3112 	| 0.2188
+0 60 	| 1.3978 	| 0.1562
+0 61 	| 1.78 	| 0.2812
+0 62 	| 1.3462 	| 0.3438
+0 63 	| 1.7514 	| 0.25
+0 64 	| 1.4405 	| 0.25
+0 65 	| 1.692 	| 0.25
+0 66 	| 1.4586 	| 0.3125
+0 67 	| 1.3948 	| 0.3125
+0 68 	| 1.7998 	| 0.0938
+0 69 	| 1.5169 	| 0.2812
+0 70 	| 1.1403 	| 0.3125
+0 71 	| 1.4886 	| 0.25
+0 72 	| 1.6946 	| 0.2812
+0 73 	| 1.4397 	| 0.4688
+Epoch:   0%|                                                                                                                  | 0/10 [00:46<?, ?it/s]
+Traceback (most recent call last):
+  File "/home/sebastiaan/fun/text_geolocation/main.py", line 34, in <module>
+    main()
+  File "/home/sebastiaan/fun/text_geolocation/main.py", line 30, in main
+    train(model, train_loader, eval_loader, config["epochs"], config["lr"])
+  File "/home/sebastiaan/fun/text_geolocation/train.py", line 84, in train
+    eval_mae_km, mean_eval_loss = validation_step(model, eval_loader)
+  File "/home/sebastiaan/fun/text_geolocation/train.py", line 118, in validation_step
+    eval_output_cluster = model(input_ids, attention_mask).cpu()
+  File "/home/sebastiaan/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1212, in _call_impl
+    result = forward_call(*input, **kwargs)
+  File "/home/sebastiaan/fun/text_geolocation/model.py", line 36, in forward
+    roberta_output = self.pretrained_model(input_ids, attention_mask)
+  File "/home/sebastiaan/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/sebastiaan/.local/lib/python3.10/site-packages/transformers/models/xlm_roberta/modeling_xlm_roberta.py", line 1221, in forward
+    outputs = self.roberta(
+  File "/home/sebastiaan/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/sebastiaan/.local/lib/python3.10/site-packages/transformers/models/xlm_roberta/modeling_xlm_roberta.py", line 853, in forward
+    encoder_outputs = self.encoder(
+  File "/home/sebastiaan/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/sebastiaan/.local/lib/python3.10/site-packages/transformers/models/xlm_roberta/modeling_xlm_roberta.py", line 527, in forward
+    layer_outputs = layer_module(
+  File "/home/sebastiaan/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/sebastiaan/.local/lib/python3.10/site-packages/transformers/models/xlm_roberta/modeling_xlm_roberta.py", line 454, in forward
+    layer_output = apply_chunking_to_forward(
+  File "/home/sebastiaan/.local/lib/python3.10/site-packages/transformers/pytorch_utils.py", line 249, in apply_chunking_to_forward
+    return forward_fn(*input_tensors)
+  File "/home/sebastiaan/.local/lib/python3.10/site-packages/transformers/models/xlm_roberta/modeling_xlm_roberta.py", line 466, in feed_forward_chunk
+    intermediate_output = self.intermediate(attention_output)
+  File "/home/sebastiaan/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/sebastiaan/.local/lib/python3.10/site-packages/transformers/models/xlm_roberta/modeling_xlm_roberta.py", line 365, in forward
+    hidden_states = self.intermediate_act_fn(hidden_states)
+  File "/home/sebastiaan/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/sebastiaan/.local/lib/python3.10/site-packages/transformers/activations.py", line 57, in forward
+    return self.act(input)
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 48.00 MiB (GPU 0; 11.75 GiB total capacity; 11.24 GiB already allocated; 13.50 MiB free; 11.34 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+Traceback (most recent call last):
+  File "/home/sebastiaan/fun/text_geolocation/main.py", line 34, in <module>
+    main()
+  File "/home/sebastiaan/fun/text_geolocation/main.py", line 30, in main
+    train(model, train_loader, eval_loader, config["epochs"], config["lr"])
+  File "/home/sebastiaan/fun/text_geolocation/train.py", line 84, in train
+    eval_mae_km, mean_eval_loss = validation_step(model, eval_loader)
+  File "/home/sebastiaan/fun/text_geolocation/train.py", line 118, in validation_step
+    eval_output_cluster = model(input_ids, attention_mask).cpu()
+  File "/home/sebastiaan/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1212, in _call_impl
+    result = forward_call(*input, **kwargs)
+  File "/home/sebastiaan/fun/text_geolocation/model.py", line 36, in forward
+    roberta_output = self.pretrained_model(input_ids, attention_mask)
+  File "/home/sebastiaan/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/sebastiaan/.local/lib/python3.10/site-packages/transformers/models/xlm_roberta/modeling_xlm_roberta.py", line 1221, in forward
+    outputs = self.roberta(
+  File "/home/sebastiaan/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/sebastiaan/.local/lib/python3.10/site-packages/transformers/models/xlm_roberta/modeling_xlm_roberta.py", line 853, in forward
+    encoder_outputs = self.encoder(
+  File "/home/sebastiaan/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/sebastiaan/.local/lib/python3.10/site-packages/transformers/models/xlm_roberta/modeling_xlm_roberta.py", line 527, in forward
+    layer_outputs = layer_module(
+  File "/home/sebastiaan/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/sebastiaan/.local/lib/python3.10/site-packages/transformers/models/xlm_roberta/modeling_xlm_roberta.py", line 454, in forward
+    layer_output = apply_chunking_to_forward(
+  File "/home/sebastiaan/.local/lib/python3.10/site-packages/transformers/pytorch_utils.py", line 249, in apply_chunking_to_forward
+    return forward_fn(*input_tensors)
+  File "/home/sebastiaan/.local/lib/python3.10/site-packages/transformers/models/xlm_roberta/modeling_xlm_roberta.py", line 466, in feed_forward_chunk
+    intermediate_output = self.intermediate(attention_output)
+  File "/home/sebastiaan/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/sebastiaan/.local/lib/python3.10/site-packages/transformers/models/xlm_roberta/modeling_xlm_roberta.py", line 365, in forward
+    hidden_states = self.intermediate_act_fn(hidden_states)
+  File "/home/sebastiaan/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/sebastiaan/.local/lib/python3.10/site-packages/transformers/activations.py", line 57, in forward
+    return self.act(input)
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 48.00 MiB (GPU 0; 11.75 GiB total capacity; 11.24 GiB already allocated; 13.50 MiB free; 11.34 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF

@@ -15,7 +15,7 @@ def get_n_parameters(model):
     print("Number of trainable parameters:", str(n_params))
     print("-"*80)
     
-# TODO: W&B implementation
+# TODO: create requirements.txt
 
 def main():
     torch.set_printoptions(sci_mode=False)

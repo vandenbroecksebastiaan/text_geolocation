@@ -1,0 +1,105 @@
+{
+    "os": "Linux-5.15.0-60-generic-x86_64-with-glibc2.35",
+    "python": "3.10.6",
+    "heartbeatAt": "2023-02-14T15:16:36.244985",
+    "startedAt": "2023-02-14T15:16:33.278047",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "/home/sebastiaan/fun/text_geolocation/main.py",
+    "codePath": "main.py",
+    "git": {
+        "remote": "https://github.com/vandenbroecksebastiaan/text_geolocation.git",
+        "commit": "1b5c54f64268e5d1fb1d685e20a2242a056746a4"
+    },
+    "email": "van.den.broeck.sebastiaan@gmail.com",
+    "root": "/home/sebastiaan/fun/text_geolocation",
+    "host": "glitterbox",
+    "username": "sebastiaan",
+    "executable": "/usr/bin/python3",
+    "cpu_count": 6,
+    "cpu_count_logical": 12,
+    "cpu_freq": {
+        "current": 2363.2748333333334,
+        "min": 800.0,
+        "max": 5600.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2500.0,
+            "min": 800.0,
+            "max": 5600.0
+        },
+        {
+            "current": 2500.0,
+            "min": 800.0,
+            "max": 5600.0
+        },
+        {
+            "current": 2500.0,
+            "min": 800.0,
+            "max": 5600.0
+        },
+        {
+            "current": 2500.0,
+            "min": 800.0,
+            "max": 5600.0
+        },
+        {
+            "current": 2500.0,
+            "min": 800.0,
+            "max": 5600.0
+        },
+        {
+            "current": 2500.0,
+            "min": 800.0,
+            "max": 5600.0
+        },
+        {
+            "current": 2500.0,
+            "min": 800.0,
+            "max": 5600.0
+        },
+        {
+            "current": 2500.0,
+            "min": 800.0,
+            "max": 5600.0
+        },
+        {
+            "current": 859.298,
+            "min": 800.0,
+            "max": 5600.0
+        },
+        {
+            "current": 2500.0,
+            "min": 800.0,
+            "max": 5600.0
+        },
+        {
+            "current": 2500.0,
+            "min": 800.0,
+            "max": 5600.0
+        },
+        {
+            "current": 2500.0,
+            "min": 800.0,
+            "max": 5600.0
+        }
+    ],
+    "disk": {
+        "total": 915.3232879638672,
+        "used": 184.7549819946289
+    },
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce RTX 3060",
+            "memory_total": 12884901888
+        }
+    ],
+    "memory": {
+        "total": 31.097774505615234
+    }
+}

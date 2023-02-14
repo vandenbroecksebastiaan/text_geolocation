@@ -1,0 +1,1 @@
+{"train loss": 1.592093825340271, "train cross entropy loss": 2.241116523742676, "train mse loss": 0.07770770788192749, "train acc": 0.28125, "_timestamp": 1676376242.550188, "_runtime": 10.865453958511353, "_step": 2, "_wandb": {"runtime": 9}}

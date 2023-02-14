@@ -1,0 +1,47 @@
+
+Epoch:   0%|                                                                                                                   | 0/5 [00:00<?, ?it/s]
+0 0 	| 1.919 	| 0.0625
+0 1 	| 1.9152 	| 0.1875
+0 2 	| 1.937 	| 0.2188
+0 3 	| 1.7903 	| 0.1875
+0 4 	| 1.7082 	| 0.2812
+0 5 	| 1.8268 	| 0.1562
+0 6 	| 1.7143 	| 0.2812
+0 7 	| 1.7868 	| 0.1562
+0 8 	| 1.6736 	| 0.1562
+0 9 	| 1.5645 	| 0.25
+0 10 	| 1.8083 	| 0.2188
+0 11 	| 1.5916 	| 0.3125
+0 12 	| 1.7188 	| 0.25
+0 13 	| 1.5863 	| 0.2812
+0 14 	| 1.8451 	| 0.1875
+0 15 	| 1.5984 	| 0.25
+0 16 	| 1.5634 	| 0.2188
+Epoch:   0%|                                                                                                                   | 0/5 [00:09<?, ?it/s]
+Traceback (most recent call last):
+  File "/home/sebastiaan/fun/text_geolocation/main.py", line 34, in <module>
+    main()
+  File "/home/sebastiaan/fun/text_geolocation/main.py", line 30, in main
+    train(model, train_loader, eval_loader, config["epochs"], config["lr"])
+  File "/home/sebastiaan/fun/text_geolocation/train.py", line 59, in train
+    train_custom_loss  = custom_loss(output_cluster=train_output,
+  File "/home/sebastiaan/fun/text_geolocation/train.py", line 23, in custom_loss
+    [cluster_to_coordinate_map[i.item()] for i
+  File "/home/sebastiaan/fun/text_geolocation/train.py", line 23, in <listcomp>
+    [cluster_to_coordinate_map[i.item()] for i
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "/home/sebastiaan/fun/text_geolocation/main.py", line 34, in <module>
+    main()
+  File "/home/sebastiaan/fun/text_geolocation/main.py", line 30, in main
+    train(model, train_loader, eval_loader, config["epochs"], config["lr"])
+  File "/home/sebastiaan/fun/text_geolocation/train.py", line 59, in train
+    train_custom_loss  = custom_loss(output_cluster=train_output,
+  File "/home/sebastiaan/fun/text_geolocation/train.py", line 23, in custom_loss
+    [cluster_to_coordinate_map[i.item()] for i
+  File "/home/sebastiaan/fun/text_geolocation/train.py", line 23, in <listcomp>
+    [cluster_to_coordinate_map[i.item()] for i
+KeyboardInterrupt
+0 18 	| 1.561 	| 0.3438
+0 19 	| 1.508 	| 0.3125
+0 20 	| 1.5921 	| 0.2812

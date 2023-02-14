@@ -1,5 +1,4 @@
 from torch import nn
-import torch
 from transformers import XLMRobertaModel, AutoModelForSequenceClassification
 from config import config
 

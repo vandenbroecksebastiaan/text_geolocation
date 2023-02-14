@@ -1,0 +1,61 @@
+wandb_version: 1
+
+_wandb:
+  desc: null
+  value:
+    cli_version: 0.13.10
+    framework: huggingface
+    huggingface_version: 4.26.0
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    python_version: 3.10.6
+    start_time: 1676381402.753108
+    t:
+      1:
+      - 1
+      - 2
+      - 3
+      - 5
+      - 11
+      - 49
+      - 53
+      - 55
+      2:
+      - 1
+      - 2
+      - 3
+      - 5
+      - 11
+      - 49
+      - 53
+      - 55
+      3:
+      - 1
+      - 16
+      - 23
+      4: 3.10.6
+      5: 0.13.10
+      6: 4.26.0
+      8:
+      - 5
+alpha:
+  desc: null
+  value: 0.3
+batch_size:
+  desc: null
+  value: 32
+epochs:
+  desc: null
+  value: 3
+lr:
+  desc: null
+  value: 5.0e-06
+max_obs:
+  desc: null
+  value: 10000
+model_name:
+  desc: null
+  value: papluca/xlm-roberta-base-language-detection
+n_classes:
+  desc: null
+  value: 10
