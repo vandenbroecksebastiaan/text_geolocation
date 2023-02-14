@@ -1,0 +1,177 @@
+2023-02-13 18:03:05,965 INFO    StreamThr :735559 [internal.py:wandb_internal():87] W&B internal server running at pid: 735559, started at: 2023-02-13 18:03:05.964878
+2023-02-13 18:03:05,968 DEBUG   HandlerThread:735559 [handler.py:handle_request():144] handle_request: status
+2023-02-13 18:03:05,971 INFO    WriterThread:735559 [datastore.py:open_for_write():85] open: /home/sebastiaan/fun/text_geolocation/wandb/run-20230213_180305-a38sco95/run-a38sco95.wandb
+2023-02-13 18:03:05,972 DEBUG   SenderThread:735559 [sender.py:send():336] send: header
+2023-02-13 18:03:05,972 DEBUG   SenderThread:735559 [sender.py:send():336] send: run
+2023-02-13 18:03:06,867 DEBUG   HandlerThread:735559 [handler.py:handle_request():144] handle_request: check_version
+2023-02-13 18:03:06,868 INFO    SenderThread:735559 [dir_watcher.py:__init__():216] watching files in: /home/sebastiaan/fun/text_geolocation/wandb/run-20230213_180305-a38sco95/files
+2023-02-13 18:03:06,868 INFO    SenderThread:735559 [sender.py:_start_run_threads():1067] run started: a38sco95 with start time 1676307785.963223
+2023-02-13 18:03:06,868 DEBUG   SenderThread:735559 [sender.py:send_request():363] send_request: summary_record
+2023-02-13 18:03:06,869 INFO    SenderThread:735559 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-13 18:03:06,869 DEBUG   SenderThread:735559 [sender.py:send_request():363] send_request: check_version
+2023-02-13 18:03:07,077 DEBUG   HandlerThread:735559 [handler.py:handle_request():144] handle_request: run_start
+2023-02-13 18:03:07,090 DEBUG   HandlerThread:735559 [system_info.py:__init__():31] System info init
+2023-02-13 18:03:07,090 DEBUG   HandlerThread:735559 [system_info.py:__init__():46] System info init done
+2023-02-13 18:03:07,090 INFO    HandlerThread:735559 [system_monitor.py:start():151] Starting system monitor
+2023-02-13 18:03:07,090 INFO    SystemMonitor:735559 [system_monitor.py:_start():116] Starting system asset monitoring threads
+2023-02-13 18:03:07,090 INFO    HandlerThread:735559 [system_monitor.py:probe():172] Collecting system info
+2023-02-13 18:03:07,091 INFO    SystemMonitor:735559 [interfaces.py:start():168] Started cpu
+2023-02-13 18:03:07,092 INFO    SystemMonitor:735559 [interfaces.py:start():168] Started disk
+2023-02-13 18:03:07,092 INFO    SystemMonitor:735559 [interfaces.py:start():168] Started gpu
+2023-02-13 18:03:07,093 INFO    SystemMonitor:735559 [interfaces.py:start():168] Started memory
+2023-02-13 18:03:07,094 INFO    SystemMonitor:735559 [interfaces.py:start():168] Started network
+2023-02-13 18:03:07,120 DEBUG   HandlerThread:735559 [system_info.py:probe():195] Probing system
+2023-02-13 18:03:07,123 DEBUG   HandlerThread:735559 [system_info.py:_probe_git():180] Probing git
+2023-02-13 18:03:07,130 DEBUG   HandlerThread:735559 [system_info.py:_probe_git():188] Probing git done
+2023-02-13 18:03:07,130 DEBUG   HandlerThread:735559 [system_info.py:probe():241] Probing system done
+2023-02-13 18:03:07,130 DEBUG   HandlerThread:735559 [system_monitor.py:probe():181] {'os': 'Linux-5.15.0-60-generic-x86_64-with-glibc2.35', 'python': '3.10.6', 'heartbeatAt': '2023-02-13T17:03:07.121002', 'startedAt': '2023-02-13T17:03:05.956714', 'docker': None, 'cuda': None, 'args': (), 'state': 'running', 'program': '/home/sebastiaan/fun/text_geolocation/main.py', 'codePath': 'main.py', 'git': {'remote': 'https://github.com/vandenbroecksebastiaan/text_geolocation.git', 'commit': '915a332504097b8f54a305caf06deeacfc5facd4'}, 'email': 'van.den.broeck.sebastiaan@gmail.com', 'root': '/home/sebastiaan/fun/text_geolocation', 'host': 'glitterbox', 'username': 'sebastiaan', 'executable': '/usr/bin/python3', 'cpu_count': 6, 'cpu_count_logical': 12, 'cpu_freq': {'current': 2530.5944999999997, 'min': 800.0, 'max': 5600.0}, 'cpu_freq_per_core': [{'current': 1113.072, 'min': 800.0, 'max': 5600.0}, {'current': 2500.0, 'min': 800.0, 'max': 5600.0}, {'current': 2500.0, 'min': 800.0, 'max': 5600.0}, {'current': 2500.0, 'min': 800.0, 'max': 5600.0}, {'current': 2500.0, 'min': 800.0, 'max': 5600.0}, {'current': 2500.0, 'min': 800.0, 'max': 5600.0}, {'current': 2500.0, 'min': 800.0, 'max': 5600.0}, {'current': 2500.0, 'min': 800.0, 'max': 5600.0}, {'current': 2500.0, 'min': 800.0, 'max': 5600.0}, {'current': 2500.0, 'min': 800.0, 'max': 5600.0}, {'current': 2500.0, 'min': 800.0, 'max': 5600.0}, {'current': 2500.0, 'min': 800.0, 'max': 5600.0}], 'disk': {'total': 915.3232879638672, 'used': 183.83052825927734}, 'gpu': 'NVIDIA GeForce RTX 3060', 'gpu_count': 1, 'gpu_devices': [{'name': 'NVIDIA GeForce RTX 3060', 'memory_total': 12884901888}], 'memory': {'total': 31.097774505615234}}
+2023-02-13 18:03:07,130 INFO    HandlerThread:735559 [system_monitor.py:probe():182] Finished collecting system info
+2023-02-13 18:03:07,130 INFO    HandlerThread:735559 [system_monitor.py:probe():185] Publishing system info
+2023-02-13 18:03:07,130 DEBUG   HandlerThread:735559 [system_info.py:_save_pip():51] Saving list of pip packages installed into the current environment
+2023-02-13 18:03:07,131 DEBUG   HandlerThread:735559 [system_info.py:_save_pip():67] Saving pip packages done
+2023-02-13 18:03:07,131 INFO    HandlerThread:735559 [system_monitor.py:probe():187] Finished publishing system info
+2023-02-13 18:03:07,135 DEBUG   SenderThread:735559 [sender.py:send():336] send: files
+2023-02-13 18:03:07,135 INFO    SenderThread:735559 [sender.py:_save_file():1321] saving file wandb-metadata.json with policy now
+2023-02-13 18:03:07,139 DEBUG   HandlerThread:735559 [handler.py:handle_request():144] handle_request: stop_status
+2023-02-13 18:03:07,139 DEBUG   SenderThread:735559 [sender.py:send_request():363] send_request: stop_status
+2023-02-13 18:03:07,549 DEBUG   SenderThread:735559 [sender.py:send():336] send: telemetry
+2023-02-13 18:03:07,549 DEBUG   SenderThread:735559 [sender.py:send():336] send: telemetry
+2023-02-13 18:03:07,832 DEBUG   SenderThread:735559 [sender.py:send():336] send: exit
+2023-02-13 18:03:07,832 INFO    SenderThread:735559 [sender.py:send_exit():559] handling exit code: 1
+2023-02-13 18:03:07,832 INFO    SenderThread:735559 [sender.py:send_exit():561] handling runtime: 0
+2023-02-13 18:03:07,832 INFO    SenderThread:735559 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-13 18:03:07,832 INFO    SenderThread:735559 [sender.py:send_exit():567] send defer
+2023-02-13 18:03:07,832 DEBUG   HandlerThread:735559 [handler.py:handle_request():144] handle_request: defer
+2023-02-13 18:03:07,832 INFO    HandlerThread:735559 [handler.py:handle_request_defer():170] handle defer: 0
+2023-02-13 18:03:07,832 DEBUG   SenderThread:735559 [sender.py:send_request():363] send_request: defer
+2023-02-13 18:03:07,832 INFO    SenderThread:735559 [sender.py:send_request_defer():583] handle sender defer: 0
+2023-02-13 18:03:07,832 INFO    SenderThread:735559 [sender.py:transition_state():587] send defer: 1
+2023-02-13 18:03:07,832 DEBUG   HandlerThread:735559 [handler.py:handle_request():144] handle_request: defer
+2023-02-13 18:03:07,832 INFO    HandlerThread:735559 [handler.py:handle_request_defer():170] handle defer: 1
+2023-02-13 18:03:07,832 DEBUG   SenderThread:735559 [sender.py:send_request():363] send_request: defer
+2023-02-13 18:03:07,832 INFO    SenderThread:735559 [sender.py:send_request_defer():583] handle sender defer: 1
+2023-02-13 18:03:07,832 INFO    SenderThread:735559 [sender.py:transition_state():587] send defer: 2
+2023-02-13 18:03:07,832 DEBUG   HandlerThread:735559 [handler.py:handle_request():144] handle_request: defer
+2023-02-13 18:03:07,832 INFO    HandlerThread:735559 [handler.py:handle_request_defer():170] handle defer: 2
+2023-02-13 18:03:07,832 INFO    HandlerThread:735559 [system_monitor.py:finish():161] Stopping system monitor
+2023-02-13 18:03:07,832 DEBUG   SystemMonitor:735559 [system_monitor.py:_start():130] Starting system metrics aggregation loop
+2023-02-13 18:03:07,833 DEBUG   SystemMonitor:735559 [system_monitor.py:_start():137] Finished system metrics aggregation loop
+2023-02-13 18:03:07,833 DEBUG   SystemMonitor:735559 [system_monitor.py:_start():141] Publishing last batch of metrics
+2023-02-13 18:03:07,833 INFO    HandlerThread:735559 [interfaces.py:finish():175] Joined cpu
+2023-02-13 18:03:07,833 INFO    HandlerThread:735559 [interfaces.py:finish():175] Joined disk
+2023-02-13 18:03:07,847 INFO    HandlerThread:735559 [interfaces.py:finish():175] Joined gpu
+2023-02-13 18:03:07,847 INFO    HandlerThread:735559 [interfaces.py:finish():175] Joined memory
+2023-02-13 18:03:07,847 INFO    HandlerThread:735559 [interfaces.py:finish():175] Joined network
+2023-02-13 18:03:07,847 DEBUG   SenderThread:735559 [sender.py:send_request():363] send_request: defer
+2023-02-13 18:03:07,847 INFO    SenderThread:735559 [sender.py:send_request_defer():583] handle sender defer: 2
+2023-02-13 18:03:07,847 INFO    SenderThread:735559 [sender.py:transition_state():587] send defer: 3
+2023-02-13 18:03:07,847 DEBUG   SenderThread:735559 [sender.py:send():336] send: stats
+2023-02-13 18:03:07,847 DEBUG   HandlerThread:735559 [handler.py:handle_request():144] handle_request: defer
+2023-02-13 18:03:07,847 INFO    HandlerThread:735559 [handler.py:handle_request_defer():170] handle defer: 3
+2023-02-13 18:03:07,848 DEBUG   SenderThread:735559 [sender.py:send_request():363] send_request: defer
+2023-02-13 18:03:07,848 INFO    SenderThread:735559 [sender.py:send_request_defer():583] handle sender defer: 3
+2023-02-13 18:03:07,848 INFO    SenderThread:735559 [sender.py:transition_state():587] send defer: 4
+2023-02-13 18:03:07,848 DEBUG   HandlerThread:735559 [handler.py:handle_request():144] handle_request: defer
+2023-02-13 18:03:07,848 INFO    HandlerThread:735559 [handler.py:handle_request_defer():170] handle defer: 4
+2023-02-13 18:03:07,848 DEBUG   SenderThread:735559 [sender.py:send_request():363] send_request: defer
+2023-02-13 18:03:07,848 INFO    SenderThread:735559 [sender.py:send_request_defer():583] handle sender defer: 4
+2023-02-13 18:03:07,848 INFO    SenderThread:735559 [sender.py:transition_state():587] send defer: 5
+2023-02-13 18:03:07,848 DEBUG   HandlerThread:735559 [handler.py:handle_request():144] handle_request: defer
+2023-02-13 18:03:07,848 INFO    HandlerThread:735559 [handler.py:handle_request_defer():170] handle defer: 5
+2023-02-13 18:03:07,848 DEBUG   SenderThread:735559 [sender.py:send():336] send: summary
+2023-02-13 18:03:07,848 INFO    SenderThread:735559 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-02-13 18:03:07,848 DEBUG   SenderThread:735559 [sender.py:send_request():363] send_request: defer
+2023-02-13 18:03:07,848 INFO    SenderThread:735559 [sender.py:send_request_defer():583] handle sender defer: 5
+2023-02-13 18:03:07,848 INFO    SenderThread:735559 [sender.py:transition_state():587] send defer: 6
+2023-02-13 18:03:07,848 DEBUG   HandlerThread:735559 [handler.py:handle_request():144] handle_request: defer
+2023-02-13 18:03:07,848 INFO    HandlerThread:735559 [handler.py:handle_request_defer():170] handle defer: 6
+2023-02-13 18:03:07,848 DEBUG   SenderThread:735559 [sender.py:send_request():363] send_request: defer
+2023-02-13 18:03:07,848 INFO    SenderThread:735559 [sender.py:send_request_defer():583] handle sender defer: 6
+2023-02-13 18:03:07,850 DEBUG   HandlerThread:735559 [handler.py:handle_request():144] handle_request: status_report
+2023-02-13 18:03:07,870 INFO    Thread-13 :735559 [dir_watcher.py:_on_file_created():275] file/dir created: /home/sebastiaan/fun/text_geolocation/wandb/run-20230213_180305-a38sco95/files/wandb-metadata.json
+2023-02-13 18:03:07,870 INFO    Thread-13 :735559 [dir_watcher.py:_on_file_created():275] file/dir created: /home/sebastiaan/fun/text_geolocation/wandb/run-20230213_180305-a38sco95/files/wandb-summary.json
+2023-02-13 18:03:07,870 INFO    Thread-13 :735559 [dir_watcher.py:_on_file_created():275] file/dir created: /home/sebastiaan/fun/text_geolocation/wandb/run-20230213_180305-a38sco95/files/output.log
+2023-02-13 18:03:07,871 INFO    Thread-13 :735559 [dir_watcher.py:_on_file_created():275] file/dir created: /home/sebastiaan/fun/text_geolocation/wandb/run-20230213_180305-a38sco95/files/requirements.txt
+2023-02-13 18:03:08,098 INFO    wandb-upload_0:735559 [upload_job.py:push():138] Uploaded file /tmp/tmp6rrvb5kewandb/fhfgrwc8-wandb-metadata.json
+2023-02-13 18:03:08,279 INFO    SenderThread:735559 [sender.py:transition_state():587] send defer: 7
+2023-02-13 18:03:08,279 DEBUG   HandlerThread:735559 [handler.py:handle_request():144] handle_request: defer
+2023-02-13 18:03:08,280 INFO    HandlerThread:735559 [handler.py:handle_request_defer():170] handle defer: 7
+2023-02-13 18:03:08,280 DEBUG   SenderThread:735559 [sender.py:send_request():363] send_request: defer
+2023-02-13 18:03:08,280 INFO    SenderThread:735559 [sender.py:send_request_defer():583] handle sender defer: 7
+2023-02-13 18:03:08,833 DEBUG   HandlerThread:735559 [handler.py:handle_request():144] handle_request: poll_exit
+2023-02-13 18:03:08,869 INFO    Thread-13 :735559 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230213_180305-a38sco95/files/config.yaml
+2023-02-13 18:03:09,559 INFO    SenderThread:735559 [sender.py:transition_state():587] send defer: 8
+2023-02-13 18:03:09,560 DEBUG   SenderThread:735559 [sender.py:send_request():363] send_request: poll_exit
+2023-02-13 18:03:09,560 DEBUG   HandlerThread:735559 [handler.py:handle_request():144] handle_request: defer
+2023-02-13 18:03:09,561 INFO    HandlerThread:735559 [handler.py:handle_request_defer():170] handle defer: 8
+2023-02-13 18:03:09,562 DEBUG   SenderThread:735559 [sender.py:send_request():363] send_request: defer
+2023-02-13 18:03:09,562 INFO    SenderThread:735559 [sender.py:send_request_defer():583] handle sender defer: 8
+2023-02-13 18:03:09,579 INFO    SenderThread:735559 [sender.py:transition_state():587] send defer: 9
+2023-02-13 18:03:09,580 DEBUG   HandlerThread:735559 [handler.py:handle_request():144] handle_request: defer
+2023-02-13 18:03:09,581 INFO    HandlerThread:735559 [handler.py:handle_request_defer():170] handle defer: 9
+2023-02-13 18:03:09,581 DEBUG   SenderThread:735559 [sender.py:send():336] send: artifact
+2023-02-13 18:03:09,833 DEBUG   HandlerThread:735559 [handler.py:handle_request():144] handle_request: poll_exit
+2023-02-13 18:03:09,870 INFO    Thread-13 :735559 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/sebastiaan/fun/text_geolocation/wandb/run-20230213_180305-a38sco95/files/output.log
+2023-02-13 18:03:11,830 INFO    wandb-upload_1:735559 [upload_job.py:push():93] Skipped uploading /home/sebastiaan/.local/share/wandb/artifacts/staging/tmpbvq0kue1
+2023-02-13 18:03:12,311 INFO    wandb-upload_0:735559 [upload_job.py:push():96] Uploaded file /home/sebastiaan/.local/share/wandb/artifacts/staging/tmprn4jt0cs
+2023-02-13 18:03:14,443 INFO    SenderThread:735559 [sender.py:send_artifact():1417] sent artifact job-https___github.com_vandenbroecksebastiaan_text_geolocation.git_main.py - {'id': 'QXJ0aWZhY3Q6MzY1MjQ1NDg0', 'digest': '466c45ef1c22bb9e06156a90197bfae2', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjUyNzE1MzM2', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MzY1MjQ0MDg5', 'versionIndex': 5}}, 'version': 'latest'}
+2023-02-13 18:03:14,443 DEBUG   SenderThread:735559 [sender.py:send_request():363] send_request: defer
+2023-02-13 18:03:14,443 INFO    SenderThread:735559 [sender.py:send_request_defer():583] handle sender defer: 9
+2023-02-13 18:03:14,443 INFO    SenderThread:735559 [dir_watcher.py:finish():362] shutting down directory watcher
+2023-02-13 18:03:14,443 DEBUG   HandlerThread:735559 [handler.py:handle_request():144] handle_request: status_report
+2023-02-13 18:03:14,838 DEBUG   HandlerThread:735559 [handler.py:handle_request():144] handle_request: keepalive
+2023-02-13 18:03:14,872 INFO    SenderThread:735559 [dir_watcher.py:finish():392] scan: /home/sebastiaan/fun/text_geolocation/wandb/run-20230213_180305-a38sco95/files
+2023-02-13 18:03:14,873 INFO    SenderThread:735559 [dir_watcher.py:finish():406] scan save: /home/sebastiaan/fun/text_geolocation/wandb/run-20230213_180305-a38sco95/files/config.yaml config.yaml
+2023-02-13 18:03:14,873 INFO    SenderThread:735559 [dir_watcher.py:finish():406] scan save: /home/sebastiaan/fun/text_geolocation/wandb/run-20230213_180305-a38sco95/files/output.log output.log
+2023-02-13 18:03:14,874 INFO    SenderThread:735559 [dir_watcher.py:finish():406] scan save: /home/sebastiaan/fun/text_geolocation/wandb/run-20230213_180305-a38sco95/files/wandb-summary.json wandb-summary.json
+2023-02-13 18:03:14,874 INFO    SenderThread:735559 [dir_watcher.py:finish():406] scan save: /home/sebastiaan/fun/text_geolocation/wandb/run-20230213_180305-a38sco95/files/requirements.txt requirements.txt
+2023-02-13 18:03:14,874 INFO    SenderThread:735559 [dir_watcher.py:finish():406] scan save: /home/sebastiaan/fun/text_geolocation/wandb/run-20230213_180305-a38sco95/files/wandb-metadata.json wandb-metadata.json
+2023-02-13 18:03:14,874 INFO    SenderThread:735559 [sender.py:transition_state():587] send defer: 10
+2023-02-13 18:03:14,874 DEBUG   SenderThread:735559 [sender.py:send_request():363] send_request: poll_exit
+2023-02-13 18:03:14,881 DEBUG   HandlerThread:735559 [handler.py:handle_request():144] handle_request: defer
+2023-02-13 18:03:14,886 INFO    HandlerThread:735559 [handler.py:handle_request_defer():170] handle defer: 10
+2023-02-13 18:03:14,894 DEBUG   SenderThread:735559 [sender.py:send_request():363] send_request: defer
+2023-02-13 18:03:14,899 INFO    SenderThread:735559 [sender.py:send_request_defer():583] handle sender defer: 10
+2023-02-13 18:03:14,899 INFO    SenderThread:735559 [file_pusher.py:finish():162] shutting down file pusher
+2023-02-13 18:03:15,723 INFO    wandb-upload_3:735559 [upload_job.py:push():138] Uploaded file /home/sebastiaan/fun/text_geolocation/wandb/run-20230213_180305-a38sco95/files/requirements.txt
+2023-02-13 18:03:16,012 INFO    wandb-upload_0:735559 [upload_job.py:push():138] Uploaded file /home/sebastiaan/fun/text_geolocation/wandb/run-20230213_180305-a38sco95/files/wandb-summary.json
+2023-02-13 18:03:16,020 INFO    wandb-upload_1:735559 [upload_job.py:push():138] Uploaded file /home/sebastiaan/fun/text_geolocation/wandb/run-20230213_180305-a38sco95/files/output.log
+2023-02-13 18:03:16,127 INFO    wandb-upload_2:735559 [upload_job.py:push():138] Uploaded file /home/sebastiaan/fun/text_geolocation/wandb/run-20230213_180305-a38sco95/files/config.yaml
+2023-02-13 18:03:16,328 INFO    Thread-12 (_thread_body):735559 [sender.py:transition_state():587] send defer: 11
+2023-02-13 18:03:16,329 DEBUG   HandlerThread:735559 [handler.py:handle_request():144] handle_request: defer
+2023-02-13 18:03:16,329 INFO    HandlerThread:735559 [handler.py:handle_request_defer():170] handle defer: 11
+2023-02-13 18:03:16,330 DEBUG   SenderThread:735559 [sender.py:send_request():363] send_request: defer
+2023-02-13 18:03:16,330 INFO    SenderThread:735559 [sender.py:send_request_defer():583] handle sender defer: 11
+2023-02-13 18:03:16,331 INFO    SenderThread:735559 [file_pusher.py:join():167] waiting for file pusher
+2023-02-13 18:03:16,331 INFO    SenderThread:735559 [sender.py:transition_state():587] send defer: 12
+2023-02-13 18:03:16,331 DEBUG   HandlerThread:735559 [handler.py:handle_request():144] handle_request: defer
+2023-02-13 18:03:16,331 INFO    HandlerThread:735559 [handler.py:handle_request_defer():170] handle defer: 12
+2023-02-13 18:03:16,332 DEBUG   SenderThread:735559 [sender.py:send_request():363] send_request: defer
+2023-02-13 18:03:16,333 INFO    SenderThread:735559 [sender.py:send_request_defer():583] handle sender defer: 12
+2023-02-13 18:03:16,521 INFO    SenderThread:735559 [sender.py:transition_state():587] send defer: 13
+2023-02-13 18:03:16,522 DEBUG   HandlerThread:735559 [handler.py:handle_request():144] handle_request: defer
+2023-02-13 18:03:16,522 INFO    HandlerThread:735559 [handler.py:handle_request_defer():170] handle defer: 13
+2023-02-13 18:03:16,523 DEBUG   SenderThread:735559 [sender.py:send_request():363] send_request: defer
+2023-02-13 18:03:16,523 INFO    SenderThread:735559 [sender.py:send_request_defer():583] handle sender defer: 13
+2023-02-13 18:03:16,524 INFO    SenderThread:735559 [sender.py:transition_state():587] send defer: 14
+2023-02-13 18:03:16,524 DEBUG   HandlerThread:735559 [handler.py:handle_request():144] handle_request: defer
+2023-02-13 18:03:16,524 INFO    HandlerThread:735559 [handler.py:handle_request_defer():170] handle defer: 14
+2023-02-13 18:03:16,526 DEBUG   SenderThread:735559 [sender.py:send():336] send: final
+2023-02-13 18:03:16,526 DEBUG   SenderThread:735559 [sender.py:send():336] send: footer
+2023-02-13 18:03:16,526 DEBUG   SenderThread:735559 [sender.py:send_request():363] send_request: defer
+2023-02-13 18:03:16,526 INFO    SenderThread:735559 [sender.py:send_request_defer():583] handle sender defer: 14
+2023-02-13 18:03:16,528 DEBUG   HandlerThread:735559 [handler.py:handle_request():144] handle_request: poll_exit
+2023-02-13 18:03:16,529 DEBUG   SenderThread:735559 [sender.py:send_request():363] send_request: poll_exit
+2023-02-13 18:03:16,530 DEBUG   HandlerThread:735559 [handler.py:handle_request():144] handle_request: server_info
+2023-02-13 18:03:16,531 DEBUG   SenderThread:735559 [sender.py:send_request():363] send_request: server_info
+2023-02-13 18:03:16,537 DEBUG   HandlerThread:735559 [handler.py:handle_request():144] handle_request: get_summary
+2023-02-13 18:03:16,538 DEBUG   HandlerThread:735559 [handler.py:handle_request():144] handle_request: sampled_history
+2023-02-13 18:03:16,905 INFO    MainThread:735559 [wandb_run.py:_footer_history_summary_info():3442] rendering history
+2023-02-13 18:03:16,905 INFO    MainThread:735559 [wandb_run.py:_footer_history_summary_info():3474] rendering summary
+2023-02-13 18:03:16,905 INFO    MainThread:735559 [wandb_run.py:_footer_sync_info():3398] logging synced files
+2023-02-13 18:03:16,906 DEBUG   HandlerThread:735559 [handler.py:handle_request():144] handle_request: shutdown
+2023-02-13 18:03:16,907 INFO    HandlerThread:735559 [handler.py:finish():841] shutting down handler
+2023-02-13 18:03:17,531 INFO    WriterThread:735559 [datastore.py:close():299] close: /home/sebastiaan/fun/text_geolocation/wandb/run-20230213_180305-a38sco95/run-a38sco95.wandb
+2023-02-13 18:03:17,905 INFO    SenderThread:735559 [sender.py:finish():1493] shutting down sender
+2023-02-13 18:03:17,905 INFO    SenderThread:735559 [file_pusher.py:finish():162] shutting down file pusher
+2023-02-13 18:03:17,905 INFO    SenderThread:735559 [file_pusher.py:join():167] waiting for file pusher
